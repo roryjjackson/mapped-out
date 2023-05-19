@@ -4,7 +4,15 @@ class ProfilesController < ApplicationController
   # GET /profiles or /profiles.json
   def index
     @profiles = policy_scope(Profile)
-    raise
+
+    @markers = @profiles.geocoded.map do |profile|
+      {
+        lat: profile.latitude,
+        lng: profile.longitude,
+        info_window_html: render_to_string(partial:
+          "info_window", locals: {flat: flat})
+      }
+    end
   end
 
   # GET /profiles/1 or /profiles/1.json
