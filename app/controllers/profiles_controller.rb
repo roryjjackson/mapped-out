@@ -4,6 +4,17 @@ class ProfilesController < ApplicationController
   # GET /profiles or /profiles.json
   def index
     @profiles = policy_scope(Profile)
+
+    @markers = @profiles.geocoded.map do |profile|
+      {
+        lat: profile.latitude,
+        lng: profile.longitude,
+        info_window_html: render_to_string(partial:
+          "info_window", locals: {profile: profile}),
+        marker_html: render_to_string(partial:
+          "marker", locals: {profile: profile})
+      }
+    end
   end
 
   # GET /profiles/1 or /profiles/1.json
@@ -71,6 +82,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:name, :hours, :title, :how, :why, :what, :advice)
+      params.require(:profile).permit(:name, :hours, :title, :how, :why, :what, :advice, :photo)
     end
 end

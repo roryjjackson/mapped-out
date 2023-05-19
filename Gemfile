@@ -79,3 +79,5 @@ end
 
 
 gem "pundit"
+gem "cloudinary"
+gem "geocoder"
