@@ -1,0 +1,18 @@
+
+<%= simple_form_for(@questionnaire) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :q1 %>
+    <%= f.input :q2 %>
+    <%= f.input :q3 %>
+    <%= f.input :q4 %>
+    <%= f.input :q5 %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
