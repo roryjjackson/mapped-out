@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   # GET /profiles or /profiles.json
   def index
     @profiles = policy_scope(Profile)
+    raise
   end
 
   # GET /profiles/1 or /profiles/1.json
@@ -71,6 +72,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:name, :hours, :title, :how, :why, :what, :advice)
+      params.require(:profile).permit(:name, :hours, :title, :how, :why, :what, :advice, :photo)
     end
 end

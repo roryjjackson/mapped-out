@@ -3,6 +3,8 @@
 <%= render @profile %>
 
 <div>
+<%# <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %> %>
+
   <% if policy(@profile).edit? %>
     <%= link_to "Edit this profile", edit_profile_path(@profile) %> |
   <% end %>
