@@ -10,9 +10,9 @@ class ProfilesController < ApplicationController
         lat: profile.latitude,
         lng: profile.longitude,
         info_window_html: render_to_string(partial:
-          "info_window", locals: {flat: flat}),
+          "info_window", locals: {profile: profile}),
         marker_html: render_to_string(partial:
-          "marker", locals: {flat: flat})
+          "marker", locals: {profile: profile})
       }
     end
   end
