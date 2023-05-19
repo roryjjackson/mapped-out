@@ -1,4 +1,4 @@
-class ProfilePolicy < ApplicationPolicy
+class QuestionnairePolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
@@ -14,15 +14,15 @@ class ProfilePolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    create?
+  end
+
   def destroy?
     record.user == user
   end
 
   def update?
     record.user == user
-  end
-
-  def total_score
-    true
   end
 end
