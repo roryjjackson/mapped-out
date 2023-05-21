@@ -11,8 +11,9 @@ class ProfilesController < ApplicationController
         lng: profile.longitude,
         info_window_html: render_to_string(partial:
           "info_window", locals: {profile: profile}),
-        marker_html: render_to_string(partial:
-          "marker", locals: {profile: profile})
+        # image_url: helpers.asset_url("https://res.cloudinary.com/dfipoufmj/image/upload/v1669887491/Pngtree_location_vector_icon_4236431_a2leau.png")
+
+        marker_html: render_to_string(partial: "marker", locals: {profile: profile})
       }
     end
   end
@@ -82,6 +83,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:name, :hours, :title, :how, :why, :what, :advice, :photo)
+      params.require(:profile).permit(:name, :hours, :title, :how, :why, :what, :advice, :photo, :address)
     end
 end
