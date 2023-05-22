@@ -1,7 +1,7 @@
 
 <%= link_to profile do %>
   <div class="info-window">
-    <%# <%= cl_image_tag article.photo.key %>
+    <%= cl_image_tag profile.photo.key, class: "info-window-image" %>
     <h2><%= profile.name %></h2>
     <p><%= profile.address %></p>
   </div>

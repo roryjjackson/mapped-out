@@ -1,5 +1,10 @@
 .info-window {
-  height: 200px;
+  height: auto;
   width: 200px;
-  // background-color: red;
+}
+
+.info-window-image {
+  height: 120px;
+  width: 200px;
+  object-fit: cover;
 }
