@@ -14,4 +14,4 @@
 </div>
 
 <%# <%= link_to "message this person",  %> %>
-<%= link_to "send a message to the user", new_chatroom_path %>
+<%= link_to "send a message to the user", new_chatroom_path(user2_id: @profile.user_id) %>

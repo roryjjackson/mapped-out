@@ -12,7 +12,8 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
-    @chatroom.user = current_user
+    @chatroom.user_id = current_user.id
+    @chatroom.user2_id = params[:user2_id]
     authorize @chatroom
     respond_to do |format|
       if @chatroom.save
@@ -28,6 +29,6 @@ class ChatroomsController < ApplicationController
   private
 
   def chatroom_params
-    params.require(:chatroom).permit(:name)
+    params.require(:chatroom).permit(:name, :user2_id, :user_id)
   end
 end
