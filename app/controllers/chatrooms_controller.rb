@@ -6,6 +6,8 @@ class ChatroomsController < ApplicationController
   end
 
   def new
+    session[:user2_id] = params[:user2_id]
+
     @chatroom = Chatroom.new
     authorize @chatroom
   end
@@ -13,7 +15,8 @@ class ChatroomsController < ApplicationController
   def create
     @chatroom = Chatroom.new(chatroom_params)
     @chatroom.user_id = current_user.id
-    @chatroom.user2_id = params[:user2_id]
+    @chatroom.user2_id = session[:user2_id]
+    # raise
     authorize @chatroom
     respond_to do |format|
       if @chatroom.save
