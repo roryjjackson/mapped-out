@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: %i[ show edit update destroy ]
+  before_action :set_profile, only: %i[ show edit update destroy total_rating]
 
   # GET /profiles or /profiles.json
   def index
@@ -16,11 +16,16 @@ class ProfilesController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {profile: profile})
       }
     end
+
+    @profiles.each do |profile|
+      total_rating(profile)
+    end
   end
 
   # GET /profiles/1 or /profiles/1.json
   def show
     authorize @profile
+    total_rating(@profile)
   end
 
   # GET /profiles/new
@@ -73,6 +78,14 @@ class ProfilesController < ApplicationController
       format.html { redirect_to profiles_url, notice: "Profile was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def total_rating(profile)
+    @reviews = Review.where(profile_id: profile.id)
+    sum_of_reviews = @reviews.sum(:rating).to_f
+    total_reviews = @reviews.length.to_f
+    @total_rating = total_reviews > 0 ? sum_of_reviews / @reviews.length : 0
+    # authorize @profile
   end
 
   private

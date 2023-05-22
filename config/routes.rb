@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :questionnaires
-  resources :profiles
+  resources :profiles do
+    resources :reviews, only: %i[new create]
+  end
   devise_for :users
   root to: "pages#home"
 
