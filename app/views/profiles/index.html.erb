@@ -6,11 +6,8 @@
   <% @profiles.each do |profile| %>
     <%= render profile %>
     <p>
-    <% raise %>
       <%= link_to "Show this profile", profile %>
     </p>
-    <%# <% if profile.photo.key.exist %> %>
-    <%# <%= if profile.photo.key.exist ? (cl_image_tag profile.photo.key, height: 300, width: 400, crop: :fill) : (<p>hdijgi</p>) %> %>
 
   <% end %>
 </div>
