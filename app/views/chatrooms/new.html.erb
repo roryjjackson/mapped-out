@@ -1,0 +1,8 @@
+
+<%= simple_form_for (@chatroom) do |f| %>
+  <%= f.input :name,
+    label: "name",
+    type: :text
+  %>
+  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+<% end %>
