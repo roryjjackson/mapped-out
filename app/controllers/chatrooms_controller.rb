@@ -4,4 +4,30 @@ class ChatroomsController < ApplicationController
     @message = Message.new
     authorize @chatroom
   end
+
+  def new
+    @chatroom = Chatroom.new
+    authorize @chatroom
+  end
+
+  def create
+    @chatroom = Chatroom.new(chatroom_params)
+    @chatroom.user = current_user
+    authorize @chatroom
+    respond_to do |format|
+      if @chatroom.save
+        format.html { redirect_to chatroom_url(@chatroom), notice: "chatroom was successfully created." }
+        format.json { render :show, status: :created, location: @chatroom }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @chatroom.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  private
+
+  def chatroom_params
+    params.require(:chatroom).permit(:name)
+  end
 end
