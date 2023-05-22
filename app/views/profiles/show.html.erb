@@ -12,7 +12,8 @@
 
   <%= button_to "Destroy this profile", @profile, method: :delete if policy(@profile).destroy? %>
 </div>
-
-<%# <%= link_to "message this person",  %> %>
-<%# <% raise %> %>
+<p>total rating: <%= @total_rating %></p>
+<%# <%= link_to "message this person",  %>
+<%# <% raise %>
 <%= link_to "send a message to the user", new_chatroom_path(user2_id: @profile.user_id) %>
+<%= link_to "new review", new_profile_review_path(@profile) %>

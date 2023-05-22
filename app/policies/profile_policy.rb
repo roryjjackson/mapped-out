@@ -25,4 +25,8 @@ class ProfilePolicy < ApplicationPolicy
   def total_score
     true
   end
+
+  def total_rating
+    true
+  end
 end
