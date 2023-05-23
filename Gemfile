@@ -83,3 +83,5 @@ gem "cloudinary"
 gem "geocoder"
 gem 'open-uri'
 gem "pg_search"
+gem "elasticsearch"
+gem "searchkick"
