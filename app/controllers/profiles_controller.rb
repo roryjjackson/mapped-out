@@ -20,6 +20,20 @@ class ProfilesController < ApplicationController
     @profiles.each do |profile|
       total_rating(profile)
     end
+
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        profiles.name @@ :query
+        OR profiles.title @@ :query
+        OR profiles.how @@ :query
+        OR profiles.why @@ :query
+        OR profiles.what @@ :query
+        OR profiles.address @@ :query
+        OR profiles.advice @@ :query
+        OR profiles.hours @@ :query
+      SQL
+      @profiles = @profiles.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   # GET /profiles/1 or /profiles/1.json
