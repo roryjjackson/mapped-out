@@ -1,0 +1,13 @@
+.button {
+  margin: 20px auto;
+  background-color: $button;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 1.2rem;
+  padding: 10px;
+}

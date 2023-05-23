@@ -1,1 +1,14 @@
-// Specific CSS for your home-page
+.home-page-image {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.landing {
+  height: 88vh;
+  margin-top: 12px;
+}
+
+.section {
+  height: 60vh;
+}
