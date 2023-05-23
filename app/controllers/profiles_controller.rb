@@ -20,6 +20,10 @@ class ProfilesController < ApplicationController
     @profiles.each do |profile|
       total_rating(profile)
     end
+
+    if params[:query].present?
+      @profiles = @profiles.where(name: params[:query])
+    end
   end
 
   # GET /profiles/1 or /profiles/1.json
