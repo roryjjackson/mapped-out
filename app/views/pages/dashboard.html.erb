@@ -1,57 +1,48 @@
-    <div class='dashboard'>
-      <div class='dashboard-container left'>
-        <div>
-          <h2 id='dashboard-title'>Dashboard</h2>
-          <p>Take a look at your dashboard and all the features that are included</p>
-            <button class='button create-profile'>Create Profile</button>
-        </div>
-        <div class='icon-container'>
-          <div class='icon'>Img</div>
-        </div>
+<div class='dashboard'>
+  <div class='dashboard-container left'>
+    <div>
+      <h2 id='dashboard-title'>Dashboard</h2>
+      <p>Take a look at your dashboard and all the features that are included</p>
+        <button class='button create-profile'>Create Profile</button>
+    </div>
+    <div class='icon-container'>
+      <div class='icon'>Img</div>
+    </div>
+  </div>
+  <div class='dashboard-container middle'>
+    <div class="card">
+      <div class='card-content'>
+        <p>This is where it happens</p>
+        <h2>Discover</h2>
       </div>
-      <div class='dashboard-container middle'>
-        <Link to='/users/dashboard/index'>
-          <div class="card">
-            <div class='card-content'>
-              <p>This is where it happens</p>
-              <h2>Discover</h2>
-
-            </div>
-            <%= cl_image_tag current_user.photo.key, class: "card-user avatar-bordered"%>
-
-          </div>
-          <div class='card-category-container'>
-            <div class="card-category">
-              Following
-            </div>
-            <div class="card-category">
-              Messaging
-            </div>
-            <div class="card-category">
-              Rating
-            </div>
-            <div class="card-category">
-              Contact
-            </div>
-            <div class="card-category">
-              Take the quiz
-            </div>
-            <div class="card-category">
-              Data
-            </div>
-          </div>
-
-
+      <%= cl_image_tag current_user.photo.key, class: "card-user avatar-bordered"%>
+    </div>
+    <div class='card-category-container'>
+      <%= link_to chatrooms_path  do %>
+        <div class="card-category">
+          Messaging
+        </div>
+      <% end %>
+      <div class="card-category">
+        Reviews
       </div>
-      <div class='dashboard-container right'>
-        <a class="social-media-icon" href="https://github.com/roryjjackson" target="_blank" rel="noreferrer">
-          <i class="fa-brands fa-github" id="github"></i>
-        </a>
-        <a class="social-media-icon" href="https://www.facebook.com/jacksonrory3/" target="_blank" rel="noreferrer">
-          <i class="fa-brands fa-facebook" id="facebook"></i>
-        </a>
-        <a class="social-media-icon" href="https://www.instagram.com/jackson_rory_/" target="_blank" rel="noreferrer">
-          <i class="fa-brands fa-instagram" id="instagram"></i>
-        </a>
+      <div class="card-category">
+        Profile
+      </div>
+      <div class="card-category">
+        Quiz data
       </div>
     </div>
+  </div>
+  <div class='dashboard-container right'>
+    <a class="social-media-icon" href="https://github.com/roryjjackson" target="_blank" rel="noreferrer">
+      <i class="fa-brands fa-github" id="github"></i>
+    </a>
+    <a class="social-media-icon" href="https://www.facebook.com/jacksonrory3/" target="_blank" rel="noreferrer">
+      <i class="fa-brands fa-facebook" id="facebook"></i>
+    </a>
+    <a class="social-media-icon" href="https://www.instagram.com/jackson_rory_/" target="_blank" rel="noreferrer">
+      <i class="fa-brands fa-instagram" id="instagram"></i>
+    </a>
+  </div>
+</div>

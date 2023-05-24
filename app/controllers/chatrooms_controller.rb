@@ -1,7 +1,18 @@
 class ChatroomsController < ApplicationController
   def index
     @chatrooms = policy_scope(Chatroom)
-    # @chatroom = Chatroom.find(params[:id])
+
+    @user_data = {}
+    @chatrooms.each do |chatroom|
+      user1 = User.find(chatroom.user_id)
+      user2 = User.find(chatroom.user2_id)
+      @messages = Message.where(chatroom_id: chatroom)
+      @user_data[chatroom.id] = {
+        user1: user1,
+        user2: user2
+      }
+    end
+
   end
 
   def show

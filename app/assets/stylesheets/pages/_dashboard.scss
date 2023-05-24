@@ -1,6 +1,7 @@
 .dashboard {
   display: flex;
-  margin: 50px 0 100px 0;
+  height: 80vh;
+  // margin: 50px 0 100px 0;
 }
 
 .fontawesome {
@@ -37,7 +38,7 @@
 .dashboard-card-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  // grid-gap: 4vh;
 }
 
 
@@ -47,7 +48,8 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  // height: 180px;
+  height: 26vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,20 +60,23 @@
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background: $color2;
+  // margin-bottom: 2vh;
 }
 
 .card-category-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 2vh;
 }
 
 .card {
   overflow: hidden;
   /* background-color: #2a9d8f; */
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 10px;
-  height: 200px;
+  margin-bottom: 2vh;
+  // height: 200px;
+  height: 26vh;
+
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -134,17 +139,17 @@
   text-decoration: none;
 }
 
-#github:hover {
+#github {
   background-color: white;
   color: black;
 }
 
-#facebook:hover {
+#facebook {
   color: white;
   background-color: #1877F2;
 }
 
-#instagram:hover {
+#instagram {
   color: white;
   background: #f09433;
   background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -153,21 +158,21 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
-#github {
+#github:hover {
   color: white;
-  background: $color3;
+  background: $color2;
   list-style: none;
 }
 
-#facebook {
+#facebook:hover {
   color: white;
-  background: $color3;
+  background: $color2;
   list-style: none;
 }
 
-#instagram {
+#instagram:hover {
   color: white;
-  background: $color3;
+  background: $color2;
   list-style: none;
 }
 
