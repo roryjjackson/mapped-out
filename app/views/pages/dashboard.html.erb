@@ -34,6 +34,8 @@
       <%= link_to new_questionnaire_path do %>
         <div class="card-category">
           Quiz
+          <p>Your score: <%= @questionnaire.first.total_score %></p>
+
         </div>
       <% end %>
     </div>
