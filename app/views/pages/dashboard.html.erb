@@ -31,9 +31,11 @@
       <div class="card-category">
         Profile
       </div>
-      <div class="card-category">
-        Quiz data
-      </div>
+      <%= link_to new_questionnaire_path do %>
+        <div class="card-category">
+          Quiz
+        </div>
+      <% end %>
     </div>
   </div>
   <div class='dashboard-container right'>

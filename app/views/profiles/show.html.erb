@@ -16,10 +16,18 @@
 
   <h3>Do you have any key advice?</h3>
   <p><%= @profile.advice %></p>
-  <% if (current_user.id != @profile.user_id) %>
-    <button class="button">
-      <%= link_to "send a message to the user", new_chatroom_path(user2_id: @profile.user_id) %>
-    </button>
+  <% if (current_user.id != @profile.user_id ) %>
+    <% chatroom = Chatroom.find_by(user_id: current_user.id, user2_id: @profile.user_id) %>
+    <% chatroom2 = Chatroom.find_by(user_id: @profile.user_id, user2_id: current_user.id) %>
+    <% if chatroom || chatroom2 %>
+      <button class="button">
+        <%= link_to "Go to Chatroom", chatroom_path(chatroom || chatroom2) %>
+      </button>
+    <% else %>
+      <button class="button">
+        <%= link_to "send a message to the user", new_chatroom_path(user2_id: @profile.user_id)  %>
+      </button>
+    <% end %>
   <% end %>
   <button class="button">
     <%= link_to "new review", new_profile_review_path(@profile) %>

@@ -9,8 +9,8 @@
             <div class="chatroom-data">
               <div class="upper">
                 <h3 class="user-nickname"><%= @user_data[chatroom.id][:user1].nickname %></h3>
-                <% if @messages.present? %>
-                  <% timestamp = @messages[0].updated_at %>
+                <% if @user_data[chatroom.id][:messages].present? %>
+                  <% timestamp = @user_data[chatroom.id][:messages].last.updated_at %>
                   <% if timestamp.today? %>
                     <h4><%= timestamp.strftime('%H:%M') %></h4>
                   <% else %>
@@ -18,15 +18,17 @@
                   <% end %>
                 <% end %>
               </div>
-              <p><%= @user_data[chatroom.id][:messages].last.content %></p>
+              <% if @user_data[chatroom.id][:messages].present? %>
+                <p><%= @user_data[chatroom.id][:messages].last.content %></p>
+              <% end %>
             </div>
           <% else %>
             <img src="<%= @user_data[chatroom.id][:user2].photo.url %>" alt="User 2 Photo" class="chatroom-avatar">
             <div class="chatroom-data">
               <div class="upper">
                 <h3 class="user-nickname"><%= @user_data[chatroom.id][:user2].nickname %></h3>
-                <% if @messages.present? %>
-                  <% timestamp = @messages[0].updated_at %>
+                <% if @user_data[chatroom.id][:messages].present? %>
+                  <% timestamp = @user_data[chatroom.id][:messages].last.updated_at %>
                   <% if timestamp.today? %>
                     <h4><%= timestamp.strftime('%H:%M') %></h4>
                   <% else %>
@@ -34,7 +36,9 @@
                   <% end %>
                 <% end %>
               </div>
-              <p><%= @user_data[chatroom.id][:messages].last.content %></p>
+              <% if @user_data[chatroom.id][:messages].present? %>
+                <p><%= @user_data[chatroom.id][:messages].last.content %></p>
+              <% end %>
             </div>
           <% end %>
         </div>
