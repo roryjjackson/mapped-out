@@ -17,10 +17,6 @@ class ProfilesController < ApplicationController
       }
     end
 
-    @profiles.each do |profile|
-      total_rating(profile)
-    end
-
     if params[:query].present?
       sql_subquery = <<~SQL
         profiles.name @@ :query
@@ -38,8 +34,10 @@ class ProfilesController < ApplicationController
     @profile_data = {}
     @profiles.each do |profile|
       user = User.find(profile.user_id)
+      total_rating = total_rating(profile)
       @profile_data[profile.id] = {
-        user: user
+        user: user,
+        total_rating: total_rating
       }
     end
   end
@@ -47,7 +45,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1 or /profiles/1.json
   def show
     authorize @profile
-    total_rating(@profile)
+    @user = User.find(@profile.user_id)
+    @total_rating = total_rating(@profile)
   end
 
   # GET /profiles/new

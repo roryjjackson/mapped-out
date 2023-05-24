@@ -3,11 +3,22 @@
     <%= link_to chatroom_path(chatroom) do %>
       <div class="chatroom-container">
         <div class="chatroom-card">
+          <%# <% if @user_data[chatroom.id][:user1].present? && chatroom.user_id != current_user.id %>
           <% if @user_data[chatroom.id][:user1].present? && chatroom.user_id != current_user.id %>
             <img src="<%= @user_data[chatroom.id][:user1].photo.url %>" alt="User 1 Photo" class="chatroom-avatar">
             <div class="chatroom-data">
-              <h3 class="user-nickname"><%= @user_data[chatroom.id][:user1].nickname %></h3>
-              <p><%= @messages[0].content %></p>
+              <div class="upper">
+                <h3 class="user-nickname"><%= @user_data[chatroom.id][:user1].nickname %></h3>
+                <% if @messages.present? %>
+                  <% timestamp = @messages[0].updated_at %>
+                  <% if timestamp.today? %>
+                    <h4><%= timestamp.strftime('%H:%M') %></h4>
+                  <% else %>
+                    <h4><%= timestamp.strftime('%A') %></h4>
+                  <% end %>
+                <% end %>
+              </div>
+              <p><%= @user_data[chatroom.id][:messages].last.content %></p>
             </div>
           <% else %>
             <img src="<%= @user_data[chatroom.id][:user2].photo.url %>" alt="User 2 Photo" class="chatroom-avatar">
@@ -23,7 +34,7 @@
                   <% end %>
                 <% end %>
               </div>
-              <p><%= @messages[0].content %></p>
+              <p><%= @user_data[chatroom.id][:messages].last.content %></p>
             </div>
           <% end %>
         </div>

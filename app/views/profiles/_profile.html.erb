@@ -7,7 +7,7 @@
         <h2><%= profile.name %></h2>
         <p><%= profile.title %></p>
       </div>
-      <h2 class="profile-card-rating"><%= @total_rating %></h2>
+      <h3 class="profile-card-rating"><%= @profile_data[profile.id][:total_rating] %> ⭐️</h2>
       <%= cl_image_tag @profile_data[profile.id][:user].photo.key, class: "profile-card-user" %>
     </div>
   </div>

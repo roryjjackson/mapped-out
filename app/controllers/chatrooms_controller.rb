@@ -6,10 +6,11 @@ class ChatroomsController < ApplicationController
     @chatrooms.each do |chatroom|
       user1 = User.find(chatroom.user_id)
       user2 = User.find(chatroom.user2_id)
-      @messages = Message.where(chatroom_id: chatroom)
+      messages = Message.where(chatroom_id: chatroom.id)
       @user_data[chatroom.id] = {
         user1: user1,
-        user2: user2
+        user2: user2,
+        messages: messages
       }
     end
 

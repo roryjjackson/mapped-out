@@ -1,19 +1,37 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @profile %>
+<div class="profile-show-section">
+  <h1><%= @profile.name %></h1>
+  <h2><%= @profile.title %></h2>
 
-<div>
-<%# <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %> %>
+  <h5>What hours do you typically work? <%= @profile.hours %></h5>
+
+  <h3>Why did you get started?</h3>
+  <p><%= @profile.why %></p>
+
+  <h3>How did you get started</h3>
+  <p><%= @profile.how %></p>
+
+  <h3>What do you actually do?</h3>
+  <p><%= @profile.what %></p>
+
+  <h3>Do you have any key advice?</h3>
+  <p><%= @profile.advice %></p>
+  <% if (current_user.id != @profile.user_id) %>
+    <button class="button">
+      <%= link_to "send a message to the user", new_chatroom_path(user2_id: @profile.user_id) %>
+    </button>
+  <% end %>
+  <button class="button">
+    <%= link_to "new review", new_profile_review_path(@profile) %>
+  </button>
+</div>
+
 
   <% if policy(@profile).edit? %>
     <%= link_to "Edit this profile", edit_profile_path(@profile) %> |
   <% end %>
-  <%= link_to "Back to profiles", profiles_path %>
 
   <%= button_to "Destroy this profile", @profile, method: :delete if policy(@profile).destroy? %>
 </div>
-<p>total rating: <%= @total_rating %></p>
 <%# <%= link_to "message this person",  %>
 <%# <% raise %>
-<%= link_to "send a message to the user", new_chatroom_path(user2_id: @profile.user_id) %>
-<%= link_to "new review", new_profile_review_path(@profile) %>
