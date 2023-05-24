@@ -1,7 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Profiles</h1>
-
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
     <%= form_with url: profiles_path, method: :get, class: "d-flex" do %>
@@ -17,11 +15,9 @@
 
 <div id="profiles">
   <% @profiles.each do |profile| %>
-    <%= render profile %>
-    <p>
-      <%= link_to "Show this profile", profile %>
-    </p>
-
+    <%= link_to profile_path(profile) do %>
+      <%= render profile %>
+    <% end %>
   <% end %>
 </div>
 

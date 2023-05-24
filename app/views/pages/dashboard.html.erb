@@ -10,13 +10,15 @@
     </div>
   </div>
   <div class='dashboard-container middle'>
-    <div class="card">
-      <div class='card-content'>
-        <p>This is where it happens</p>
-        <h2>Discover</h2>
+    <%= link_to profiles_path do %>
+      <div class="card">
+        <div class='card-content'>
+          <p>This is where it happens</p>
+          <h2>Discover</h2>
+        </div>
+        <%= cl_image_tag current_user.photo.key, class: "card-user avatar-bordered"%>
       </div>
-      <%= cl_image_tag current_user.photo.key, class: "card-user avatar-bordered"%>
-    </div>
+    <% end %>
     <div class='card-category-container'>
       <%= link_to chatrooms_path  do %>
         <div class="card-category">
