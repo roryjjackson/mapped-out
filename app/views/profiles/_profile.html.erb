@@ -8,8 +8,7 @@
         <p><%= profile.title %></p>
       </div>
       <h2 class="profile-card-rating"><%= @total_rating %></h2>
-      <div class="profile-card-user">
-      </div>
+      <%= cl_image_tag @profile_data[profile.id][:user].photo.key, class: "profile-card-user" %>
     </div>
   </div>
 </div>

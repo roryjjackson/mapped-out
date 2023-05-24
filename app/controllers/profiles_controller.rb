@@ -34,6 +34,14 @@ class ProfilesController < ApplicationController
       SQL
       @profiles = @profiles.where(sql_subquery, query: "%#{params[:query]}%")
     end
+
+    @profile_data = {}
+    @profiles.each do |profile|
+      user = User.find(profile.user_id)
+      @profile_data[profile.id] = {
+        user: user
+      }
+    end
   end
 
   # GET /profiles/1 or /profiles/1.json
