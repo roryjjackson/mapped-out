@@ -1,11 +1,23 @@
+
+// profile index page
+
+.profiles-section {
+  min-height: 80vh;
+  display: flex;
+}
+
+#map {
+  height: 80vh;
+  width: 48vw;
+  margin-left: 2vw;
+}
+
 #profiles {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
-}
-
-.profiles-section {
-  min-height: 80vh;
+  flex-grow: 1;
+  max-width: 50vw;
 }
 
 .profile-container {
