@@ -4,11 +4,11 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :q1, as: :range, label: "Question 1", in: 1..5 %>
-    <%= f.input :q2, as: :range, label: "Question 2", in: 1..5 %>
-    <%= f.input :q3, as: :range, label: "Question 3", in: 1..5 %>
-    <%= f.input :q4, as: :range, label: "Question 4", in: 1..5 %>
-    <%= f.input :q5, as: :range, label: "Question 5", in: 1..5 %>
+    <%= f.input :q1, as: :range, label: "Are you a home bird or fly the nest", in: 1..5 %>
+    <%= f.input :q2, as: :range, label: "Orgnaised or like changing environments", in: 1..5 %>
+    <%= f.input :q3, as: :range, label: "Artistic or analytical", in: 1..5 %>
+    <%= f.input :q4, as: :range, label: "People person or solo", in: 1..5 %>
+    <%= f.input :q5, as: :range, label: "Gay ro straight", in: 1..5 %>
   </div>
 
   <div class="form-actions">

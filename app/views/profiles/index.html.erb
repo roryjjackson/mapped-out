@@ -1,23 +1,33 @@
 <div class="profiles-section">
-  <%# <p style="color: green"><%= notice %>
-  <div class="row justify-content-center">
-    <div class="col-sm-8 my-3">
-      <%= form_with url: profiles_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Type a keyword"
-          %>
-        <%= submit_tag "Search", name: "", class: "button" %>
+  <div>
+    <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <%= form_with url: profiles_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Type a keyword"
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="profiles">
+      <% @profiles.each do |profile| %>
+        <%= link_to profile_path(profile) do %>
+          <%= render profile %>
+        <% end %>
+
       <% end %>
     </div>
   </div>
 
-  <div id="profiles">
-    <% @profiles.each do |profile| %>
-      <%= link_to profile_path(profile) do %>
-        <%= render profile %>
-      <% end %>
-    <% end %>
+  <div
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    id="map">
   </div>
+
 </div>
