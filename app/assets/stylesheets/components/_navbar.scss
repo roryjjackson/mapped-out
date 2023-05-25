@@ -1,3 +1,7 @@
+.navbar.hidden {
+  top: -10vh;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
@@ -5,6 +9,10 @@
   color: black;
   height: 10vh;
   padding: 0;
+  position: fixed;
+  width: 100%;
+  max-width: 1250px;
+  transition: top .5s;
 }
 
 .navbar-lewagon .navbar-collapse {
