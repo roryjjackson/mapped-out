@@ -6,7 +6,10 @@ class PagesController < ApplicationController
 
   def dashboard
     @questionnaire = Questionnaire.where(user_id: current_user.id)
-    # raise
+
+    @profile = Profile.where(user_id: current_user.id).first
+
+
     # @data = {}
     # @questionnaires.each do |questionnaire|
     #   user = User.find(questionnaire.user_id)

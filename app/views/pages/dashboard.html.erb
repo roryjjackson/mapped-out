@@ -4,7 +4,7 @@
       <h2 id='dashboard-title'>Dashboard</h2>
       <p>Take a look at your dashboard and all the features that are included</p>
         <button class='button create-profile'>
-          <%= link_to "Create a profile", new_profile_path %>
+          <%= link_to "Do something" %>
         </button>
     </div>
     <div class='icon-container'>
@@ -28,17 +28,33 @@
         </div>
       <% end %>
       <div class="card-category">
-        Reviews
+        Reviews?
       </div>
-      <div class="card-category">
-        Profile
-      </div>
-      <%= link_to new_questionnaire_path do %>
-        <div class="card-category">
-          Quiz
-          <p>Your score: <%= @questionnaire.first.total_score %></p>
-
-        </div>
+      <% if @profile.present? %>
+        <%= link_to edit_profile_path(@profile) do %>
+          <div class="card-category">
+            Edit Profile
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to new_profile_path do %>
+          <div class="card-category">
+            Create Profile
+          </div>
+        <% end %>
+      <% end %>
+      <% if @questionnaire.present? %>
+        <%= link_to questionnaire_path(@questionnaire) do %>
+          <div class="card-category">
+            Quiz results
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to new_questionnaire_path do %>
+          <div class="card-category">
+            Take the quiz
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

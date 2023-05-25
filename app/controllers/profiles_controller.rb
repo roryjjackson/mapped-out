@@ -1,10 +1,8 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: %i[ show edit update destroy total_rating]
+  before_action :set_profile, only: %i[show edit update destroy total_rating]
 
-  # GET /profiles or /profiles.json
   def index
     @profiles = policy_scope(Profile)
-
     @markers = @profiles.geocoded.map do |profile|
       {
         lat: profile.latitude,
@@ -42,25 +40,23 @@ class ProfilesController < ApplicationController
     end
   end
 
-  # GET /profiles/1 or /profiles/1.json
   def show
     authorize @profile
     @user = User.find(@profile.user_id)
     @total_rating = total_rating(@profile)
   end
 
-  # GET /profiles/new
   def new
     @profile = Profile.new
     authorize @profile
   end
 
-  # GET /profiles/1/edit
   def edit
+    # @profile = Profile.where(user_id: current_user)
     authorize @profile
+
   end
 
-  # POST /profiles or /profiles.json
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
@@ -76,12 +72,13 @@ class ProfilesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /profiles/1 or /profiles/1.json
   def update
+    # @profile = Profile.where(user_id: current_user)
+
     authorize @profile
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to profile_url(@profile), notice: "Profile was successfully updated." }
+        format.html { redirect_to profile_path(@profile), notice: "Profile was successfully updated." }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -90,7 +87,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-  # DELETE /profiles/1 or /profiles/1.json
   def destroy
     authorize @profile
     @profile.destroy
@@ -106,27 +102,17 @@ class ProfilesController < ApplicationController
     sum_of_reviews = @reviews.sum(:rating).to_f
     total_reviews = @reviews.length.to_f
     @total_rating = total_reviews > 0 ? sum_of_reviews / @reviews.length : 0
-    # authorize @profile
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      @profile = Profile.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def profile_params
-      params.require(:profile).permit(:name,
-                                      :hours,
-                                      :title,
-                                      :how,
-                                      :why,
-                                      :what,
-                                      :advice,
-                                      :photo,
-                                      :address,
-                                      :linked_in_url,
-                                      :instagram_url)
-    end
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
+
+  def profile_params
+    params.require(:profile).permit(:name, :hours, :title, :how,
+                                    :why, :what, :advice, :photo,
+                                    :address, :linked_in_url, :instagram_url)
+  end
 end
