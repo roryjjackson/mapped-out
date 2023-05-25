@@ -1,1 +1,131 @@
-// Specific CSS for your home-page
+body {
+  max-width: 1250px;
+  margin: auto;
+}
+
+
+
+.landing {
+  height: 90vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.landing-content {
+  max-width: 60vw;
+  text-align: left;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.landing-content h1, h2 {
+  margin-bottom: 10px;
+}
+
+.landing-content p {
+  margin-top: 50px;
+}
+
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//section one
+
+.section.one {
+  margin-bottom: 100px;
+  height: 60vh;
+}
+
+.section.one img {
+  margin: 0 80px 0 0;
+  height: 30vw;
+  width: auto;
+}
+
+.section.one h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+//section two
+
+.section.two {
+  margin-bottom: 100px;
+}
+
+.subheader.how-it-works {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.how-it-works-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.how-it-works-container {
+  height: 300px;
+  width: 300px;
+}
+
+.how-it-works-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: $color2;
+  color: $white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+//section three
+
+.section.three {
+  height: 60vh;
+  margin-bottom: 100px;
+}
+
+.mission-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mission-content-container {
+  width: 60vw;
+}
+
+//section four
+
+.section.four {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.become-a-member-container {
+  width: 50vw;
+}
+
+.section.four img {
+  height: 400px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 30vw;
+  margin: auto;
+}

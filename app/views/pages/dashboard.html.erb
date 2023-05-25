@@ -1,0 +1,54 @@
+<div class='dashboard'>
+  <div class='dashboard-container left'>
+    <div>
+      <h2 id='dashboard-title'>Dashboard</h2>
+      <p>Take a look at your dashboard and all the features that are included</p>
+        <button class='button create-profile'>Create Profile</button>
+    </div>
+    <div class='icon-container'>
+      <div class='icon'>Img</div>
+    </div>
+  </div>
+  <div class='dashboard-container middle'>
+    <%= link_to profiles_path do %>
+      <div class="card">
+        <div class='card-content'>
+          <p>This is where it happens</p>
+          <h2>Discover</h2>
+        </div>
+        <%= cl_image_tag current_user.photo.key, class: "card-user avatar-bordered"%>
+      </div>
+    <% end %>
+    <div class='card-category-container'>
+      <%= link_to chatrooms_path  do %>
+        <div class="card-category">
+          Messaging
+        </div>
+      <% end %>
+      <div class="card-category">
+        Reviews
+      </div>
+      <div class="card-category">
+        Profile
+      </div>
+      <%= link_to new_questionnaire_path do %>
+        <div class="card-category">
+          Quiz
+          <p>Your score: <%= @questionnaire.first.total_score %></p>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class='dashboard-container right'>
+    <a class="social-media-icon" href="https://github.com/roryjjackson" target="_blank" rel="noreferrer">
+      <i class="fa-brands fa-github" id="github"></i>
+    </a>
+    <a class="social-media-icon" href="https://www.facebook.com/jacksonrory3/" target="_blank" rel="noreferrer">
+      <i class="fa-brands fa-facebook" id="facebook"></i>
+    </a>
+    <a class="social-media-icon" href="https://www.instagram.com/jackson_rory_/" target="_blank" rel="noreferrer">
+      <i class="fa-brands fa-instagram" id="instagram"></i>
+    </a>
+  </div>
+</div>

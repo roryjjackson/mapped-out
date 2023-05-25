@@ -1,5 +1,48 @@
-<% @chatrooms.each do |chatroom| %>
-  <%= link_to chatroom_path(chatroom) do %>
-    <p><%= chatroom.user_id %></p>
+<div class="chatroom-section">
+  <% @chatrooms.each do |chatroom| %>
+    <%= link_to chatroom_path(chatroom) do %>
+      <div class="chatroom-container">
+        <div class="chatroom-card">
+          <%# <% if @user_data[chatroom.id][:user1].present? && chatroom.user_id != current_user.id %>
+          <% if @user_data[chatroom.id][:user1].present? && chatroom.user_id != current_user.id %>
+            <img src="<%= @user_data[chatroom.id][:user1].photo.url %>" alt="User 1 Photo" class="chatroom-avatar">
+            <div class="chatroom-data">
+              <div class="upper">
+                <h3 class="user-nickname"><%= @user_data[chatroom.id][:user1].nickname %></h3>
+                <% if @user_data[chatroom.id][:messages].present? %>
+                  <% timestamp = @user_data[chatroom.id][:messages].last.updated_at %>
+                  <% if timestamp.today? %>
+                    <h4><%= timestamp.strftime('%H:%M') %></h4>
+                  <% else %>
+                    <h4><%= timestamp.strftime('%A') %></h4>
+                  <% end %>
+                <% end %>
+              </div>
+              <% if @user_data[chatroom.id][:messages].present? %>
+                <p><%= @user_data[chatroom.id][:messages].last.content %></p>
+              <% end %>
+            </div>
+          <% else %>
+            <img src="<%= @user_data[chatroom.id][:user2].photo.url %>" alt="User 2 Photo" class="chatroom-avatar">
+            <div class="chatroom-data">
+              <div class="upper">
+                <h3 class="user-nickname"><%= @user_data[chatroom.id][:user2].nickname %></h3>
+                <% if @user_data[chatroom.id][:messages].present? %>
+                  <% timestamp = @user_data[chatroom.id][:messages].last.updated_at %>
+                  <% if timestamp.today? %>
+                    <h4><%= timestamp.strftime('%H:%M') %></h4>
+                  <% else %>
+                    <h4><%= timestamp.strftime('%A') %></h4>
+                  <% end %>
+                <% end %>
+              </div>
+              <% if @user_data[chatroom.id][:messages].present? %>
+                <p><%= @user_data[chatroom.id][:messages].last.content %></p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

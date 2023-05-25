@@ -4,7 +4,6 @@ class ChatroomPolicy < ApplicationPolicy
     def resolve
       # scope.all
       scope.where("user_id = ? OR user2_id = ?", user.id, user.id)
-
     end
   end
 
