@@ -1,6 +1,7 @@
 body {
   max-width: 1250px;
   margin: auto;
+  margin-top: 10vh;
 }
 
 
@@ -10,26 +11,26 @@ body {
   display: flex;
   justify-content: left;
   align-items: center;
+  padding-top: 10vh;
 }
 
 .landing-content {
   max-width: 60vw;
   text-align: left;
-}
 
-h1 {
-  font-size: 4rem;
-  font-weight: bold;
-}
+  h1, h2 {
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 6rem;
+    font-weight: bold;
+  }
 
-.landing-content h1, h2 {
-  margin-bottom: 10px;
+  p {
+    margin-top: 50px;
+    opacity: .7;
+  }
 }
-
-.landing-content p {
-  margin-top: 50px;
-}
-
 
 .section {
   display: flex;
@@ -42,24 +43,31 @@ h1 {
 .section.one {
   margin-bottom: 100px;
   height: 60vh;
-}
 
-.section.one img {
-  margin: 0 80px 0 0;
-  height: 30vw;
-  width: auto;
-}
+  img {
+    margin: 0 80px 0 0;
+    height: 30vw;
+    width: auto;
+  }
 
-.section.one h2 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 50px;
+  h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  p {
+    opacity: .7;
+   }
 }
 
 //section two
 
 .section.two {
   margin-bottom: 100px;
+
+  i {
+    font-size: 1.4rem;
+  }
 }
 
 .subheader.how-it-works {

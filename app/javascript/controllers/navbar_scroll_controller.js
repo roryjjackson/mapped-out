@@ -19,9 +19,9 @@ export default class extends Controller {
     const scrollingUp = currentScrollPos < this.prevScrollPos;
 
     if (scrollingUp) {
-      this.navbarTarget.classList.remove = 'hidden';
+      this.navbarTarget.classList.remove('hidden');
     } else {
-      this.navbarTarget.classList.add = `hidden`;
+      this.navbarTarget.classList.add(`hidden`);
     }
 
     this.prevScrollPos = currentScrollPos;
