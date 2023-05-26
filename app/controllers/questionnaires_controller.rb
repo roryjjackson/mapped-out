@@ -27,9 +27,6 @@ class QuestionnairesController < ApplicationController
   def create
     @questionnaire = Questionnaire.new(questionnaire_params)
     @questionnaire.user = current_user
-    # total = @questionnaire.q1 + @questionnaire.q2 + @questionnaire.q3 + @questionnaire.q4 + @questionnaire.q5
-    # @total_score = (total.to_f / 500) * 100
-    # @questionnaire.total_score = @total_score
     authorize @questionnaire
     respond_to do |format|
       if @questionnaire.save
@@ -42,6 +39,7 @@ class QuestionnairesController < ApplicationController
         scores.sort!.reverse!
 
         @most_similar = scores.first(5)
+
         format.html { redirect_to questionnaire_url(@questionnaire), notice: "Questionnaire was successfully created." }
         format.json { render :show, status: :created, location: @questionnaire }
       else
