@@ -2,11 +2,12 @@ class Profile < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
   has_many :reviews
+  has_one :questionnaire
 
   validates :name, :hours, :title, :how, :why, :what, :advice, :photo, :address, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-
+  validates :user_id, uniqueness: true
   # pg_search_scope :search_by_data,
   #   against:
   #   %i[

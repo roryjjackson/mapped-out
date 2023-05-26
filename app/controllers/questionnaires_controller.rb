@@ -1,5 +1,6 @@
 class QuestionnairesController < ApplicationController
-  before_action :set_questionnaire, only: %i[edit update destroy]
+  before_action :set_questionnaire, only: %i[show edit update destroy]
+  before_action :set_profile, only: %i[show new create update]
 
   def total_score
     @questionnaire = Questionnaire.find(params[:id])
@@ -11,7 +12,6 @@ class QuestionnairesController < ApplicationController
   end
 
   def show
-    @questionnaire = Questionnaire.where(user_id: current_user.id).first
     authorize @questionnaire
   end
 
@@ -27,6 +27,7 @@ class QuestionnairesController < ApplicationController
   def create
     @questionnaire = Questionnaire.new(questionnaire_params)
     @questionnaire.user = current_user
+    @questionnaire.profile_id = @profile.id
     authorize @questionnaire
     respond_to do |format|
       if @questionnaire.save
@@ -39,8 +40,7 @@ class QuestionnairesController < ApplicationController
         scores.sort!.reverse!
 
         @most_similar = scores.first(5)
-
-        format.html { redirect_to questionnaire_url(@questionnaire), notice: "Questionnaire was successfully created." }
+        format.html { redirect_to profile_questionnaire_url(@profile, @questionnaire), notice: "Questionnaire was successfully created." }
         format.json { render :show, status: :created, location: @questionnaire }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -69,19 +69,23 @@ class QuestionnairesController < ApplicationController
     @questionnaire.destroy
 
     respond_to do |format|
-      format.html { redirect_to questionnaires_url, notice: "Questionnaire was successfully destroyed." }
+      format.html { redirect_to dashboard_path, notice: "Questionnaire was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
 
+  def set_profile
+    @profile = Profile.find(params[:profile_id])
+  end
+
   def set_questionnaire
     @questionnaire = Questionnaire.find(params[:id])
   end
 
   def questionnaire_params
-    params.require(:questionnaire).permit(:q1, :q2, :q3, :q4, :q5)
+    params.require(:questionnaire).permit(:q1, :q2, :q3, :q4, :q5, :profile_id)
   end
 
   def euclidean_distance(a, b)

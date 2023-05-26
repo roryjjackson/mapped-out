@@ -3,8 +3,7 @@
 <%= render @questionnaire %>
 
 <div>
-  <%= link_to "Edit this questionnaire", edit_questionnaire_path(@questionnaire) %> |
-  <%= link_to "Back to questionnaires", questionnaires_path %>
+  <%= link_to "Edit this questionnaire", edit_profile_questionnaire_path(@profile, @questionnaire), class: "button" %> |
 
-  <%= button_to "Destroy this questionnaire", @questionnaire, method: :delete %>
+  <%= button_to "Destroy this questionnaire", profile_questionnaire_path(@profile, @questionnaire), method: :delete, class: "button" %>
 </div>

@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = policy_scope(Profile)
+
     @markers = @profiles.geocoded.map do |profile|
       {
         lat: profile.latitude,
@@ -32,10 +33,12 @@ class ProfilesController < ApplicationController
     @profile_data = {}
     @profiles.each do |profile|
       user = User.find(profile.user_id)
+      questionnaire = Questionnaire.where(user_id: profile.user_id).first
       total_rating = total_rating(profile)
       @profile_data[profile.id] = {
         user: user,
-        total_rating: total_rating
+        total_rating: total_rating,
+        questionnaire: questionnaire
       }
     end
   end
