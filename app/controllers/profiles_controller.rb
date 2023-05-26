@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   def index
     @profiles = policy_scope(Profile)
 
+
     @markers = @profiles.geocoded.map do |profile|
       {
         lat: profile.latitude,
@@ -31,16 +32,23 @@ class ProfilesController < ApplicationController
     end
 
     @profile_data = {}
+    @most_similar_profiles = []
     @profiles.each do |profile|
       user = User.find(profile.user_id)
-      questionnaire = Questionnaire.where(user_id: profile.user_id).first
+      questionnaire = Questionnaire.where(user_id: current_user.id).first
       total_rating = total_rating(profile)
+      most_similar = find_most_similar_questionnaires(questionnaire)
       @profile_data[profile.id] = {
         user: user,
         total_rating: total_rating,
-        questionnaire: questionnaire
+        questionnaire: questionnaire,
+        most_similar: most_similar
       }
+      @most_similar_profiles << profile if most_similar.present?
+      @most_similar_profiles = @most_similar_profiles.take(2) if @most_similar_profiles.size > 2
+
     end
+
   end
 
   def show
@@ -117,5 +125,26 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:name, :hours, :title, :how,
                                     :why, :what, :advice, :photo,
                                     :address, :linked_in_url, :instagram_url)
+  end
+
+  def find_most_similar_questionnaires(questionnaire)
+    scores = Questionnaire.where.not(id: questionnaire.id).map do |other_questionnaire|
+      similarity_score = similarity_score(questionnaire, other_questionnaire)
+      [similarity_score, other_questionnaire]
+    end
+    scores.sort!.reverse!
+
+  end
+
+  def similarity_score(a, b)
+    total_deviation = [a.q1, a.q2, a.q3, a.q4, a.q5].zip([b.q1, b.q2, b.q3, a.q4, a.q5]).sum do |x, y|
+      euclidean_distance(x, y)
+    end
+    total_deviation_percentage = (total_deviation.to_f / (a.attribute_names.size - 1) * 4) * 100
+    100 - total_deviation_percentage
+  end
+
+  def euclidean_distance(a, b)
+    (a - b).abs
   end
 end

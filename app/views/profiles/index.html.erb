@@ -12,19 +12,33 @@
         <% end %>
       </div>
     </div>
+    <div data-controller="most-similar">
 
-    <button>
-      Search top results based on quiz score
-    </button>
+      <button class="button" data-most-similar-target="btn" data-action="click->most-similar#trigger">
+        Search top results based on quiz score
+      </button>
 
-    <div id="profiles">
-      <% @profiles.each do |profile| %>
-        <%= link_to profile_path(profile) do %>
-          <%= render profile %>
+      <div data-target="most-similar.profiles">
+        <% @profiles.each do |profile| %>
+          <%= link_to profile_path(profile) do %>
+            <%= render profile %>
+          <% end %>
         <% end %>
+      </div>
 
-      <% end %>
+      <div class="most-similar-profiles" data-target="most-similar.mostSimilarProfiles">
+        <% @most_similar_profiles.each do |profile| %>
+          <%= link_to profile_path(profile) do %>
+            <%= render profile %>
+          <% end %>
+        <% end %>
+      </div>
+
     </div>
+
+
+
+
   </div>
 
   <div

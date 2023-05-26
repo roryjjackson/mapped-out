@@ -1,6 +1,6 @@
 class QuestionnairesController < ApplicationController
   before_action :set_questionnaire, only: %i[show edit update destroy]
-  before_action :set_profile, only: %i[show new create update]
+  before_action :set_profile, only: %i[show new create update edit]
 
   def total_score
     @questionnaire = Questionnaire.find(params[:id])
@@ -29,17 +29,9 @@ class QuestionnairesController < ApplicationController
     @questionnaire.user = current_user
     @questionnaire.profile_id = @profile.id
     authorize @questionnaire
+    @most_similar = find_most_similar_questionnaires(@questionnaire)
     respond_to do |format|
       if @questionnaire.save
-
-        scores = Questionnaire.where.not(id: @questionnaire.id).map do |other_questionnaire|
-          similarity_score = similarity_score(@questionnaire, other_questionnaire)
-          [similarity_score, other_questionnaire]
-        end
-
-        scores.sort!.reverse!
-
-        @most_similar = scores.first(5)
         format.html { redirect_to profile_questionnaire_url(@profile, @questionnaire), notice: "Questionnaire was successfully created." }
         format.json { render :show, status: :created, location: @questionnaire }
       else
@@ -54,7 +46,7 @@ class QuestionnairesController < ApplicationController
 
     respond_to do |format|
       if @questionnaire.update(questionnaire_params)
-        format.html { redirect_to questionnaire_url(@questionnaire), notice: "Questionnaire was successfully updated." }
+        format.html { redirect_to dashboard_path, notice: "Questionnaire was successfully updated." }
         format.json { render :show, status: :ok, location: @questionnaire }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -75,6 +67,17 @@ class QuestionnairesController < ApplicationController
   end
 
   private
+
+  def find_most_similar_questionnaires(questionnaire)
+    scores = Questionnaire.where.not(id: questionnaire.id).map do |other_questionnaire|
+      similarity_score = similarity_score(questionnaire, other_questionnaire)
+      [similarity_score, other_questionnaire]
+    end
+
+    scores.sort!.reverse!
+    scores.first(1)
+  end
+
 
   def set_profile
     @profile = Profile.find(params[:profile_id])
