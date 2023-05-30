@@ -7,11 +7,15 @@ body {
 
 
 .landing {
+  color: $white;
   height: 90vh;
   display: flex;
   justify-content: left;
   align-items: center;
   padding-top: 10vh;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685435179/pexels-thijs-van-der-weide-792972_nevhug.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .landing-content {
@@ -20,6 +24,7 @@ body {
 
   h1, h2 {
     margin-bottom: 10px;
+    opacity: .8;
   }
   h1 {
     font-size: 6rem;
@@ -28,7 +33,7 @@ body {
 
   p {
     margin-top: 50px;
-    opacity: .7;
+    opacity: .5;
   }
 }
 
@@ -116,19 +121,31 @@ body {
   width: 60vw;
 }
 
-//section four
+// section four
 
 .section.four {
+  height: 300px;
+  background-color: $color2;
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+//section five
+
+.section.five {
   text-align: center;
-  margin-bottom: 100px;
+  margin: 100px 0;
 }
 
 .become-a-member-container {
   width: 50vw;
-}
-
-.section.four img {
-  height: 400px;
 }
 
 .button-container {
