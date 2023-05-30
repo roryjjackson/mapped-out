@@ -1,14 +1,15 @@
 <div class='dashboard'>
   <div class='dashboard-container left'>
     <div>
-      <h2 id='dashboard-title'>Dashboard</h2>
+      <h2 id='dashboard-title'>Welcome, <%= current_user.nickname %></h2>
       <p>Take a look at your dashboard and all the features that are included</p>
-        <button class='button create-profile'>
-          <%= link_to "Do something" %>
-        </button>
+          <%# <%= link_to "Do something" %>
+        <%# <button class='button create-profile'> %>
+        <%# </button> %>
     </div>
     <div class='icon-container'>
       <div class='icon'>Img</div>
+      <div class='icon'>5*</div>
     </div>
   </div>
   <div class='dashboard-container middle'>
@@ -30,6 +31,14 @@
       <div class="card-category">
         Reviews?
       </div>
+            <div class="card-category">
+        Reviews?
+      </div>
+            <div class="card-category">
+        Reviews?
+      </div>
+
+
       <% if @profile.present? %>
 
         <%= link_to edit_profile_path(@profile) do %>
@@ -61,6 +70,7 @@
         <% end %>
 
       <% end %>
+
 
     </div>
   </div>

@@ -1,6 +1,9 @@
 .dashboard {
   display: flex;
-  height: 80vh;
+  // min-height: 80vh;
+  margin-top: 10vh;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
 }
 
 .fontawesome {
@@ -21,10 +24,13 @@
   margin-left: 10vw;
   max-width: 30vw;
   padding-right: 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  #dashboard-title {
+    font-size: 3rem;
+  }
 
 }
 .dashboard-container.middle {
@@ -48,7 +54,7 @@
   background-size: cover;
   background-position: center;
   // height: 180px;
-  height: 26vh;
+  height: 24vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +65,6 @@
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background: $color2;
-  // margin-bottom: 2vh;
 }
 
 .card-category-container {
@@ -70,12 +75,9 @@
 
 .card {
   overflow: hidden;
-  /* background-color: #2a9d8f; */
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 2vh;
-  // height: 200px;
-  height: 26vh;
-
+  height: 35vh;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -83,20 +85,19 @@
   border-radius: 10px;
   background: $color2;
 
-}
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+  }
 
-.card h2 {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 0;
-  color: white;
-}
-
-.card p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-  color: white;
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+    color: white;
+  }
 }
 
  .card-user {

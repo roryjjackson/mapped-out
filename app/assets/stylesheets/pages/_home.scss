@@ -8,7 +8,7 @@
 .content {
   max-width: 1250px;
   margin: 0 auto;
-  padding: 20px;
+  // padding: 20px;
 }
 
 .separator {
@@ -71,11 +71,10 @@
   // background-position: center;
   // background-size: cover;
 
-  #map-icon {
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    height: 500px;
+  img {
+    width: 40vw;
+    height: 100%;
+    object-fit: cover;
   }
 
   .landing-content {

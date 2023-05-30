@@ -2,6 +2,7 @@
 // profile index page
 
 .profiles-section {
+  margin-top: 15vh;
   min-height: 80vh;
   display: flex;
 }
@@ -12,6 +13,15 @@
   margin-left: 2vw;
   position: sticky;
   top: 10vh;
+  // display: none;
+}
+
+.all-profiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  flex-grow: 1;
+  // max-width: 50vw;
 }
 
 .profiles {
@@ -20,9 +30,6 @@
   grid-gap: 10px;
   flex-grow: 1;
   max-width: 50vw;
-}
-.profiles.hidden {
-  display: none;
 }
 
 .hidden {
@@ -41,13 +48,13 @@
   max-width: 50vw;
 }
 
-.most-similar-profiles {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  flex-grow: 1;
-  max-width: 50vw;
-}
+// .most-similar-profiles {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 10px;
+//   flex-grow: 1;
+//   max-width: 50vw;
+// }
 
 .profile-container {
   border: solid black 1px;

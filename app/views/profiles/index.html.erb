@@ -1,5 +1,5 @@
 <div class="profiles-section">
-  <div>
+  <div class="content">
     <div class="row justify-content-center">
       <div class="col-sm-8 my-3">
         <%= form_with url: profiles_path, method: :get, class: "d-flex" do %>
@@ -14,11 +14,11 @@
     </div>
     <div data-controller="most-similar">
 
-      <button class="button" data-most-similar-button-texts-value='["Filter by score", "Full index"]' data-most-similar-target="btn" data-action="click->most-similar#trigger">
-      button and something for a commit
+      <button class="button" data-most-similar-target="btn" data-action="click->most-similar#trigger">
+        Most similar
       </button>
 
-      <div data-target="most-similar.profiles">
+      <div class="all-profiles" data-most-similar-target="profiles">
         <% @profiles.each do |profile| %>
           <%= link_to profile_path(profile) do %>
             <%= render profile %>
@@ -26,7 +26,7 @@
         <% end %>
       </div>
 
-      <div class="most-similar-profiles" data-target="most-similar.mostSimilarProfiles">
+      <div class="most-similar-profiles" data-most-similar-target="mostSimilarProfiles">
         <% @most_similar_profiles.each do |profile| %>
           <%= link_to profile_path(profile) do %>
             <%= render profile %>
@@ -38,13 +38,13 @@
 
 
 
-  </div>
+    <div
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      id="map">
+    </div>
 
-  <div
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-    id="map">
   </div>
 
 </div>

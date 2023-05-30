@@ -8,7 +8,7 @@ export default class extends Controller {
   }
 
   trigger() {
-
+    console.log("trigger1")
     this.profilesTarget.classList.toggle('hidden')
     this.mostSimilarProfilesTarget.classList.toggle('not-hidden')
   }
