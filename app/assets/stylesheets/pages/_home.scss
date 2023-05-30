@@ -32,20 +32,20 @@
     position: relative;
     width: 5px;
     height: 5px;
-    background: $color1;
+    background: $light-color1;
     margin: 0 8px;
     border-radius: 50%;
-    box-shadow: 0 0 0 5px $color1,
-                0 0 15px $color3;
+    box-shadow: 0 0 0 5px $light-color1,
+                0 0 15px $light-color3;
     animation: animate 15s linear infinite;
-    animation-duration: calc(150s / var(--i));
+    animation-duration: calc(700s / var(--i));
     animation-delay: -15s;
   }
 
   span:nth-child(even) {
-    background: $color3;
-    box-shadow: 0 0 0 5px $color3,
-                0 0 30px $color1;
+    background: $light-color3;
+    box-shadow: 0 0 0 5px $light-color3,
+                0 0 30px $light-color1;
   }
 }
 @keyframes animate {

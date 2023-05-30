@@ -5,15 +5,17 @@
 .navbar {
   z-index: 3;
   justify-content: space-between;
-  background: transparent;
-  color: black;
+  background: linear-gradient( 45deg, #0400ffc0, #ef00fcce);
+  backdrop-filter: blur(5px);
+
   height: 10vh;
   padding: 0;
   position: fixed;
-  width: 100%;
+  min-width: 100%;
   max-width: 1250px;
   top: 0;
   transition: top .5s ease;
+  margin: auto;
 
   h6 {
     margin: 0;
@@ -27,7 +29,7 @@
 
 
 .nav-link {
-  color: $black;
+  color: $white;
 }
 
 .avatar {
