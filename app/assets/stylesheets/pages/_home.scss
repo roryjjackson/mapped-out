@@ -1,21 +1,69 @@
-body {
-  max-width: 1250px;
-  margin: auto;
-  margin-top: 10vh;
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
+.content {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
+// // moving background
+
+.bubbles {
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  justify-content: space-evenly;
+  overflow: hidden;
+
+  span {
+    position: relative;
+    width: 5px;
+    height: 5px;
+    background: $light-color1;
+    margin: 0 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px $light-color1,
+                0 0 15px $light-color3;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(800s / var(--i));
+    animation-delay: -15s;
+  }
+
+  span:nth-child(even) {
+    background: $light-color3;
+    box-shadow: 0 0 0 1px $light-color3,
+                0 0 30px $light-color1;
+  }
+}
+@keyframes animate {
+  0% {
+    transform: translateY(100vh) scale(0);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
+//landing
 
 .landing {
-  color: $white;
+  color: $black;
   height: 90vh;
   display: flex;
   justify-content: left;
   align-items: center;
   padding-top: 10vh;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685435179/pexels-thijs-van-der-weide-792972_nevhug.jpg);
-  background-position: center;
-  background-size: cover;
+  // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685435179/pexels-thijs-van-der-weide-792972_nevhug.jpg);
+  // background-position: center;
+  // background-size: cover;
 }
 
 .landing-content {
