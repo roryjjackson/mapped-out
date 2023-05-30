@@ -11,6 +11,11 @@
   padding: 20px;
 }
 
+.separator {
+  text-align: center;
+  width: 100%;
+}
+
 // // moving background
 
 .bubbles {
@@ -58,32 +63,45 @@
   color: $black;
   height: 90vh;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   padding-top: 10vh;
+  width: 100%;
   // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685435179/pexels-thijs-van-der-weide-792972_nevhug.jpg);
   // background-position: center;
   // background-size: cover;
+
+  #map-icon {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    height: 500px;
+  }
+
+  .landing-content {
+    max-width: 60vw;
+    text-align: left;
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 6rem;
+      font-weight: bold;
+    }
+
+    h2 {
+      opacity: .8;
+    }
+
+    p {
+      margin-top: 50px;
+      opacity: .5;
+      max-width: 400px;
+    }
+  }
 }
 
-.landing-content {
-  max-width: 60vw;
-  text-align: left;
-
-  h1, h2 {
-    margin-bottom: 10px;
-    opacity: .8;
-  }
-  h1 {
-    font-size: 6rem;
-    font-weight: bold;
-  }
-
-  p {
-    margin-top: 50px;
-    opacity: .5;
-  }
-}
 
 .section {
   display: flex;
@@ -96,6 +114,8 @@
 .section.one {
   margin-bottom: 100px;
   height: 60vh;
+  background-image: url(https://res.cloudinary.com/dfipoufmj/image/upload/v1682015896/pexels-vishnu-r-nair-1105666_ymoud6.jpg);
+  width: 100vw;
 
   img {
     margin: 0 80px 0 0;
@@ -103,13 +123,19 @@
     width: auto;
   }
 
+  h3 {
+    color: $white;
+  }
+
   h2 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 50px;
+    color: $white;
   }
   p {
     opacity: .7;
+    color: $white;
    }
 }
 
@@ -121,35 +147,69 @@
   i {
     font-size: 1.4rem;
   }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .how-it-works-titles {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    // max-width: 600px;
+    width: 100%;
+    // margin-bottom: 80px;
+
+    p {
+      width: 500px;
+      font-size: .8rem;
+    }
+  }
 }
 
 .subheader.how-it-works {
-  text-align: center;
-  margin-bottom: 50px;
+  text-align: left;
+  margin-bottom: 30px;
 }
 
 .how-it-works-section {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .how-it-works-container {
-  height: 300px;
-  width: 300px;
+  width: 25vw;
+
+  h3 {
+    position: relative;
+    top: 65px;
+    left: 10px;
+    z-index: 3;
+    font-size: 3rem;
+    color: $white;
+  }
 }
 
 .how-it-works-card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
-  background-color: $color2;
+  background: linear-gradient( 45deg, #0400ffc0, #ef00fcce);
   color: $white;
+  backdrop-filter: blur(5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+
+  .connect-text {
+    font-size: 2.5rem;
+  }
 }
 
 //section three
