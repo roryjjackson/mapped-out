@@ -32,20 +32,20 @@
     position: relative;
     width: 5px;
     height: 5px;
-    background: $light-color1;
+    background: $color1;
     margin: 0 8px;
     border-radius: 50%;
-    box-shadow: 0 0 0 1px $light-color1,
-                0 0 15px $light-color3;
+    box-shadow: 0 0 0 5px $color1,
+                0 0 15px $color3;
     animation: animate 15s linear infinite;
-    animation-duration: calc(800s / var(--i));
+    animation-duration: calc(150s / var(--i));
     animation-delay: -15s;
   }
 
   span:nth-child(even) {
-    background: $light-color3;
-    box-shadow: 0 0 0 1px $light-color3,
-                0 0 30px $light-color1;
+    background: $color3;
+    box-shadow: 0 0 0 5px $color3,
+                0 0 30px $color1;
   }
 }
 @keyframes animate {
@@ -216,7 +216,7 @@
 
 .section.three {
   height: 60vh;
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg);
   background-position: center;
   background-size: cover;
@@ -244,22 +244,6 @@
 // section four
 
 .section.four {
-  height: 300px;
-  background-color: $color2;
-
-  ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-}
-
-//section five
-
-.section.five {
   text-align: center;
   margin: 100px 0;
 }
