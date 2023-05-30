@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @questionnaire = Questionnaire.where(user_id: current_user.id)
+    @questionnaire = Questionnaire.where(user_id: current_user.id).first
 
     @profile = Profile.where(user_id: current_user.id).first
 

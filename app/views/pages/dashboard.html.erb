@@ -31,31 +31,37 @@
         Reviews?
       </div>
       <% if @profile.present? %>
+
         <%= link_to edit_profile_path(@profile) do %>
           <div class="card-category">
             Edit Profile
           </div>
         <% end %>
+
+        <% if @questionnaire.present? %>
+          <%= link_to profile_questionnaire_path(@profile, @questionnaire) do %>
+            <div class="card-category">
+              Quiz results
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to new_profile_questionnaire_path(@profile) do %>
+            <div class="card-category">
+              Take the quiz
+            </div>
+          <% end %>
+        <% end %>
+
       <% else %>
+
         <%= link_to new_profile_path do %>
           <div class="card-category">
             Create Profile
           </div>
         <% end %>
+
       <% end %>
-      <% if @questionnaire.present? %>
-        <%= link_to questionnaire_path(@questionnaire) do %>
-          <div class="card-category">
-            Quiz results
-          </div>
-        <% end %>
-      <% else %>
-        <%= link_to new_questionnaire_path do %>
-          <div class="card-category">
-            Take the quiz
-          </div>
-        <% end %>
-      <% end %>
+
     </div>
   </div>
   <div class='dashboard-container right'>

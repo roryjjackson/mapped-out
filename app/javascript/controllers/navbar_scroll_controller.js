@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = ['navbar'];
 
   connect() {
+    console.log('wahey')
     this.prevScrollPos = window.pageYOffset;
     this.navbarHeight = this.navbarTarget.offsetHeight;
 
