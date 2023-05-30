@@ -217,12 +217,24 @@
 .section.three {
   height: 60vh;
   margin-bottom: 100px;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white;
 }
 
 .mission-section {
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  .button {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
 }
 
 .mission-content-container {
