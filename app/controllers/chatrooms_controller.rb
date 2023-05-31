@@ -18,6 +18,13 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
+
+    if current_user.id == @chatroom.user_id
+      @user = User.where(id: @chatroom.user2_id).first
+    else
+      @user = User.where(id: @chatroom.user_id).first
+    end
+
     @message = Message.new
     authorize @chatroom
   end
