@@ -2,7 +2,8 @@
 // profile index page
 
 .profiles-section {
-  margin-top: 10vh;
+  margin: 10vh auto 10vh auto;
+  max-width: 1250px;
   // min-height: 80vh;
   // display: flex;
 }
@@ -19,6 +20,10 @@
   }
 }
 
+.index-container {
+  display: flex;
+}
+
 #map {
   height: 80vh;
   width: 48vw;
@@ -28,9 +33,14 @@
   // display: none;
 }
 
+.profile-index-container {
+  flex-grow: 1;
+  max-width: 60vw;
+}
+
 .all-profiles {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
   flex-grow: 1;
   // max-width: 50vw;
