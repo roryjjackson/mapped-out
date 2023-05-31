@@ -1,6 +1,6 @@
 .chatroom-index {
   background-color: white;
-  margin: 20vh 10vw ;
+  margin: 20vh 10vw;
 
   h2 {
     text-align: center;
@@ -11,7 +11,8 @@
 .chatroom {
   background: white;
   margin-top: 9px;
-  height: calc(100vh - 75px);
+  // height: calc(55vh - 75px);
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -111,5 +112,12 @@
 //chatroom form
 
 .chatroom-form-section {
-  min-height: 80vh;
+  min-height: 50vh;
+  margin: 20vh 20vw;
+
+  .container {
+    background: white;
+    padding: 20px 0;
+  }
+
 }

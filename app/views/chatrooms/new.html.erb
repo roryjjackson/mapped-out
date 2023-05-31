@@ -1,14 +1,14 @@
 <div class="chatroom-form-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-sm-8">
-            <%= simple_form_for (@chatroom) do |f| %>
-              <%= f.input :name,
-                label: "Tell us a little bit about what you want to ask",
-                type: :text
-              %>
-              <%= f.submit "Send", class: "button" %>
-            <% end %>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-8">
+        <%= simple_form_for (@chatroom) do |f| %>
+          <%= f.input :name,
+            label: "Tell us a little bit about what you want to ask",
+            type: :text
+          %>
+          <%= f.submit "Send", class: "button" %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -70,18 +70,6 @@
   max-width: 50vw;
 }
 
-// .most-similar-profiles {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   grid-gap: 10px;
-//   flex-grow: 1;
-//   max-width: 50vw;
-// }
-
-.profile-container {
-  border: solid black 1px;
-}
-
 .profile-card {
   overflow: hidden;
   background: $color2;
@@ -145,7 +133,38 @@
 
 //profile show page
 
-.profile-show-section {
+.profile-show {
+  margin: 15vh auto;
+  max-width: 1250px;
+
+  .profile-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+
+  }
+
+  .profile-show-title {
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      opacity: .8;
+    }
+
+
+
+  }
+
+  .profile-show-card {
+    padding: 10px;
+    background-color: $white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  }
+
   a {
     color: $white;
   }
