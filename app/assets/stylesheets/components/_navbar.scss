@@ -1,22 +1,28 @@
-.navbar.hidden {
-  top: -10vh;
-}
-
 .navbar {
   z-index: 3;
   justify-content: space-between;
-  background-color: $color4;
+  background-color: transparent;
   width: 100%;
   height: 10vh;
   padding: 0;
   position: fixed;
   top: 0;
-  transition: top .5s ease;
   margin: auto;
+  // backdrop-filter: blur(5px);
+  // transition: top 1.5s ease;
 
   h6 {
     margin: 0;
   }
+
+}
+
+.x {
+  display: none;
+  // top: -10vh;
+  // background-color: red;
+  // transition: top 1.5s ease;
+
 }
 
 .container-fluid {
@@ -28,12 +34,12 @@
 }
 
 .nav-link {
-  color: $light-white;
+  color: $color4;
   margin-right: 15px;
 }
 
 .nav-link:hover {
-  background-color: $black;
+  background-color: $color2;
   color: $white;
   border-radius: 5px;
 }
@@ -42,4 +48,13 @@
   height: 40px;
   width: 40px;
   object-fit: cover;
+}
+
+.dropdown-menu {
+  border-radius: 5px;
+  background-color: $color2;
+
+  .dropdown-item {
+    color: $light-white;
+  }
 }
