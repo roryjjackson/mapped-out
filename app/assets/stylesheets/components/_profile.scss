@@ -2,9 +2,21 @@
 // profile index page
 
 .profiles-section {
-  margin-top: 15vh;
-  min-height: 80vh;
+  margin-top: 10vh;
+  // min-height: 80vh;
+  // display: flex;
+}
+
+.filter-bar {
   display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+
+  .searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 #map {
