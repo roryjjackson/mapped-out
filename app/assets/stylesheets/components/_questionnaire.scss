@@ -26,3 +26,25 @@
     align-items: center;
   }
 }
+
+// edit page
+
+.questionnaire-edit-section {
+  height: 90vh;
+  margin: 20vh auto auto auto;
+  max-width: 1250px;
+
+  .button {
+    a {
+      color: $light-white;
+    }
+  }
+}
+
+//new page
+
+.questionnaire-new-section {
+  height: 90vh;
+  margin: 20vh auto auto auto;
+  max-width: 1250px;
+}
