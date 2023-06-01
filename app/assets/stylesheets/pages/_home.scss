@@ -60,16 +60,20 @@
 //landing
 
 .landing {
-  color: $light-white;
+  color: $black;
   height: 90vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10vh;
   width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1683107312/pexels-buro-millennial-1438075_ob6gjy.jpg);
-  background-size: cover;
-  background-position: center;
+  // background-image: url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685615456/Untitled-4-removebg-preview_pthk1g.png);
+  // background-size: cover;
+  // background-position: center;
+
+  img {
+    height: 450px;
+  }
 
   .landing-content {
     max-width: 1250px;
@@ -85,12 +89,16 @@
     h1 {
       font-size: 6rem;
       font-weight: bold;
-      color: white;
+      color: $black;
+    }
+
+    h2 {
+      opacity: .8;
     }
 
     p {
       margin-top: 50px;
-      // opacity: .5;
+      opacity: .5;
       max-width: 400px;
     }
   }

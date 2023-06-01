@@ -4,7 +4,8 @@
     data-action="scroll->navbar-scroll#handleScroll">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <h6 class="nav-link">MPDT</h6>
+      <%# <h6 class="nav-link">MPDT</h6> %>
+      <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685632379/worldandshoe_fqdkqm.png" alt="fuck">
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,6 +44,12 @@
             </div>
           </li>
         <% else %>
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Blog", "#", class: "nav-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "button" %>
           </li>
