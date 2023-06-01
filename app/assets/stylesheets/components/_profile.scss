@@ -137,6 +137,12 @@
   margin: 15vh auto;
   max-width: 1250px;
 
+  .button-container {
+    button {
+      margin: 20px;
+    }
+  }
+
   .profile-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
