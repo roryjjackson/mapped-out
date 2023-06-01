@@ -86,7 +86,9 @@
         <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
         <%= yield %>
-        <%= render "shared/footer" %>
+        <% if current_page?(root_path) || current_page?(dashboard_path) || current_page?(profiles_path) %>
+          <%= render "shared/footer" %>
+        <% end %>
     </div>
   </body>
 </html>
