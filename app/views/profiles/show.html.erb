@@ -58,9 +58,5 @@
 </div>
 
 
-  <% if policy(@profile).edit? %>
-    <%= link_to "Edit this profile", edit_profile_path(@profile) %> |
-  <% end %>
-
-  <%= button_to "Destroy this profile", @profile, method: :delete if policy(@profile).destroy? %>
+  <%# <%= button_to "Destroy this profile", @profile, method: :delete if policy(@profile).destroy? %>
 </div>
