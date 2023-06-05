@@ -37,7 +37,9 @@ class ProfilesController < ApplicationController
       user = User.find(profile.user_id)
       questionnaire = Questionnaire.where(user_id: current_user.id).first
       total_rating = total_rating(profile)
-      most_similar = find_most_similar_questionnaires(questionnaire)
+      if questionnaire.present?
+        most_similar = find_most_similar_questionnaires(questionnaire)
+      end
       @profile_data[profile.id] = {
         user: user,
         total_rating: total_rating,
@@ -134,7 +136,6 @@ class ProfilesController < ApplicationController
       [similarity_score, other_questionnaire]
     end
     scores.sort!.reverse!
-
   end
 
   def similarity_score(a, b)

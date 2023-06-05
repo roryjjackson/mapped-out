@@ -6,9 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
+puts "deleting messages"
 Message.destroy_all
+puts "deleting chatrooms"
 Chatroom.destroy_all
+
+if (Chatroom.first.present?)
+  puts "failed to delete chatrooms"
+else
+  puts "deleted succesfyully"
+end
+puts "deleting reviews"
 Review.destroy_all
+puts "deleting profiles"
 Profile.destroy_all
 
 puts "deleting users"
@@ -50,7 +60,7 @@ profile1 = Profile.create(name: "John",
                           user_id: user1.id,
                           address: "London, UK")
 
-if profile2.exist?
+if profile1.present?
   puts "created a profile"
 end
 
@@ -67,7 +77,7 @@ profile2 = Profile.create(name: "Mike",
                           advice: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                           user_id: user2.id,
                           address: "Paris, France")
-if profile2.exist?
+if profile2.present?
   puts "created a profile"
 end
 
@@ -84,7 +94,7 @@ profile3 = Profile.create(name: "Sam",
                           advice: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                           user_id: user3.id,
                           address: "Sydney, Australia")
-if profile3.exist?
+if profile3.present?
   puts "created a profile"
 end
 
