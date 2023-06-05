@@ -2,7 +2,7 @@
 // profile index page
 
 .profiles-section {
-  margin: 10vh auto 10vh auto;
+  margin: 15vh auto 10vh auto;
   max-width: 1250px;
   // min-height: 80vh;
   // display: flex;
@@ -30,7 +30,6 @@
   margin-left: 2vw;
   position: sticky;
   top: 10vh;
-  // display: none;
 }
 
 .profile-index-container {
@@ -72,12 +71,12 @@
 
 .profile-card {
   overflow: hidden;
-  background: $color2;
+  background: $light-white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
 
   h2, p, h3 {
-    color: $white;
+    color: $color2;
   }
 
   h3 {
@@ -174,4 +173,25 @@
   a {
     color: $white;
   }
+}
+
+// profile edit page
+.profile-edit {
+  max-width: 1250px;
+  margin: 15vh auto 10vh auto;
+}
+
+.subheader.profile-edit-title {
+  margin-bottom: 50px;
+}
+
+
+//form
+
+.form-input {
+  margin-bottom: 50px;
+}
+
+#profile_why, #profile_how, #profile_advice, #profile_what {
+  height: 200px;
 }
