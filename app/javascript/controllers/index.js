@@ -22,9 +22,6 @@ application.register("map", MapController)
 import MostSimilarController from "./most_similar_controller"
 application.register("most-similar", MostSimilarController)
 
-import MovingBackgroundController from "./moving_background_controller"
-application.register("moving-background", MovingBackgroundController)
-
 import NavbarScrollController from "./navbar_scroll_controller"
 application.register("navbar-scroll", NavbarScrollController)
 
