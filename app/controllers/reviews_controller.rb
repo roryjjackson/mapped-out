@@ -16,8 +16,10 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to profile_path(@profile)
     else
-      flash[:alert] = "Something went wrong."
-      render :new
+      # flash[:alert] = "Something went wrong."
+      # render :new
+      flash.now[:alert] = "Failed to create review: #{review.errors.full_messages.join(', ')}"
+      render 'profiles/show'
     end
   end
 
