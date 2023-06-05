@@ -1,30 +1,37 @@
-import { Controller } from 'stimulus';
+// import { Controller } from 'stimulus';
 
-export default class extends Controller {
-  static targets = ['navbar'];
+// export default class extends Controller {
+//   static targets = ['navbar'];
 
-  connect() {
-    this.prevScrollPos = window.pageYOffset;
+//   connect() {
+//     console.log('wahey')
+//     this.prevScrollPos = window.pageYOffset;
+//     // this.navbarHeight = this.navbarTarget.offsetHeight;
 
-    window.addEventListener('scroll', this.handleScroll.bind(this));
-  }
+//     window.addEventListener('scroll', this.handleScroll.bind(this));
+//   }
 
-  disconnect() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
+//   disconnect() {
+//     window.removeEventListener('scroll', this.handleScroll);
+//   }
 
-  handleScroll() {
-    const currentScrollPos = window.pageYOffset;
-    const scrollingDown = currentScrollPos > this.prevScrollPos;
-    const scrollDifference = Math.abs(currentScrollPos - this.prevScrollPos);
+//   handleScroll() {
+//     console.log("gdsigefpiu")
+//     const currentScrollPos = window.pageYOffset;
+//     const scrollingUp = currentScrollPos < this.prevScrollPos;
 
+//     // if (window.pageYOffset < 0) {
+//     //   this.navbarTarget.classList.add('non-transparent');
+//     // } else {
+//     //   this.navbarTarget.classList.remove('non-transparent');
+//     // }
 
-    if (scrollingDown && scrollDifference > 10) {
-      this.navbarTarget.classList.remove('hidden');
-    } else {
-      this.navbarTarget.classList.add(`hidden`);
-    }
+//     if (scrollingUp) {
+//       this.navbarTarget.classList.remove('hidden');
+//     } else {
+//       this.navbarTarget.classList.add(`hidden`);
+//     }
 
-    this.prevScrollPos = currentScrollPos;
-  }
-}
+//     this.prevScrollPos = currentScrollPos;
+//   }
+// }
