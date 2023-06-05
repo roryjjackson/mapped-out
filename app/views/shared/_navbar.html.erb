@@ -1,9 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon"
-     data-controller="navbar-scroll"
-     data-navbar-scroll-target="navbar">
+    data-controller="navbar-scroll"
+    data-navbar-scroll-target="navbar"
+    data-action="scroll->navbar-scroll#handleScroll">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/dfipoufmj/image/upload/v1684244486/Pngtree_world_map_1970382_jh9kie.png" %>
+      <%# <h6 class="nav-link">MPDT</h6> %>
+      <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685632379/worldandshoe_fqdkqm.png" alt="fuck">
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +24,7 @@
           <li class="nav-item">
             <%= link_to "Blog", "#", class: "nav-link" %>
           </li>
-           <li class="nav-item">
+          <li class="nav-item">
             <%= link_to "Discover", profiles_path, class: "nav-link" %>
           </li>
 
@@ -43,7 +45,13 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Blog", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "button" %>
           </li>
         <% end %>
       </ul>

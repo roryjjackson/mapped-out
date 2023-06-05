@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     console.log('wahey')
     this.prevScrollPos = window.pageYOffset;
-    this.navbarHeight = this.navbarTarget.offsetHeight;
+    // this.navbarHeight = this.navbarTarget.offsetHeight;
 
     window.addEventListener('scroll', this.handleScroll.bind(this));
   }
@@ -16,8 +16,15 @@ export default class extends Controller {
   }
 
   handleScroll() {
+    console.log("gdsigefpiu")
     const currentScrollPos = window.pageYOffset;
     const scrollingUp = currentScrollPos < this.prevScrollPos;
+
+    // if (window.pageYOffset < 0) {
+    //   this.navbarTarget.classList.add('non-transparent');
+    // } else {
+    //   this.navbarTarget.classList.remove('non-transparent');
+    // }
 
     if (scrollingUp) {
       this.navbarTarget.classList.remove('hidden');

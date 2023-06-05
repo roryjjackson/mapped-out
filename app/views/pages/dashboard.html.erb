@@ -1,14 +1,15 @@
 <div class='dashboard'>
   <div class='dashboard-container left'>
     <div>
-      <h2 id='dashboard-title'>Dashboard</h2>
+      <h2 id='dashboard-title'>Welcome, <%= current_user.nickname %></h2>
       <p>Take a look at your dashboard and all the features that are included</p>
-        <button class='button create-profile'>
-          <%= link_to "Do something" %>
-        </button>
+          <%# <%= link_to "Do something" %>
+        <%# <button class='button create-profile'> %>
+        <%# </button> %>
     </div>
     <div class='icon-container'>
       <div class='icon'>Img</div>
+      <div class='icon'>5*</div>
     </div>
   </div>
   <div class='dashboard-container middle'>
@@ -17,6 +18,7 @@
         <div class='card-content'>
           <p>This is where it happens</p>
           <h2>Discover</h2>
+          <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685633294/worldandshoeredandwhite_geerl4.png" alt="">
         </div>
         <%= cl_image_tag current_user.photo.key, class: "card-user avatar-bordered"%>
       </div>
@@ -28,8 +30,16 @@
         </div>
       <% end %>
       <div class="card-category">
-        Reviews?
+        Reviews
       </div>
+            <div class="card-category">
+        Account settings
+      </div>
+            <div class="card-category">
+        Contact us
+      </div>
+
+
       <% if @profile.present? %>
 
         <%= link_to edit_profile_path(@profile) do %>
@@ -61,6 +71,7 @@
         <% end %>
 
       <% end %>
+
 
     </div>
   </div>

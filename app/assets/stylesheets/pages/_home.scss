@@ -1,36 +1,114 @@
-body {
-  max-width: 1250px;
-  margin: auto;
-  margin-top: 10vh;
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
+.content {
+  max-width: 1250px;
+  margin: 0 auto;
+  // padding: 20px;
+}
 
+.separator {
+  text-align: center;
+  width: 100%;
+}
+
+// // moving background
+
+.bubbles {
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  justify-content: space-evenly;
+  overflow: hidden;
+
+  span {
+    position: relative;
+    width: 5px;
+    height: 5px;
+    background: $light-color1;
+    margin: 0 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px $light-color1,
+                0 0 15px $light-color3;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(700s / var(--i));
+    animation-delay: -15s;
+  }
+
+  span:nth-child(even) {
+    background: $light-color3;
+    box-shadow: 0 0 0 5px $light-color3,
+                0 0 30px $light-color1;
+  }
+}
+@keyframes animate {
+  0% {
+    transform: translateY(100vh) scale(0);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
+//landing
 
 .landing {
+  color: $black;
   height: 90vh;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   padding-top: 10vh;
+  width: 100%;
+  // background-image: url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg);
+  // background-size: cover;
+  // background-position: center;
+  // background-position-y: 30px;
+  // background-repeat: no-repeat;
+
+  img {
+    height: 450px;
+    width: 50%;
+    object-fit: cover;
+  }
+
+  .landing-content {
+    max-width: 1250px;
+    width: 50%;
+    margin: auto;
+    text-align: left;
+
+    h1, h2 {
+      margin-bottom: 10px;
+      z-index: 3;
+    }
+
+    h1 {
+      font-size: 6rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: $black;
+    }
+
+    h2 {
+      opacity: .8;
+    }
+
+    p {
+      // margin-top: 50px;
+      opacity: .5;
+      max-width: 400px;
+    }
+  }
 }
 
-.landing-content {
-  max-width: 60vw;
-  text-align: left;
-
-  h1, h2 {
-    margin-bottom: 10px;
-  }
-  h1 {
-    font-size: 6rem;
-    font-weight: bold;
-  }
-
-  p {
-    margin-top: 50px;
-    opacity: .7;
-  }
-}
 
 .section {
   display: flex;
@@ -38,25 +116,68 @@ body {
   align-items: center;
 }
 
+//logos
+
+.logos {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80%;
+
+}
+
 //section one
 
 .section.one {
-  margin-bottom: 100px;
-  height: 60vh;
+  margin: 30px auto 100px;
+  max-width: 1250px;
 
-  img {
-    margin: 0 80px 0 0;
-    height: 30vw;
-    width: auto;
+
+  .our-mission {
+    text-align: center;
+    width: 100%;
+
+    .information {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      div {
+        width: 500px;
+      }
+
+      p {
+        max-width: 450px;
+      }
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .card {
+        background-color: white;
+        width: 28vw;
+      }
+    }
+  }
+
+  h3 {
+    color: $color2;
   }
 
   h2 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 50px;
+    color: $color2;
   }
   p {
     opacity: .7;
+    color: $color2;
    }
 }
 
@@ -64,71 +185,163 @@ body {
 
 .section.two {
   margin-bottom: 100px;
+  color: white;
+  width: 100%;
+  margin: 0 auto 100px auto;
+
+  .mission-section {
+    max-width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    color: $color2;
+
+    .mission-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      margin: auto;
+    }
+
+    .button {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 3rem;
+      text-align: left;
+    }
+
+    img {
+      height: 450px;
+      width: 45%;
+      object-fit: cover;
+    }
+  }
+
+
+}
+
+
+
+.mission-content-container {
+  width: 60vw;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+// icon list
+
+.icon-train {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  // animation: trainAnimation 26s linear infinite;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon-train i {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+@keyframes trainAnimation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+//section three
+
+section.three {
+  margin-bottom: 100px;
 
   i {
     font-size: 1.4rem;
   }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .how-it-works-titles {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    // max-width: 600px;
+    width: 100%;
+    // margin-bottom: 80px;
+
+    p {
+      width: 500px;
+      font-size: .8rem;
+    }
+  }
 }
 
 .subheader.how-it-works {
-  text-align: center;
-  margin-bottom: 50px;
+  text-align: left;
+  margin-bottom: 30px;
 }
 
 .how-it-works-section {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .how-it-works-container {
-  height: 300px;
-  width: 300px;
+  width: 25vw;
+
+  h3 {
+    position: relative;
+    top: 65px;
+    left: 10px;
+    z-index: 3;
+    font-size: 3rem;
+    color: $color2;
+
+    // color: $white;
+  }
 }
 
 .how-it-works-card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
-  background-color: $color2;
-  color: $white;
+  // background: linear-gradient( 45deg, #0400ffc0, #ef00fcce);
+  background-color: $light-white;
+  color: $color2;
+  backdrop-filter: blur(5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+
+  .connect-text {
+    font-size: 2.5rem;
+  }
 }
-
-//section three
-
-.section.three {
-  height: 60vh;
-  margin-bottom: 100px;
-}
-
-.mission-section {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.mission-content-container {
-  width: 60vw;
-}
-
-//section four
+// section four
 
 .section.four {
   text-align: center;
-  margin-bottom: 100px;
+  margin: 100px 0;
 }
 
 .become-a-member-container {
   width: 50vw;
-}
-
-.section.four img {
-  height: 400px;
 }
 
 .button-container {

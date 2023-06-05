@@ -1,0 +1,50 @@
+// questionnaire show
+
+.questionnaire-show-section {
+  height: 90vh;
+  margin: 20vh auto auto auto;
+  max-width: 1250px;
+
+  .score {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    margin: 20px auto;
+  }
+
+  .button {
+    width: 100px;
+
+    a {
+      color: $light-white;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+// edit page
+
+.questionnaire-edit-section {
+  height: 90vh;
+  margin: 20vh auto auto auto;
+  max-width: 1250px;
+
+  .button {
+    a {
+      color: $light-white;
+    }
+  }
+}
+
+//new page
+
+.questionnaire-new-section {
+  height: 90vh;
+  margin: 20vh auto auto auto;
+  max-width: 1250px;
+}

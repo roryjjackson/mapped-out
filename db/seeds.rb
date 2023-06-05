@@ -50,7 +50,9 @@ profile1 = Profile.create(name: "John",
                           user_id: user1.id,
                           address: "London, UK")
 
-puts "created a profile"
+if profile2.exist?
+  puts "created a profile"
+end
 
 file4 = URI.open("https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg")
 profile1.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
@@ -65,7 +67,9 @@ profile2 = Profile.create(name: "Mike",
                           advice: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                           user_id: user2.id,
                           address: "Paris, France")
-puts "created a profile"
+if profile2.exist?
+  puts "created a profile"
+end
 
 file5 = URI.open("https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg")
 profile2.photo.attach(io: file5, filename: "nes.png", content_type: "image/png")
@@ -80,7 +84,9 @@ profile3 = Profile.create(name: "Sam",
                           advice: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                           user_id: user3.id,
                           address: "Sydney, Australia")
-puts "created a profile"
+if profile3.exist?
+  puts "created a profile"
+end
 
 file6 = URI.open("https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg")
 profile3.photo.attach(io: file6, filename: "nes.png", content_type: "image/png")

@@ -55,6 +55,7 @@ class ProfilesController < ApplicationController
     authorize @profile
     @user = User.find(@profile.user_id)
     @total_rating = total_rating(@profile)
+    @review = Review.new
   end
 
   def new

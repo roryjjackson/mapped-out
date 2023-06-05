@@ -1,9 +1,3 @@
-<h1>Editing questionnaire</h1>
-
-<%= render "form", questionnaire: @questionnaire %>
-
-<br>
-
-<div>
-  <%= link_to "Show this questionnaire", profile_questionnaire_path(@profile, @questionnaire) %> |
+<div class="questionnaire-edit-section">
+  <%= render "form", questionnaire: @questionnaire %>
 </div>

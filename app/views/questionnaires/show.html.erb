@@ -1,9 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<div class="questionnaire-show-section">
+  <h1 class="subheader">Your scores</h1>
+  <div>
 
-<%= render @questionnaire %>
+    <%= render @questionnaire %>
 
-<div>
-  <%= link_to "Edit this questionnaire", edit_profile_questionnaire_path(@profile, @questionnaire), class: "button" %> |
-
-  <%= button_to "Destroy this questionnaire", profile_questionnaire_path(@profile, @questionnaire), method: :delete, class: "button" %>
+    <div class="button-container">
+      <button class="button">
+        <%= link_to "ReTake", edit_profile_questionnaire_path(@profile, @questionnaire) %>
+      </button>
+      <%= button_to "Delete", profile_questionnaire_path(@profile, @questionnaire), method: :delete, class: "button" %>
+    </div>
+  </div>
 </div>
