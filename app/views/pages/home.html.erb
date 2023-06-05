@@ -91,7 +91,7 @@
       <h2>Discover alternate paths</h2>
       <h1>Mapped Out</h1>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      <button class="button">Get started</button>
+      <%= link_to "Get started", new_profile_path, class: "button" %>
       <div class="logos">
           <div>
             <h3><strong>10'000 +</strong></h3>
@@ -123,27 +123,33 @@
       <p>The eductaion system will never be able to let you explore all the toptions available to you, predominately because how could they? There is a million ways to go about your life, and with the climate of careers changing rapidly, why enclose yourself?</p>
     </div>
     <div class="card-container">
-      <div class="card">
-        <h3>Think</h3>
-        <div class="">
-          <div class="connect-text"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685634376/light_bulb_moment_zpn95k.png" alt=""></div>
+      <%= link_to new_profile_path do %>
+        <div class="card">
+          <h3>Think</h3>
+          <div class="">
+            <div class="connect-text"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685634376/light_bulb_moment_zpn95k.png" alt=""></div>
+          </div>
+          <p>Answer our questions instinctively, and let our algorithm present you with opportunities you may not have thought of.</p>
         </div>
-        <p>Answer our questions instinctively, and let our algorithm present you with opportunities you may not have thought of.</p>
-      </div>
-      <div class="card">
-        <h3>Discover</h3>
-        <div class="">
-          <div class="connect-text"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685633294/worldandshoeredandwhite_geerl4.png" alt=""></div>
+      <% end %>
+      <%= link_to profiles_path do %>
+        <div class="card">
+          <h3>Discover</h3>
+          <div class="">
+            <div class="connect-text"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685633294/worldandshoeredandwhite_geerl4.png" alt=""></div>
+          </div>
+          <p>Discover our portfolio of professionals willing to help, and become inspired by their journeys!</p>
         </div>
-        <p>Discover our portfolio of professionals willing to help, and become inspired by their journeys!</p>
-      </div>
-      <div class="card">
-        <h3>Connect</h3>
-        <div class="">
-          <div class="connect-text"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685688842/connected_vs3ymr.png" alt=""></div>
+      <% end %>
+      <%= link_to dashboard_path do %>
+        <div class="card">
+          <h3>Connect</h3>
+          <div class="">
+            <div class="connect-text"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685688842/connected_vs3ymr.png" alt=""></div>
+          </div>
+          <p>Connect to established professials and begin making the right turns towards your potential new start!</p>
         </div>
-        <p>Connect to established professials and begin making the right turns towards your potential new start!</p>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -215,7 +221,7 @@
     <h2 class="subheader" >Become a member of the community!</h2>
     <p>Get started inspiring someone and sign up below</p>
     <div class="button-container">
-      <button class="button">Sign up</button>
+    <%= link_to "sign up", new_user_registration_path, class: "button" %>
     </div>
   </div>
 </div>
