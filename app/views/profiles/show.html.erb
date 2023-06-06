@@ -9,18 +9,16 @@
             <% chatroom2 = Chatroom.find_by(user_id: @profile.user_id, user2_id: current_user.id) %>
             <% if chatroom || chatroom2 %>
               <button class="button">
-                <%= link_to "Message", chatroom_path(chatroom || chatroom2) %>
+                <%= link_to "Message #{@profile.name}", chatroom_path(chatroom || chatroom2) %>
               </button>
             <% else %>
               <button class="button">
-                <%= link_to "Message", new_chatroom_path(user2_id: @profile.user_id)  %>
+                <%= link_to "Message #{@profile.name}", new_chatroom_path(user2_id: @profile.user_id)  %>
               </button>
             <% end %>
           <% end %>
         </div>
-        <button class="button">
-          <%= link_to "new review", new_profile_review_path(@profile) %>
-        </button>
+
         <%= render partial: 'reviews/form', locals: { profile: @profile } %>
 
       </div>
