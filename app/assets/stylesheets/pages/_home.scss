@@ -340,13 +340,49 @@ section.three {
   margin: 100px 0;
 }
 
+
 .become-a-member-container {
-  width: 50vw;
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto 100px auto;
 }
 
-.button-container {
+.member-image {
+  position: absolute;
+  top: 5vh;
+  right: 0;
+  width: 40vw;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    z-index: 2;
+  }
+
+}
+
+.member-content {
+  z-index: -1;
+  color: $color2;
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: 100%;
+  padding-right: 15vw;
   display: flex;
-  justify-content: space-evenly;
-  max-width: 30vw;
-  margin: auto;
+  justify-content: left;
+  align-items: center;
+  padding: 20px 12vw 20px 60px;
+  border-radius: 10px;
+  text-align: left;
 }
