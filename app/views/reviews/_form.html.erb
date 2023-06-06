@@ -5,7 +5,7 @@
         <p>You have already submitted a review.</p>
       <% else %>
         <%= simple_form_for ([@profile, @review]), data: {controller: "submit" } do |f| %>
-          <%= f.input :content, label: "Leave #{@profile.name} a message" %>
+          <%= f.input :content, label: "Send a message" %>
           <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: { controller: "star-rating", action: "click->form-submit#submit"} }  %>
           <%= f.submit "Send your review"  %>
         <% end %>
