@@ -1,0 +1,88 @@
+.about-page {
+  margin-top: calc(10vh + 100px);
+}
+
+.about-titles {
+  text-align: center;
+  margin-bottom: 100px;
+
+  h2 {
+    opacity: 1;
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.about-list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1250px;
+  margin: 0 auto 100px auto;
+
+  .about-list-card {
+    max-width: 250px;
+  }
+
+  i {
+    font-size: 3rem;
+    text-align: left;
+  }
+}
+
+
+.about-meet-the-owners-container {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto 100px auto;
+}
+
+.about-owners-image {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  width: 40vw;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    z-index: 2;
+  }
+
+}
+
+.about-owners-content {
+  z-index: -1;
+  color: $light-white;
+  background-color: $color2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  padding-left: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 20px 12vw;
+  border-radius: 10px;
+}
