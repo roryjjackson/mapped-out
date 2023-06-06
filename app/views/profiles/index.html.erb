@@ -39,11 +39,13 @@
           </div>
         </div>
       </div>
-      <div
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-        id="map">
+      <div>
+        <div
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          id="map">
+        </div>
       </div>
     </div>
   </div>
