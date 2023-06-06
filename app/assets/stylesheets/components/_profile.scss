@@ -4,8 +4,6 @@
 .profiles-section {
   margin: 15vh auto 10vh auto;
   max-width: 1250px;
-  // min-height: 80vh;
-  // display: flex;
 }
 
 .filter-bar {
@@ -22,37 +20,33 @@
 
 .index-container {
   display: flex;
+  justify-content: space-between;
+}
+
+.index-of-profiles {
+  padding-right: 30px;
+}
+
+.profile-index-sidebar {
+  width: 28vw;
 }
 
 #map {
-  height: 80vh;
-  width: 48vw;
-  margin-left: 2vw;
+  height: 40vh;
+  width: 100%;
+  margin-bottom: 30px;
   position: sticky;
   top: 10vh;
 }
 
-.profile-index-container {
-  flex-grow: 1;
-  max-width: 60vw;
-}
-
 .all-profiles {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   flex-grow: 1;
   // max-width: 50vw;
 }
 
-.profiles {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  flex-grow: 1;
-  max-width: 50vw;
-
-}
 .hidden {
   display: none;
 }
@@ -92,7 +86,7 @@
 }
 
 .profile-card > img {
-  height: 200px;
+  height: 150px;
   width: 100%;
   object-fit: cover;
 }
