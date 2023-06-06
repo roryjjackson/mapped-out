@@ -1,7 +1,7 @@
 <div class="profiles-section">
   <div data-controller="most-similar">
     <div class="index-container">
-      <div>
+      <div class="index-of-profiles">
         <div class="filter-bar">
           <div class="row justify-content-center">
             <div class="col-sm-12  searchbar">
@@ -39,11 +39,16 @@
           </div>
         </div>
       </div>
-      <div
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-        id="map">
+      <div class="profile-index-sidebar">
+        <h2>Search our map</h2>
+        <div
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          id="map">
+        </div>
+        <h3>Some info here?</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
       </div>
     </div>
   </div>

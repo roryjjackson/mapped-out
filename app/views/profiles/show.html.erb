@@ -1,58 +1,86 @@
 <div class="profile-show">
-    <div class="profile-show-title">
-      <h1><%= @profile.name %></h1>
-      <h2><%= @profile.title %></h2>
-      <div class="button-container">
-        <div>
-          <% if (current_user.id != @profile.user_id ) %>
-            <% chatroom = Chatroom.find_by(user_id: current_user.id, user2_id: @profile.user_id) %>
-            <% chatroom2 = Chatroom.find_by(user_id: @profile.user_id, user2_id: current_user.id) %>
-            <% if chatroom || chatroom2 %>
-              <button class="button">
-                <%= link_to "Message #{@profile.name}", chatroom_path(chatroom || chatroom2) %>
-              </button>
-            <% else %>
-              <button class="button">
-                <%= link_to "Message #{@profile.name}", new_chatroom_path(user2_id: @profile.user_id)  %>
-              </button>
+  <div class="profile-show-title">
+    <div class="background-image" style="background-image: url('<%= cl_image_path(@profile.photo.key)%>')">
+    </div>
+    <div class="profile-show-content">
+      <div class="profile-show-content-data">
+        <h1>Hi 👋🏼, I'm <%= @profile.name %></h1>
+        <h2>I work as a <%= @profile.title %></h2>
+        <div class="message-button-container">
+          <div>
+            <% if (current_user.id != @profile.user_id ) %>
+              <% chatroom = Chatroom.find_by(user_id: current_user.id, user2_id: @profile.user_id) %>
+              <% chatroom2 = Chatroom.find_by(user_id: @profile.user_id, user2_id: current_user.id) %>
+              <% if chatroom || chatroom2 %>
+                <button class="button">
+                  <%= link_to "Message #{@profile.name}", chatroom_path(chatroom || chatroom2) %>
+                </button>
+              <% else %>
+                <button class="button">
+                  <%= link_to "Message #{@profile.name}", new_chatroom_path(user2_id: @profile.user_id)  %>
+                </button>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
-
-        <%= render partial: 'reviews/form', locals: { profile: @profile } %>
-
       </div>
     </div>
-  <div class="profile-container">
-    <div class="profile-show-card">
-      <h3>What hours do you typically work? </h3>
-      <p><%= @profile.hours %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>Why did you get started?</h3>
-      <p><%= @profile.why %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>How did you get started</h3>
-      <p><%= @profile.how %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>What do you actually do?</h3>
+  </div>
+
+
+  <%# <div class="profile-show-divider">
+    <h2>Below is some key information about what I do</h2>
+  </div> %>
+
+
+    <div class="profile-show-card what">
+      <h3>What does your day typically involve?</h3>
       <p><%= @profile.what %></p>
     </div>
-    <div class="profile-show-card">
-      <h3>linked in:</h3>
-      <p><%= @profile.linked_in_url %></p>
+    <div class="profile-show-card-why">
+      <div class="profile-show-card-why-container">
+        <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685435179/pexels-thijs-van-der-weide-792972_nevhug.jpg" alt="">
+        <div>
+          <h3>Why did you choose to go into your field?</h3>
+          <p><%= @profile.why %></p>
+        </div>
+      </div>
     </div>
-    <div class="profile-show-card">
-      <h3>Instagram:</h3>
-      <p><%= @profile.instagram_url %></p>
+
+    <div class="content">
+      <div class="profile-show-divider">
+        <h2>Find other similar profiles</h2>
+        <button class="button">Discover</button>
+      </div>
     </div>
-    <div class="profile-show-card">
-      <h3>Do you have any key advice?</h3>
-      <p><%= @profile.advice %></p>
+
+    <div class="profile-show-card what">
+      <h3>How did you get yourself started in the beginning?</h3>
+      <p><%= @profile.how %></p>
     </div>
-  </div>
+    <div class="content">
+      <div class="profile-show-card socials">
+        <div class="review-partial">
+          <%= render partial: 'reviews/form', locals: { profile: @profile } %>
+        </div>
+        <div>
+          <h3>Why not keep in touch with <%= @profile.name %> by checking out their socials</h3>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="profile-show-card what">
+      <div>
+        <h3>What advice would you give to aspiring people?</h3>
+        <p><%= @profile.advice %></p>
+      </div>
+    </div>
+
 </div>
 
 
