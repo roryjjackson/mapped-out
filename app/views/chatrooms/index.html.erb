@@ -1,8 +1,10 @@
 <div class="chatroom-index">
-  <h2>Your active chats</h2>
+
+
   <div class="chatroom-section">
+    <h2>Your active chats</h2>
     <% @chatrooms.each do |chatroom| %>
-      <%= link_to chatroom_path(chatroom) do %>
+      <%= link_to chatroom_path(chatroom), remote: true, class: 'chatroom-link' do %>
         <div class="chatroom-container">
           <div class="chatroom-card">
             <% if @user_data[chatroom.id][:user1].present? && chatroom.user_id != current_user.id %>
@@ -45,6 +47,32 @@
           </div>
         </div>
       <% end %>
+      <div id="chatroom-show-partial">
+      </div>
     <% end %>
   </div>
+
+
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const chatroomLinks = document.querySelectorAll('.chatroom-link');
+
+    chatroomLinks.forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const url = this.getAttribute('href');
+
+        fetch(url)
+          .then(response => response.text())
+          .then(data => {
+            console.log(data)
+            const chatroomShowPartial = document.getElementById('chatroom-show-partial');
+            chatroomShowPartial.innerHTML = data;
+          })
+          .catch(error => console.error('Error:', error));
+      });
+    });
+  });
+</script>
