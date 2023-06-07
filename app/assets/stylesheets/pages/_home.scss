@@ -189,46 +189,55 @@
   width: 100%;
   margin: 0 auto 100px auto;
 
+
   .mission-section {
-    max-width: 1250px;
+    border-top: $color2 5px solid;
+    border-bottom: $color2 5px solid;
+    background-color: $color1;
+    position: relative;
+    height: 700px;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     color: $color2;
 
-    .mission-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
-      margin: auto;
-    }
-
-    .button {
-      margin: 0;
-    }
-
-    h2 {
-      font-size: 3rem;
-      text-align: left;
-    }
-
     img {
-      height: 450px;
-      width: 45%;
+      border-right: $color2 5px solid;
+      position: absolute;
+      height: 100%;
+      width: 50vw;
       object-fit: cover;
+      top: 0;
+      left: 0;
+    }
+
+    .mission-container {
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      margin: auto;
+
+      .mission-content-container {
+        padding-left: 50px;
+
+        h3, p {
+          max-width: 500px;
+        }
+        h2 {
+          font-size: 3rem;
+          text-align: left;
+        }
+        .button {
+          margin: 0;
+        }
+      }
     }
   }
-
-
-}
-
-
-
-.mission-content-container {
-  width: 60vw;
-  backdrop-filter: blur(5px);
-  padding: 20px;
-  border-radius: 10px;
 }
 
 // icon list
