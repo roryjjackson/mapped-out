@@ -1,9 +1,12 @@
 .dashboard {
   display: flex;
   // min-height: 80vh;
+  justify-content: space-between;
+  max-width: 1250px;
   margin-top: 10vh;
   padding-bottom: 10vh;
   padding-top: 10vh;
+  margin: 100px auto;
 }
 
 .fontawesome {
@@ -21,7 +24,7 @@
 }
 
 .dashboard-container.left{
-  margin-left: 10vw;
+  // margin-left: 10vw;
   max-width: 30vw;
   padding-right: 20px;
   display: flex;
@@ -38,12 +41,11 @@
 }
 .dashboard-container.right{
   width: 20vw;
-  margin-right: 10vw;
+  // margin-right: 10vw;
 }
 .dashboard-card-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  // grid-gap: 4vh;
 }
 
 
@@ -53,7 +55,6 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  // height: 180px;
   height: 24vh;
   display: flex;
   justify-content: center;
@@ -64,7 +65,8 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background: $light-white;
+  background-color: $color3;
+  border: solid $light-white 5px;
 }
 
 .card-category-container {
@@ -73,17 +75,18 @@
   grid-gap: 2vh;
 }
 
-.card {
+.discover-card {
+  border: solid $light-white 5px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 2vh;
-  height: 35vh;
+  height: 30vh;
   padding: 16px;
   display: flex;
   justify-content: space-between;
   position: relative;
   border-radius: 10px;
-  background: $light-white;
+  background: $color3;
 
   h2 {
     font-size: 30px;
@@ -120,6 +123,13 @@
 
 .icon-container {
   display: flex;
+
+  .dashboard-avatar {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+  }
 }
 
 .icon {
@@ -131,8 +141,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $color2;
-  color: white;
+  background: $color3;
+  border: solid $light-white 5px;
+
 }
 
 .social-media-icon {
@@ -143,17 +154,17 @@
   text-decoration: none;
 }
 
-#github {
+#github:hover {
   background-color: white;
   color: black;
 }
 
-#facebook {
+#facebook:hover {
   color: white;
   background-color: #1877F2;
 }
 
-#instagram {
+#instagram:hover {
   color: white;
   background: #f09433;
   background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -162,36 +173,52 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
-#github:hover {
+#github {
   color: white;
-  background: $color2;
+  background: $color3;
   list-style: none;
+  border: solid $light-white 5px;
 }
 
-#facebook:hover {
+#facebook {
   color: white;
-  background: $color2;
+  background: $color3;
   list-style: none;
+  border: solid $light-white 5px;
 }
 
-#instagram:hover {
+#instagram {
   color: white;
-  background: $color2;
+  background: $color3;
   list-style: none;
+  border: solid $light-white 5px;
 }
 
 .svg-inline--fa {
   margin: auto;
-  height: 20px;
+  height: 40px;
 }
 
-.dashboard-container.right i {
-  height: 40px;
-  width: 40px;
-  background-color: #fff;
-  border-radius: 50%;
+.dashboard-container.right {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s ease;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+  i {
+    height: 60px;
+    width: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+
+  p {
+    text-align: right;
+    padding: 0 0 0 10;
+    margin-bottom: 0;
+  }
 }

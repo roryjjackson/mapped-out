@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
   def index
     @chatrooms = policy_scope(Chatroom)
-
+    # @message = Message.new
     @user_data = {}
     @chatrooms.each do |chatroom|
       user1 = User.find(chatroom.user_id)
@@ -13,11 +13,11 @@ class ChatroomsController < ApplicationController
         messages: messages
       }
     end
-
   end
 
   def show
     @chatroom = Chatroom.find(params[:id])
+
 
     if current_user.id == @chatroom.user_id
       @user = User.where(id: @chatroom.user2_id).first

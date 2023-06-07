@@ -1,4 +1,4 @@
-<div class="chatroom-index">
+<div class="chatroom-show">
   <div class="container chatroom"
     data-controller="chatroom-subscription"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
@@ -15,7 +15,6 @@
       <% end %>
     </div>
   </div>
-
   <div class="message-form">
     <%= simple_form_for [@chatroom, @message],
       html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
