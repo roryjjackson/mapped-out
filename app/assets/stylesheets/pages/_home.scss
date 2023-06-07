@@ -60,18 +60,14 @@
 //landing
 
 .landing {
-  color: $black;
   height: 90vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10vh;
   width: 100%;
-  // background-image: url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg);
-  // background-size: cover;
-  // background-position: center;
-  // background-position-y: 30px;
-  // background-repeat: no-repeat;
+  max-width: 1250px;
+  margin: 0 auto;
 
   img {
     height: 450px;
@@ -94,7 +90,7 @@
       font-size: 6rem;
       font-weight: bold;
       margin-bottom: 40px;
-      color: $black;
+      // color: $black;
     }
 
     h2 {
@@ -127,28 +123,53 @@
 
 }
 
+//slogan
+
+.slogan {
+  height: 300px;
+  background-color: $color1;
+  border-top: solid $light-white 5px;
+  border-bottom: solid $light-white 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-size: 3.5rem;
+  }
+}
+
 //section one
 
 .section.one {
-  margin: 30px auto 100px;
-  max-width: 1250px;
+  margin: 30px auto 0 auto;
+  padding: 100px 0;
 
 
   .our-mission {
+    max-width: 1250px;
     text-align: center;
     width: 100%;
+
 
     .information {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 50px;
+
+      h2 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 50px;
+      }
+      p {
+        opacity: .7;
+        max-width: 450px;
+       }
 
       div {
         width: 500px;
-      }
-
-      p {
-        max-width: 450px;
       }
     }
 
@@ -159,40 +180,42 @@
       width: 100%;
 
       .card {
-        background-color: white;
+        background-color: $color3;
         width: 28vw;
+        border: solid $light-white 5px;
+        height: 400px;
+
+        img {
+          margin-bottom: 30px;
+        }
+
+        h3 {
+          color: $light-white;
+          font-size: 2.5rem;
+          font-weight: bold;
+        }
+
+        p {
+          color: $light-white;
+          font-size: 1rem;
+        }
       }
     }
   }
 
-  h3 {
-    color: $color2;
-  }
-
-  h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 50px;
-    color: $color2;
-  }
-  p {
-    opacity: .7;
-    color: $color2;
-   }
 }
 
 //section two
 
 .section.two {
   margin-bottom: 100px;
-  color: white;
   width: 100%;
   margin: 0 auto 100px auto;
 
 
   .mission-section {
-    border-top: $color2 5px solid;
-    border-bottom: $color2 5px solid;
+    border-top: $light-white 5px solid;
+    border-bottom: $light-white 5px solid;
     background-color: $color1;
     position: relative;
     height: 700px;
@@ -202,7 +225,7 @@
     color: $color2;
 
     img {
-      border-right: $color2 5px solid;
+      border-right: $light-white 5px solid;
       position: absolute;
       height: 100%;
       width: 50vw;
@@ -355,7 +378,6 @@ section.three {
   height: 70vh;
   width: 100%;
   max-width: 1250px;
-  margin: 0 auto 100px auto;
 }
 
 .member-image {
@@ -381,7 +403,7 @@ section.three {
 .member-content {
   z-index: -1;
   color: $color2;
-  background-color: $white;
+  background-color: $color3;
   position: absolute;
   top: 0;
   left: 0;
@@ -394,4 +416,26 @@ section.three {
   padding: 20px 12vw 20px 60px;
   border-radius: 10px;
   text-align: left;
+  border: solid $light-white 5px;
+
+  h3 {
+    margin-bottom: 20px;
+    font-weight: 100;
+  }
+
+  p {
+    font-weight: 100;
+    margin-top: 50px;
+  }
+
+   i {
+    font-size: 3rem;
+    margin-right: 20px;
+    color: $color2;
+   }
+
+   .become-a-member-button {
+    color: $color2;
+    background-color: $color1;
+   }
 }

@@ -84,33 +84,40 @@
   <span style="--i:28;"></span>
 </div> %>
 
-<div class="content">
+<%# <div class="content"> %>
 
   <div class="landing">
-    <div class="landing-content">
-      <h2>Discover alternate paths</h2>
-      <h1>Mapped Out</h1>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      <%= link_to "Get started", new_profile_path, class: "button" %>
-      <div class="logos">
-          <div>
-            <h3><strong>10'000 +</strong></h3>
-            <p>Users worldwide</p>
-          </div>
-          <div>
-            <h3><strong>4.9/5</strong></h3>
-            <p>in 3000+ reviews</p>
-          </div>
-          <div>
-            <h3><strong>#1</strong></h3>
-            <p>Top ranked globally</p>
-          </div>
+    <%# <div class="landing-container"> %>
+      <div class="landing-content">
+        <h2>Discover alternate paths</h2>
+        <h1>Mapped Out</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <%= link_to "Get started", new_profile_path, class: "button" %>
+        <div class="logos">
+            <div>
+              <h3><strong>10'000 +</strong></h3>
+              <p>Users worldwide</p>
+            </div>
+            <div>
+              <h3><strong>4.9/5</strong></h3>
+              <p>in 3000+ reviews</p>
+            </div>
+            <div>
+              <h3><strong>#1</strong></h3>
+              <p>Top ranked globally</p>
+            </div>
+        </div>
       </div>
-    </div>
-    <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg" alt="">
-    <%# <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685633294/worldandshoeredandwhite_geerl4.png" alt=""> %>
+      <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg" alt="">
+    <%# </div> %>
   </div>
-</div>
+
+  <div class="slogan">
+    <div>
+      <h2>"Some sort of slogan or something"</h2>
+      <p>- Someone said this ?</p>
+    </div>
+  </div>
 
 
 <div class="section one">
@@ -126,27 +133,21 @@
       <%= link_to new_profile_path do %>
         <div class="card">
           <h3>Think</h3>
-          <div class="">
-            <div class="connect-text"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685634376/light_bulb_moment_zpn95k.png" alt=""></div>
-          </div>
+          <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div>
           <p>Answer our questions instinctively, and let our algorithm present you with opportunities you may not have thought of.</p>
         </div>
       <% end %>
       <%= link_to profiles_path do %>
         <div class="card">
           <h3>Discover</h3>
-          <div class="">
-            <div class="connect-text"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685633294/worldandshoeredandwhite_geerl4.png" alt=""></div>
-          </div>
-          <p>Discover our portfolio of professionals willing to help, and become inspired by their journeys!</p>
+          <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685632379/worldandshoe_fqdkqm.png" alt=""></div>
+          <p>Discover our portfolio of professionals willing to help, and become inspired by their journeys! ANd a little more text.</p>
         </div>
       <% end %>
       <%= link_to dashboard_path do %>
         <div class="card">
           <h3>Connect</h3>
-          <div class="">
-            <div class="connect-text"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685688842/connected_vs3ymr.png" alt=""></div>
-          </div>
+            <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689099/connectedBW_o8qesf.png" alt=""></div>
           <p>Connect to established professials and begin making the right turns towards your potential new start!</p>
         </div>
       <% end %>
@@ -191,21 +192,21 @@
         <div class="how-it-works-container">
           <h3>01</h3>
           <div class="how-it-works-card">
-            <div class="connect-text">Test</div>
+            <div>Test</div>
           </div>
           <p>Answer our questions instinctively, and let our algorithm present you with opportunities you may not have thought of.</p>
         </div>
         <div class="how-it-works-container">
           <h3>02</h3>
           <div class="how-it-works-card">
-            <div class="connect-text">Discover</div>
+            <div>Discover</div>
           </div>
           <p>Discover our portfolio of professionals willing to help, and become inspired by their journeys!</p>
         </div>
         <div class="how-it-works-container">
           <h3>03</h3>
           <div class="how-it-works-card">
-            <div class="connect-text">Connect</div>
+            <div>Connect</div>
           </div>
           <p>Connect to established professials and begin making the right turns towards your potential new start!</p>
         </div>
@@ -221,9 +222,15 @@
     <div class="member-content">
       <div>
         <h3>Become a member of the community!</h3>
+        <div>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
         <p>Get started inspiring someone and sign up below</p>
         <div class="button-container">
-        <%= link_to "sign up", new_user_registration_path, class: "button" %>
+        <%= link_to "sign up", new_user_registration_path, class: "button become-a-member-button" %>
         </div>
       </div>
     </div>

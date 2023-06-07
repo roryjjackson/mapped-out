@@ -1,9 +1,10 @@
 .footer {
-  background: $light-white;
+  background: $color1;
+  border-top: solid $light-white 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 10vh;
+  height: 30vh;
   padding: 0px 50px;
   color: rgba(0, 0, 0, 0.56);
 }
