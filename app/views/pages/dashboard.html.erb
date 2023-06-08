@@ -40,15 +40,15 @@
         <% end %>
 
         <% if @questionnaire.present? %>
-          <%= link_to profile_questionnaire_path(@profile, @questionnaire) do %>
+          <%= link_to edit_profile_questionnaire_path(@profile, @questionnaire) do %>
             <div class="card-category">
-              Results
+              Re-take Quiz
             </div>
           <% end %>
         <% else %>
           <%= link_to new_profile_questionnaire_path(@profile) do %>
             <div class="card-category">
-              Take the quiz
+              Take The Quiz
             </div>
           <% end %>
         <% end %>
