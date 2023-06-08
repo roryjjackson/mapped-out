@@ -13,7 +13,6 @@ class ChatroomsController < ApplicationController
         messages: messages
       }
     end
-    @first_chatroom = @chatrooms.first
   end
 
   def show
