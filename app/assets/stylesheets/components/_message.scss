@@ -13,10 +13,14 @@
 }
 
 .sender-style {
+  border: solid $light-white 5px;
+  border-radius: 10px;
   background-color: $color1;
 }
 
 .receiver-style {
-  background-color: $color2;
+  background-color: $color3;
+  border: solid $light-white 5px;
+  border-radius: 10px;
   color: white;
 }
