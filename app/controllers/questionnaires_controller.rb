@@ -32,7 +32,7 @@ class QuestionnairesController < ApplicationController
     @most_similar = find_most_similar_questionnaires(@questionnaire)
     respond_to do |format|
       if @questionnaire.save
-        format.html { redirect_to profile_questionnaire_url(@profile, @questionnaire), notice: "Questionnaire was successfully created." }
+        format.html { redirect_to dashboard_path, notice: "Questionnaire was successfully created." }
         format.json { render :show, status: :created, location: @questionnaire }
       else
         format.html { render :new, status: :unprocessable_entity }
