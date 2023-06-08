@@ -44,7 +44,7 @@
 }
 
 
-.about-meet-the-owners-container {
+.about-meet-the-founders-container {
   position: relative;
   height: 70vh;
   width: 100%;
@@ -52,7 +52,7 @@
   margin: 0 auto 100px auto;
 }
 
-.about-owners-image {
+.about-founders-image {
   position: absolute;
   top: 5vh;
   left: 0;
@@ -67,12 +67,13 @@
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+    border: solid $light-white 5px;
     z-index: 2;
   }
 
 }
 
-.about-owners-content {
+.about-founders-content {
   z-index: -1;
   color: $color2;
   background-color: $color1;
@@ -91,13 +92,13 @@
 }
 
 
-.meet-owner-container {
+.meet-founder-container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 100px;
 
-  .meet-owner-card {
+  .meet-founder-card {
     max-width: 280px;
     text-align: center;
 
@@ -107,6 +108,7 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 20px;
+      border: solid $light-white 5px;
     }
 
     h2 {
