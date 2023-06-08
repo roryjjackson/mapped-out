@@ -65,7 +65,8 @@
 
 .profile-card {
   overflow: hidden;
-  background: $light-white;
+  background: $color1;
+  border: solid $light-white 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
 
@@ -86,6 +87,7 @@
 }
 
 .profile-card > img {
+  border-bottom: solid $light-white 2px;
   height: 150px;
   width: 100%;
   object-fit: cover;
@@ -121,6 +123,8 @@
   width: 50px;
   border-radius: 50%;
   object-fit: cover;
+  border: solid $light-white 2px;
+
 }
 
 
@@ -143,6 +147,8 @@
       background-size: cover;
       background-position: center;
       z-index: -1;
+      border-bottom: solid $light-white 5px;
+      border-left: solid $light-white 5px;
     }
 
     .profile-show-content {
@@ -175,18 +181,27 @@
 
   .profile-show-divider {
     padding: 30px ;
-    background-color: $light-white;
-    color: $color2;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    margin-bottom: 100px;
     text-align: center;
+
+    button {
+      margin: 0 auto;
+    }
   }
 
 
   .profile-show-card.what {
-    margin: 50px auto;
-    max-width: 1250px;
+    background-color: $color1;
+    color: $color2;
+    border-top: solid $light-white 5px;
+    border-bottom: solid $light-white 5px;
+    padding: 50px 0;
+
+    .what-content {
+      margin: 50px auto;
+      max-width: 1250px;
+
+    }
   }
 
   .profile-show-card-why {
@@ -219,6 +234,7 @@
     margin-bottom: 50px;
 
     .review-partial {
+      color: $color2;
       width: 35vw;
       margin-right: 50px;
     }
@@ -230,6 +246,22 @@
   }
 }
 
+// bad organization of css
+
+.member-image.socials {
+  background-color: $color1;
+  border-radius: 10px;
+  border: solid $light-white 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+
+  a {
+    font-size: 4rem;
+    margin: 20px;
+  }
+}
 
 
 // profile edit page
