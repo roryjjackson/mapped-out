@@ -91,7 +91,7 @@
       <div class="landing-content">
         <h2>Discover alternate paths</h2>
         <h1>Mapped Out</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p>We are making the world more accessible by connecting people together</p>
         <%= link_to "Get started", new_profile_path, class: "button" %>
         <div class="logos">
             <div>
@@ -113,9 +113,9 @@
   </div>
 
   <div class="slogan">
-    <div>
-      <h2>"Some sort of slogan or something"</h2>
-      <p>- Someone said this ?</p>
+    <div class="slogan-content">
+      <h2>The 9-5 is dying. The modern world has more to offer than you might think</h2>
+      <%# <p>Share your experiences or learn about others ventures</p> %>
     </div>
   </div>
 
@@ -125,30 +125,30 @@
     <div class="information">
       <div>
         <p>Our mission</p>
-        <h2 class="subheader">Open up to new ideas</h2>
+        <h2 class="subheader">To alert people to more opportunities earlier.</h2>
       </div>
-      <p>The eductaion systeem will never be able to let you explore all the toptions available to you, predominately because how could they? There is a million ways to go about your life, and with the climate of careers changing rapidly, why enclose yourself?</p>
+      <p>Traditional careers are a well trodden and documented path. But what about those who don't fit the mould of the modern Accountant, Doctor or Lawyer etc? We have found a collection of unique people willing to share their valuable experiences for the benefit of YOU!</p>
     </div>
     <div class="card-container">
       <%= link_to new_profile_path do %>
         <div class="card">
           <h3>Think</h3>
           <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div>
-          <p>Answer our questions instinctively, and let our algorithm present you with opportunities you may not have thought of.</p>
+          <p>Answer our questions instinctively, and let our algorithm find people who have found success</p>
         </div>
       <% end %>
       <%= link_to profiles_path do %>
         <div class="card">
           <h3>Discover</h3>
           <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685632379/worldandshoe_fqdkqm.png" alt=""></div>
-          <p>Discover our portfolio of professionals willing to help, and become inspired by their journeys! ANd a little more text.</p>
+          <p>Discover key snippets of information given from others and let your mind explore</p>
         </div>
       <% end %>
       <%= link_to dashboard_path do %>
         <div class="card">
           <h3>Connect</h3>
             <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689099/connectedBW_o8qesf.png" alt=""></div>
-          <p>Connect to established professials and begin making the right turns towards your potential new start! add a tad</p>
+          <p>Connect to your new mentor and gain specific advice and guidance from those happy to help!</p>
         </div>
       <% end %>
     </div>
@@ -161,9 +161,9 @@
       <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg" alt="">
       <div class="mission-container">
         <div class="mission-content-container">
-          <h2 class="subheader">About us</h2>
+          <h2 class="subheader">But why are we doing this?</h2>
           <h3>Who has ever heard the question "What do you want to be when you grow up?"</h3>
-          <p>Likelihood is you have, but its one of the trickiest things to answer for most of us. People now regularly have career changes throughout their lives, and what typically inspires that change?</p>
+          <p>Likelihood is you have, but its one of the trickiest things to answer for most of us. People now regularly have major changes throughout their lives, and what typically inspires that change?</p>
           <button class="button">Read more</button>
         </div>
       </div>
@@ -221,14 +221,14 @@
   <div class="become-a-member-container">
     <div class="member-content">
       <div>
-        <h3>Become a member of the community!</h3>
+        <h3>Are you in the priviledged position of being able to help others?</h3>
         <div>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
           <a href="#"><i class="fa-brands fa-twitter"></i></a>
           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </div>
-        <p>Get started inspiring someone and sign up below</p>
+        <p>Get started inspiring people and register with us below. No matter how advanced you aree in your field, you will undoubtedly have some knowledge to share!</p>
         <div class="button-container">
         <%= link_to "sign up", new_user_registration_path, class: "button become-a-member-button" %>
         </div>
