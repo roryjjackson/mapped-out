@@ -1,21 +1,22 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  static targets= ['profiles', 'mostSimilarProfiles', 'buttonagain']
+  static targets= ['profiles', 'mostSimilarProfiles', 'mostSimilarButton', 'allProfilesButton']
 
   connect() {
-    console.log("connected")
+    console.log("connected");
   }
 
-  trigger() {
-    console.log("trigger1")
-    this.profilesTarget.classList.toggle('hidden')
-    this.mostSimilarProfilesTarget.classList.toggle('not-hidden')
-    this.buttonagainTarget.classList.toggle('hidden')
-    // this.buttonTarget.classList.toggle('hidden')
+  triggerMostSimilar() {
+    console.log("trigger1");
+    this.profilesTarget.classList.add('hidden');
+    this.mostSimilarProfilesTarget.classList.add('not-hidden');
+
   }
 
-  triggeragain() {
-    console.log('triggeragain')
+  triggerAllProfiles() {
+    console.log("triggered all rpfles block")
+    this.profilesTarget.classList.remove('hidden');
+    this.mostSimilarProfilesTarget.classList.remove('not-hidden');
   }
 }

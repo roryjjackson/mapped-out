@@ -15,9 +15,14 @@
               <% end %>
             </div>
           </div>
-          <button class="button" data-most-similar-target="button" data-action="click->most-similar#trigger">
+
+          <button class="button most-similar-button" data-most-similar-target="most-similar-button" data-action="click->most-similar#triggerMostSimilar">
             Most similar
           </button>
+          <button class="button all-profiles-button" data-most-similar-target="all-profiles-button" data-action="click->most-similar#triggerAllProfiles">
+            All Profiles
+          </button>
+
         </div>
         <div class="profile-index-container">
           <div class="all-profiles" data-most-similar-target="profiles">
