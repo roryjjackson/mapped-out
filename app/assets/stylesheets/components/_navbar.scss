@@ -25,9 +25,24 @@
   flex-grow: 0;
 }
 
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-link {
   color: $color2;
   margin-right: 15px;
+}
+
+.nav-item p {
+  color: $color2;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 0;
 }
 
 .nav-link:hover {
