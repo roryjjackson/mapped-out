@@ -87,12 +87,13 @@
 <%# <div class="content"> %>
 
   <div class="landing">
-    <%# <div class="landing-container"> %>
       <div class="landing-content">
         <h2>Discover alternate paths</h2>
         <h1>Mapped Out</h1>
         <p>We are making the world more accessible by connecting people together</p>
-        <%= link_to "Get started", new_profile_path, class: "button" %>
+        <div class="get-started-button">
+          <%= link_to "Get started", new_profile_path, class: "button" %>
+        </div>
         <div class="logos">
             <div>
               <h3><strong>10'000 +</strong></h3>
@@ -109,13 +110,11 @@
         </div>
       </div>
       <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg" alt="">
-    <%# </div> %>
   </div>
 
   <div class="slogan">
     <div class="slogan-content">
       <h2>The 9-5 is dying. The modern world has more to offer than you might think</h2>
-      <%# <p>Share your experiences or learn about others ventures</p> %>
     </div>
   </div>
 
@@ -133,21 +132,21 @@
       <%= link_to new_profile_path do %>
         <div class="card">
           <h3>About you</h3>
-          <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div>
+          <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div>
           <p>Tell us a little about you, where you're at right now and if you're willing to share your skills with others as a mentor</p>
         </div>
       <% end %>
       <%= link_to profiles_path do %>
         <div class="card">
           <h3>Discover</h3>
-          <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685632379/worldandshoe_fqdkqm.png" alt=""></div>
+          <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685632379/worldandshoe_fqdkqm.png" alt=""></div>
           <p>Discover key snippets of information given from others and let your mind explore</p>
         </div>
       <% end %>
       <%= link_to dashboard_path do %>
         <div class="card">
           <h3>Connect</h3>
-            <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689099/connectedBW_o8qesf.png" alt=""></div>
+            <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689099/connectedBW_o8qesf.png" alt=""></div>
           <p>Connect to your new mentor and gain specific advice and guidance from those happy to help!</p>
         </div>
       <% end %>
