@@ -542,7 +542,7 @@
 
   p {
     font-weight: 100;
-    margin-top: 50px;
+    // margin-top: 50px;
   }
 
    i {
@@ -554,6 +554,7 @@
    .become-a-member-button {
     color: $color2;
     background-color: $color1;
+    margin: 20px 0;
    }
 }
 
@@ -594,7 +595,7 @@
     border-bottom: none;
 
      .become-a-member-button {
-      margin: 0 auto;
+      margin: 20px auto;
      }
   }
 }
