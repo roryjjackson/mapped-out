@@ -159,6 +159,14 @@
   }
 }
 
+@media only screen and (max-width: 700px) {
+ .landing {
+  h1 {
+    font-size: 2rem;
+  }
+ }
+}
+
 //logos
 
 .logos {
@@ -297,17 +305,23 @@
       .information {
         display: block;
         padding-bottom: 50px;
+        text-align: center;
+
+        p {
+          max-width: 100%;
+        }
+
+        div {
+          width: 100%;
+        }
 
         h2 {
           font-size: 2rem;
-          text-align: left;
+          max-width: 100%;
         }
       }
 
       .card-container {
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;/
         width: 100%;
 
         .card {
@@ -341,6 +355,19 @@
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .card-container {
+    display: grid !important;
+    grid-template-columns: 1fr;
+
+    .card {
+      width: 80% !important;
+      margin: 20px auto;
+      height: 300px !important;
     }
   }
 }
@@ -405,108 +432,54 @@
   }
 }
 
-// icon list
-
-.icon-train {
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-  // animation: trainAnimation 26s linear infinite;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.icon-train i {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-@keyframes trainAnimation {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-//section three
-
-section.three {
-  margin-bottom: 100px;
-
-  i {
-    font-size: 1.4rem;
-  }
-
-  p {
-    padding: 0;
-    margin: 0;
-  }
-
-  .how-it-works-titles {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    // max-width: 600px;
+@media only screen and (max-width: 1300px) {
+  .section.two {
+    margin-bottom: 100px;
     width: 100%;
-    // margin-bottom: 80px;
+    margin: 0 auto;
+    text-align: center;
 
-    p {
-      width: 500px;
-      font-size: .8rem;
+
+    .mission-section {
+      height: 500px;
+      width: 100vw;
+      display: block;
+
+      img {
+        display: none;
+      }
+
+      .mission-container {
+        height: 100%;
+        width: 100%;
+        border-left: $light-white 5px solid;
+
+        .mission-content-container {
+          padding: 0 5vw;
+          width: 100%;
+
+          h3 {
+            font-size: 1.5rem;
+            margin: 20px auto;
+          }
+          h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+          p {
+            font-size: .8rem;
+            margin: 20px auto;
+          }
+          .button {
+            margin: auto;
+          }
+        }
+      }
     }
   }
 }
 
-.subheader.how-it-works {
-  text-align: left;
-  margin-bottom: 30px;
-}
-
-.how-it-works-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.how-it-works-container {
-  width: 25vw;
-
-  h3 {
-    position: relative;
-    top: 65px;
-    left: 10px;
-    z-index: 3;
-    font-size: 3rem;
-    color: $color2;
-
-    // color: $white;
-  }
-}
-
-.how-it-works-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  // background: linear-gradient( 45deg, #0400ffc0, #ef00fcce);
-  background-color: $light-white;
-  color: $color2;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 15px;
-
-  .connect-text {
-    font-size: 2.5rem;
-  }
-}
 // section four
 
 .section.four {
@@ -582,4 +555,46 @@ section.three {
     color: $color2;
     background-color: $color1;
    }
+}
+
+@media only screen and (max-width: 1300px) {
+  .section.four {
+    text-align: center;
+    margin: 0;
+  }
+
+  .become-a-member-container {
+    height: 700px;
+    width: 100%;
+  }
+
+  .member-image {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 300px;
+
+
+    img {
+      border-radius: 0;
+      border-top: none;
+      border-bottom: none;
+    }
+
+  }
+
+  .member-content {
+    top: 300px;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    padding: 0 5vw;
+    border-radius: 0;
+    text-align: center;
+    border-bottom: none;
+
+     .become-a-member-button {
+      margin: 0 auto;
+     }
+  }
 }
