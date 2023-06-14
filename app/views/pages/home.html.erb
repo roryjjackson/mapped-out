@@ -87,12 +87,13 @@
 <%# <div class="content"> %>
 
   <div class="landing">
-    <%# <div class="landing-container"> %>
       <div class="landing-content">
         <h2>Discover alternate paths</h2>
         <h1>Mapped Out</h1>
         <p>We are making the world more accessible by connecting people together</p>
-        <%= link_to "Get started", new_profile_path, class: "button" %>
+        <div class="get-started-button">
+          <%= link_to "Get started", new_profile_path, class: "button" %>
+        </div>
         <div class="logos">
             <div>
               <h3><strong>10'000 +</strong></h3>
@@ -109,13 +110,12 @@
         </div>
       </div>
       <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg" alt="">
-    <%# </div> %>
   </div>
 
   <div class="slogan">
     <div class="slogan-content">
-      <h2>The 9-5 is dying. The modern world has more to offer than you might think</h2>
-      <%# <p>Share your experiences or learn about others ventures</p> %>
+      <h2>Ever been asked the question, "What do you wanna be" and have no idea how to answer?</h2>
+      <p>Probably. Thats why we're setting out to make it easier for more people to answer</p>
     </div>
   </div>
 
@@ -125,29 +125,29 @@
     <div class="information">
       <div>
         <p>Our mission</p>
-        <h2 class="subheader">To alert people to more opportunities earlier.</h2>
+        <h2 class="subheader">To give people like you more choice!</h2>
       </div>
-      <p>Traditional careers are a well trodden and documented path. But what about those who don't fit the mould of the modern Accountant, Doctor or Lawyer etc? We have found a collection of unique people willing to share their valuable experiences for the benefit of YOU!</p>
+      <p>Traditional careers are a well trodden and documented path. But what about those who don't fit the mould of the modern Accountant, Doctor or Lawyer etc? We have found a collection of unique people willing to share their valuable experiences for the benefit of YOU! Take the steps below...</p>
     </div>
     <div class="card-container">
       <%= link_to new_profile_path do %>
         <div class="card">
-          <h3>Think</h3>
-          <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div>
-          <p>Answer our questions instinctively, and let our algorithm find people who have found success</p>
+          <h3>About you</h3>
+          <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div>
+          <p>Tell us a little about you, where you're at right now and if you're willing to share your skills with others as a mentor</p>
         </div>
       <% end %>
       <%= link_to profiles_path do %>
         <div class="card">
           <h3>Discover</h3>
-          <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685632379/worldandshoe_fqdkqm.png" alt=""></div>
+          <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685632379/worldandshoe_fqdkqm.png" alt=""></div>
           <p>Discover key snippets of information given from others and let your mind explore</p>
         </div>
       <% end %>
       <%= link_to dashboard_path do %>
         <div class="card">
           <h3>Connect</h3>
-            <div><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689099/connectedBW_o8qesf.png" alt=""></div>
+            <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689099/connectedBW_o8qesf.png" alt=""></div>
           <p>Connect to your new mentor and gain specific advice and guidance from those happy to help!</p>
         </div>
       <% end %>
@@ -161,76 +161,30 @@
       <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg" alt="">
       <div class="mission-container">
         <div class="mission-content-container">
-          <h2 class="subheader">But why are we doing this?</h2>
-          <h3>Who has ever heard the question "What do you want to be when you grow up?"</h3>
-          <p>Likelihood is you have, but its one of the trickiest things to answer for most of us. People now regularly have major changes throughout their lives, and what typically inspires that change?</p>
+          <h2 class="subheader">About us</h2>
+          <h3>We have all been in the position when you leave education and get bombarded with questions about what to do next.</h3>
+          <p>How can we possibly know what we want to do without actually knowing what's out there waiting for us? Most people don't find something they enjoy doing until deep into their careers. We want to help change that.</p>
           <button class="button">Read more</button>
         </div>
       </div>
     </div>
 </div>
 
-<%# <div class="icon-train">
-  <i class="fa-solid fa-users"></i>
-  <i class="fa-solid fa-users"></i>
-  <i class="fa-solid fa-users"></i>
-</div> %>
-
-
-
-<%# <div class="content">
-  <div class="section three">
-    <div style="width: 100%;">
-      <div class="how-it-works-titles">
-        <div>
-          <p>How it works</p>
-          <h2 class="subheader how-it-works">Follow the steps below</h2>
-        </div>
-        <p>We have a tested process to help you discover what possibilities are out there without any outside pressures from schools/parents/your peers.We have a tested process to help you discover what possibilities are out there without any outside pressures from schools/parents/your peers</p>
-      </div>
-      <div class="how-it-works-section">
-        <div class="how-it-works-container">
-          <h3>01</h3>
-          <div class="how-it-works-card">
-            <div>Test</div>
-          </div>
-          <p>Answer our questions instinctively, and let our algorithm present you with opportunities you may not have thought of.</p>
-        </div>
-        <div class="how-it-works-container">
-          <h3>02</h3>
-          <div class="how-it-works-card">
-            <div>Discover</div>
-          </div>
-          <p>Discover our portfolio of professionals willing to help, and become inspired by their journeys!</p>
-        </div>
-        <div class="how-it-works-container">
-          <h3>03</h3>
-          <div class="how-it-works-card">
-            <div>Connect</div>
-          </div>
-          <p>Connect to established professials and begin making the right turns towards your potential new start!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> %>
-
-
-
 <div class="section four">
   <div class="become-a-member-container">
     <div class="member-content">
       <div>
         <h3>Are you in the priviledged position of being able to help others?</h3>
+        <p>Get started inspiring people and register with us below. No matter how advanced you aree in your field, you will undoubtedly have some knowledge to share!</p>
+        <div class="button-container">
+          <%= link_to "sign up", new_user_registration_path, class: "button become-a-member-button" %>
+        </div>
+        <h3>Follow us below</h3>
         <div>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
           <a href="#"><i class="fa-brands fa-twitter"></i></a>
           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-        <p>Get started inspiring people and register with us below. No matter how advanced you aree in your field, you will undoubtedly have some knowledge to share!</p>
-        <div class="button-container">
-        <%= link_to "sign up", new_user_registration_path, class: "button become-a-member-button" %>
         </div>
       </div>
     </div>

@@ -15,10 +15,14 @@
               <% end %>
             </div>
           </div>
-          <button class="button" data-most-similar-target="button" data-action="click->most-similar#trigger">
-            Most similar
+          <button class="button most-similar-button" data-most-similar-target="most-similar-button" data-action="click->most-similar#triggerMostSimilar">
+            For You
+          </button>
+          <button class="button all-profiles-button" data-most-similar-target="all-profiles-button" data-action="click->most-similar#triggerAllProfiles">
+            All Profiles
           </button>
         </div>
+
         <div class="profile-index-container">
           <div class="all-profiles" data-most-similar-target="profiles">
             <% @profiles.each do |profile| %>
@@ -31,24 +35,41 @@
 
         <div class="profile-index-container">
           <div class="most-similar-profiles" data-most-similar-target="mostSimilarProfiles">
-            <% @most_similar_profiles.each do |profile| %>
-              <%= link_to profile_path(profile) do %>
-                <%= render profile %>
+            <% if @most_similar_profiles.length < 1 %>
+
+              <div>
+                <p>You need to create a profile and complete our questionnaire to match with similar people</p>
+                <%= link_to new_profile_path  do %>
+                  <button class="button">
+                    Create Profile
+                  </button>
+                <% end %>
+              </div>
+
+            <% else %>
+
+              <% @most_similar_profiles.each do |profile| %>
+                <%= link_to profile_path(profile) do %>
+                  <%= render profile %>
+                <% end %>
               <% end %>
+
             <% end %>
           </div>
         </div>
       </div>
-      <div class="profile-index-sidebar">
-        <h2>Search our map</h2>
-        <div
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-          id="map">
+      <div>
+        <div class="profile-index-sidebar">
+          <h2>Search our map</h2>
+          <div
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+            id="map">
+          </div>
+          <h3>Some info here?</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
         </div>
-        <h3>Some info here?</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
       </div>
     </div>
   </div>

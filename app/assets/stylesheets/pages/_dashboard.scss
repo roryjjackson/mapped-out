@@ -1,6 +1,5 @@
 .dashboard {
   display: flex;
-  // min-height: 80vh;
   justify-content: space-between;
   max-width: 1250px;
   margin-top: 10vh;
@@ -24,7 +23,6 @@
 }
 
 .dashboard-container.left{
-  // margin-left: 10vw;
   max-width: 30vw;
   padding-right: 20px;
   display: flex;
@@ -220,5 +218,70 @@
     text-align: right;
     padding: 0 0 0 10;
     margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .dashboard {
+    display: block;
+    padding: 0 5vw;
+    text-align: center;
+  }
+
+  .profile-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .icon-container {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+
+
+  .card-category {
+    height: 30vh;
+  }
+
+  .discover-card {
+    height: 40vh;
+  }
+
+  .dashboard-container.left{
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-container.middle {
+    min-width: 100%;
+  }
+
+  .dashboard-container.right {
+    width: 100%;
+    margin-top: 50px;
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .dashboard-container.right div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .card-category {
+    height: 24vh;
+  }
+
+  .discover-card {
+    height: 35vh;
   }
 }

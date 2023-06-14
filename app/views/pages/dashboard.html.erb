@@ -3,7 +3,7 @@
   <div class='dashboard-container left'>
     <div>
       <h2 id='dashboard-title'>Welcome, <%= current_user.nickname %></h2>
-      <p>Take a look at your dashboard and all the features that are included</p>
+      <p>Manage everything all in one place</p>
     </div>
     <div class='icon-container'>
       <div class='icon'><%= cl_image_tag current_user.photo.key, class: "dashboard-avatar" %></div>
@@ -18,7 +18,6 @@
           <p>This is where it happens</p>
           <h2>Discover</h2>
         </div>
-        <%# <%= cl_image_tag current_user.photo.key, class: "card-user avatar-bordered"%>
       </div>
     <% end %>
     <div class='card-category-container'>
@@ -76,9 +75,7 @@
         <i class="fa-brands fa-instagram" id="instagram"></i>
       </a>
     </div>
-    <div>
-      <p>mappedout.com</p>
-    </div>
+    <p>mappedout.com logo</p>
   </div>
 
 </div>

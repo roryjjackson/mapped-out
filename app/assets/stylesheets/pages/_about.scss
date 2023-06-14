@@ -117,3 +117,130 @@
   }
 
 }
+
+@media only screen and (max-width: 1300px) {
+  .about-page {
+    padding: 0 5vw;
+  }
+
+  .about-titles {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  .about-list-container {
+    display: block;
+
+    .about-list-card {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+
+
+  .about-meet-the-founders-container {
+    position: relative;
+    height: calc(950px + 5vw);
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto 100px auto;
+  }
+
+  .about-founders-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      border: solid $light-white 5px;
+      z-index: 2;
+    }
+
+  }
+
+  .about-founders-content {
+    z-index: -1;
+    color: $color2;
+    background-color: $color1;
+    border: solid $light-white 5px;
+    position: absolute;
+    top: calc(400px + 5vw);
+    right: 0;
+    width: 100%;
+    height: 550px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px ) {
+  .about-meet-the-founders-container {
+    position: relative;
+    height: calc(1050px + 5vw);
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto 100px auto;
+  }
+
+  .about-founders-content {
+    z-index: -1;
+    color: $color2;
+    background-color: $color1;
+    border: solid $light-white 5px;
+    position: absolute;
+    top: calc(400px + 5vw);
+    right: 0;
+    width: 100%;
+    height: 650px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .meet-founder-container {
+    display: block;
+    margin-bottom: 100px;
+
+    .meet-founder-card {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 50px;
+
+      img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: solid $light-white 5px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+
+  }
+}

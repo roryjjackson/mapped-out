@@ -1,7 +1,6 @@
 .navbar {
   z-index: 3;
   justify-content: space-between;
-  background-color: transparent;
   backdrop-filter: blur(5px);
   background-color: $light-white;
   width: 100%;
@@ -61,9 +60,20 @@
 
 .dropdown-menu {
   border-radius: 5px;
-  background-color: $color2;
+  background-color: $color1;
+  border: solid $light-white 5px;
+}
 
-  .dropdown-item {
-    color: $light-white;
+.navbar-collapse.collapse.show {
+  border-radius: 5px;
+  background-color: $color1;
+  border: solid $light-white 5px;
+
+  .nav-item p {
+    display: none;
+  }
+
+  .nav-item.dropdown {
+    display: none;
   }
 }
