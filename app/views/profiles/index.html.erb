@@ -15,15 +15,14 @@
               <% end %>
             </div>
           </div>
-
           <button class="button most-similar-button" data-most-similar-target="most-similar-button" data-action="click->most-similar#triggerMostSimilar">
-            Most similar
+            For You
           </button>
           <button class="button all-profiles-button" data-most-similar-target="all-profiles-button" data-action="click->most-similar#triggerAllProfiles">
             All Profiles
           </button>
-
         </div>
+
         <div class="profile-index-container">
           <div class="all-profiles" data-most-similar-target="profiles">
             <% @profiles.each do |profile| %>
@@ -59,16 +58,18 @@
           </div>
         </div>
       </div>
-      <div class="profile-index-sidebar">
-        <h2>Search our map</h2>
-        <div
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-          id="map">
+      <div>
+        <div class="profile-index-sidebar">
+          <h2>Search our map</h2>
+          <div
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+            id="map">
+          </div>
+          <h3>Some info here?</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
         </div>
-        <h3>Some info here?</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
       </div>
     </div>
   </div>

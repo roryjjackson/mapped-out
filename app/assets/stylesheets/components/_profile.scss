@@ -10,6 +10,7 @@
   display: flex;
   justify-content: space-evenly;
   margin: 20px 0;
+  width: 500px;
 
   .searchbar {
     display: flex;
@@ -27,6 +28,11 @@
   padding-right: 30px;
 }
 
+.profile-index-container {
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
 .profile-index-sidebar {
   width: 28vw;
 }
@@ -35,15 +41,84 @@
   height: 40vh;
   width: 100%;
   margin-bottom: 30px;
-  position: sticky;
-  top: 10vh;
 }
 
 .all-profiles {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   flex-grow: 1;
+}
+
+@media only screen and (max-width: 1300px) {
+  .profiles-section {
+    padding: 0 5vw;
+  }
+  .all-profiles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .not-hidden {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    max-width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .all-profiles {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .not-hidden {
+    grid-template-columns: 1fr 1fr !important;
+    max-width: 100% !important;
+  }
+
+  .index-container {
+    display: block;
+  }
+
+  .profile-index-sidebar {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-index-container {
+    max-height: 60vh;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+  .all-profiles {
+    grid-template-columns: 1fr;
+  }
+
+  .not-hidden {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+  }
+
+  .index-of-profiles {
+    padding-right: 0;
+  }
+
+  .filter-bar {
+    width: 80vw;
+  }
+  .button.most-similar-button {
+    margin-left: 10px;
+    font-size: .5rem;
+  }
+
+  .button.all-profiles-button {
+    margin-left: 10px;
+    font-size: .5rem;
+  }
+
+  .profile-index-container {
+    max-height: 60vh;
+  }
 }
 
 .hidden {
@@ -64,10 +139,12 @@
 
 .button.most-similar-button {
   display: block;
+  height: 38px;
 }
 
 .button.all-profiles-button {
   display: block;
+  height: 38px;
 }
 
 .profile-card {
