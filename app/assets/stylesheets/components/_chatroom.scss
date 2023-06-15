@@ -1,20 +1,23 @@
 // whole page
 
 .chatroom-index {
-  // margin-top: 15vh;
   display: flex;
   justify-content: space-between;
-  // align-items: center;
-  // border: solid black 1px;
   max-width: 1250px;
   width: 100%;
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1300px) {
+  .chatroom-index {
+    padding: 0 5vw;
+  }
+}
+
 // chatroom list
 
 .chatroom-list-section {
-  width: 35%;
+  width: 45%;
   margin-top: 15vh;
 }
 
@@ -25,7 +28,7 @@
   border: solid $light-white 5px;
   border-radius: 10px;
   margin-bottom: 5px;
-  background-color: $color3;
+  background-color: $light-white;
   color: $color2;
   padding: 10px;
 
@@ -42,7 +45,8 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 20px;
-    width: 300px;
+    overflow: hidden;
+    // width: 300px;
 
     p {
       opacity: .7;
@@ -84,14 +88,11 @@
 
 .chatroom-selected-section {
   width: 70%;
-  margin-left: 20px;
-  // border: solid $light-white 5px;
-  // border-radius: 10px;
+  margin-right: 20px;
   min-height: 60vh;
   display: flex;
   align-items: end;
   justify-content: center;
-  // background-color: $light-white;
 }
 
 .simple_form {
@@ -99,7 +100,7 @@
 }
 
 .messages-container {
-  max-height: 60vh; /* Adjust the maximum height as needed */
+  max-height: 60vh;
   overflow-y: auto;
 
 }
@@ -145,4 +146,28 @@
   height: 90vh;
   margin-top: 10vh;
 
+}
+
+
+@media only screen and (max-width: 800px) {
+  .chatroom-index {
+    display: block;
+  }
+
+  .chatroom-list-section {
+    width: 105%;
+    margin-top: 0;
+    padding-right: 5vw;
+    margin-bottom: 50px;
+  }
+
+  .chatroom-selected-section {
+    width: 100%;
+    margin-left: 0px;
+    min-height: 30vh;
+  }
+
+  .chatroom-show {
+    margin: 15vh 0 30px 0;
+  }
 }
