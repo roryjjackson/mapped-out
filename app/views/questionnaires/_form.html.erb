@@ -5,20 +5,47 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
+    <br/>
+    <br/>
     <div class="questionnaire-form-input">
-      <%= f.input :q1, as: :range, label: "Are you a home bird or would you like to fly the nest?", in: 1..5 %>
+      <h3>Are you a home bird or would you like to fly the nest?</h3>
+      <div class="questionnaire-form-label">
+        <p>Home bird</p>
+        <p>Fly the nest</p>
+      </div>
+      <%= f.input :q1, label: false, as: :range, in: 1..5 %>
     </div>
     <div class="questionnaire-form-input">
-      <%= f.input :q2, as: :range, label: "Do you like routine or would you like to be subject to constant change?", in: 1..5 %>
+      <h3>Do you like routine or would you like to be subject to constant change?</h3>
+      <div class="questionnaire-form-label">
+        <p>Routine</p>
+        <p>Change</p>
+      </div>
+        <%= f.input :q2, as: :range, label: false, in: 1..5 %>
     </div>
     <div class="questionnaire-form-input">
-      <%= f.input :q3, as: :range, label: "Would you like to have your own set place to sit and work or would you like to be constantly on the move?", in: 1..5 %>
+      <h3>Would you like to have your own set place to sit and work or would you like to be constantly on the move?</h3>
+      <div class="questionnaire-form-label">
+        <p>Set position</p>
+        <p>On the move</p>
+      </div>
+        <%= f.input :q3, as: :range, label: false, in: 1..5 %>
     </div>
     <div class="questionnaire-form-input">
-      <%= f.input :q4, as: :range, label: "Would you say you are an introvert or an extrovert?", in: 1..5 %>
+      <h3>Would you say you are an introvert or an extrovert?</h3>
+      <div class="questionnaire-form-label">
+        <p>Intovert</p>
+        <p>Extrovert</p>
+      </div>
+        <%= f.input :q4, as: :range, label: false, in: 1..5 %>
     </div>
     <div class="questionnaire-form-input">
-      <%= f.input :q5, as: :range, label: "Do you think you're more a 'live to work' or 'work to live' kinda person?", in: 1..5 %>
+      <h3>Do you think you're more a 'live to work' or 'work to live' kinda person?</h3>
+      <div class="questionnaire-form-label">
+        <p>Live to work</p>
+        <p>Work to live</p>
+      </div>
+        <%= f.input :q5, as: :range, label: false, in: 1..5 %>
     </div>
   </div>
 
