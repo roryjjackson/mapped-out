@@ -6,6 +6,11 @@ class ReviewsController < ApplicationController
 
   end
 
+  # def index
+  #   @reviews = Review.find(current_user.id)
+  #   raise
+  # end
+
   def create
     @profile = Profile.find(params[:profile_id])
     @review = Review.new(review_params)

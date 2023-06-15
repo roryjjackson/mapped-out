@@ -34,6 +34,8 @@
         </div>
 
         <div class="profile-index-container">
+
+          <h5 data-most-similar-target="mostSimilarTag">These people are most similar to you</h5>
           <div class="most-similar-profiles" data-most-similar-target="mostSimilarProfiles">
             <% if @most_similar_profiles.length < 1 %>
 
@@ -47,7 +49,6 @@
               </div>
 
             <% else %>
-
               <% @most_similar_profiles.each do |profile| %>
                 <%= link_to profile_path(profile) do %>
                   <%= render profile %>
