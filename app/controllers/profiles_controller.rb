@@ -35,20 +35,19 @@ class ProfilesController < ApplicationController
       user = User.find(profile.user_id)
       questionnaire = Questionnaire.where(user_id: current_user.id).first
       total_rating = total_rating(profile)
-      if questionnaire.present?
+
+      if questionnaire.present? && profile.user_id == current_user.id
         most_similar = find_most_similar_questionnaires(questionnaire)
+        profile_ids = most_similar.map { |element| element[1].profile_id }
+        profile_ids.map { |profileid| @most_similar_profiles.push(Profile.find(profileid)) }
       end
       @profile_data[profile.id] = {
         user: user,
         total_rating: total_rating,
         questionnaire: questionnaire,
-        most_similar: most_similar
+        most_similar: most_similar  # this has an array of the most similar profiles, most similar first
       }
-      @most_similar_profiles << profile if most_similar.present?
-      @most_similar_profiles = @most_similar_profiles.take(2) if @most_similar_profiles.size > 2
-
     end
-
   end
 
   def show
@@ -113,7 +112,7 @@ class ProfilesController < ApplicationController
     @reviews = Review.where(profile_id: profile.id)
     sum_of_reviews = @reviews.sum(:rating).to_f
     total_reviews = @reviews.length.to_f
-    @total_rating = total_reviews > 0 ? sum_of_reviews / @reviews.length : 0
+    @total_rating = total_reviews > 0 ? sum_of_reviews / @reviews.length : "No reviews"
   end
 
   private

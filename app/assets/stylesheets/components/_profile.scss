@@ -33,6 +33,10 @@
   max-height: 80vh;
 }
 
+.profile-index-container h5 {
+  display: none;
+}
+
 .profile-index-sidebar {
   width: 28vw;
 }
@@ -346,6 +350,60 @@
     margin: 20px;
   }
 }
+
+@media only screen and (max-width: 1300px) {
+  .profile-show .profile-show-title {
+    height: 400px;
+  }
+
+  .profile-show-title .background-image {
+    height: 400px;
+    width: 100vw;
+    border-bottom: none;
+    border-top: solid $light-white 5px;
+  }
+
+  .profile-show-content-data {
+    top: 400px;
+    left: 0;
+  }
+  .profile-show-content-data {
+    padding-left: 5vw;
+  }
+
+  .what-content {
+    padding: 0 5vw;
+  }
+
+  .become-a-member-container.show-member-container {
+    height: 900px;
+  }
+
+  .member-content.show-member-content {
+    height: 600px;
+    border-bottom: solid $light-white 5px ;
+  }
+
+  .member-image.show-member-image {
+    height: 300px;
+  }
+
+  .profile-show .profile-show-divider {
+    margin-bottom: 0;
+  }
+
+  .member-image.socials {
+    background-color: $color2;
+    border-radius: 0 !important;
+    border: none;
+  }
+
+  .form-label {
+    color: $light-white;
+  }
+}
+
+
 
 
 // profile edit page

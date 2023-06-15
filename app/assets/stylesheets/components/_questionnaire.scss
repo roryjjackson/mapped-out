@@ -30,8 +30,8 @@
 // edit page
 
 .questionnaire-edit-section {
-  height: 90vh;
-  margin: 20vh auto auto auto;
+  min-height: 90vh;
+  margin: 20vh auto 10vh auto;
   max-width: 1250px;
 
   .button {
@@ -44,8 +44,8 @@
 //new page
 
 .questionnaire-new-section {
-  height: 90vh;
-  margin: 20vh auto auto auto;
+  min-height: 90vh;
+  margin: 20vh auto 10vh auto;
   max-width: 1250px;
 }
 
@@ -53,4 +53,11 @@
 
 .questionnaire-form-input {
   margin-bottom: 50px;
+}
+
+.questionnaire-form-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }

@@ -9,4 +9,6 @@ class Profile < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  validates :what, :why, :how, :advice, length: { minimum: 300 }
 end

@@ -34,12 +34,14 @@
         </div>
 
         <div class="profile-index-container">
+
+          <h5 data-most-similar-target="mostSimilarTag">These people are most similar to you</h5>
           <div class="most-similar-profiles" data-most-similar-target="mostSimilarProfiles">
             <% if @most_similar_profiles.length < 1 %>
 
               <div>
                 <p>You need to create a profile and complete our questionnaire to match with similar people</p>
-                <%= link_to new_profile_path  do %>
+                <%= link_to new_profile_questionnaire_path(@profile)  do %>
                   <button class="button">
                     Create Profile
                   </button>
@@ -47,7 +49,6 @@
               </div>
 
             <% else %>
-
               <% @most_similar_profiles.each do |profile| %>
                 <%= link_to profile_path(profile) do %>
                   <%= render profile %>
@@ -67,8 +68,8 @@
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
             id="map">
           </div>
-          <h3>Some info here?</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+          <h3>Not found anything valuable?</h3>
+          <p>Get in touch with us to use our route planning algorithm and start building for your future. On here are just snippets of key information.</p>
         </div>
       </div>
     </div>

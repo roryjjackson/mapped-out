@@ -8,17 +8,12 @@ class PagesController < ApplicationController
     @questionnaire = Questionnaire.where(user_id: current_user.id).first
 
     @profile = Profile.where(user_id: current_user.id).first
-
-
-    # @data = {}
-    # @questionnaires.each do |questionnaire|
-    #   user = User.find(questionnaire.user_id)
-    #   total_score = questionnaire.total_score
-    #   @questionnaire_data[questionnaire.id] = {
-    #     user: user,
-    #     total_score: total_score
-    #   }
-    # end
+    if @profile.present?
+      @reviews = Review.where(profile_id: @profile.id)
+      sum_of_reviews = @reviews.sum(:rating).to_f
+      total_reviews = @reviews.length.to_f
+      @total_rating = total_reviews > 0 ? sum_of_reviews / @reviews.length : "No reviews"
+    end
   end
 
   def about

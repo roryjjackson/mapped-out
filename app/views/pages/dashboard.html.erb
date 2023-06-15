@@ -7,7 +7,7 @@
     </div>
     <div class='icon-container'>
       <div class='icon'><%= cl_image_tag current_user.photo.key, class: "dashboard-avatar" %></div>
-      <div class='icon'>5*</div>
+      <div class='icon'><%= @total_rating %> ⭐️</div>
     </div>
   </div>
 
@@ -15,8 +15,8 @@
     <%= link_to profiles_path do %>
       <div class="discover-card">
         <div class='card-content'>
-          <p>This is where it happens</p>
           <h2>Discover</h2>
+          <p>Browse some snippets of information from our mentors!</p>
         </div>
       </div>
     <% end %>
