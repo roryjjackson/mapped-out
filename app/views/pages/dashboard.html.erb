@@ -39,7 +39,7 @@
         <% end %>
 
         <% if @questionnaire.present? %>
-          <%= link_to edit_profile_questionnaire_path(@profile, @questionnaire) do %>
+          <%= link_to edit_questionnaire_path(@questionnaire) do %>
             <div class="card-category">
               Re-take Quiz
             </div>
@@ -56,7 +56,7 @@
 
         <%= link_to new_profile_path do %>
           <div class="card-category">
-            Share your experiences!
+            Become a mentor
           </div>
         <% end %>
       <% end %>

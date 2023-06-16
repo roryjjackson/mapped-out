@@ -130,25 +130,37 @@
       <p>Traditional careers are a well trodden and documented path. But what about those who don't fit the mould of the modern Accountant, Doctor or Lawyer etc? We have found a collection of unique people willing to share their valuable experiences for the benefit of YOU! Take the steps below...</p>
     </div>
     <div class="card-container">
-      <%= link_to new_profile_path do %>
-        <div class="card">
-          <h3>About you</h3>
-          <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div>
-          <p>Tell us a little about you, where you're at right now and if you're willing to share your skills with others as a mentor</p>
-        </div>
+
+      <% if Questionnaire.where(user_id: current_user.id).exists? %>
+        <%= link_to edit_questionnaire_path(@questionnaire) do %>
+          <div class="card">
+            <h3>About you</h3>
+            <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div>
+            <p>Tell us a little bit about you! We have devised a set of questions to help us identify possible paths you could take</p>
+          </div>
+        <% end %>
+      <% else %>
+         <%= link_to new_questionnaire_path do %>
+          <div class="card">
+            <h3>About you</h3>
+            <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div>
+            <p>Tell us a little bit about you! We have devised a set of questions to help us identify possible paths you could take</p>
+          </div>
+        <% end %>
       <% end %>
+
       <%= link_to profiles_path do %>
         <div class="card">
           <h3>Discover</h3>
           <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685632379/worldandshoe_fqdkqm.png" alt=""></div>
-          <p>Discover key snippets of information given from others and let your mind explore</p>
+          <p>Browse our community of mentors willing to help and share their experiences! Use our basic algorithm to help you streamline your search</p>
         </div>
       <% end %>
       <%= link_to dashboard_path do %>
         <div class="card">
           <h3>Connect</h3>
-            <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689099/connectedBW_o8qesf.png" alt=""></div>
-          <p>Connect to your new mentor and gain specific advice and guidance from those happy to help!</p>
+          <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689099/connectedBW_o8qesf.png" alt=""></div>
+          <p>Connect to your new mentor and gain specific advice and guidance, or apply for our deeper testing process to help you accelerate your decision making process!</p>
         </div>
       <% end %>
     </div>

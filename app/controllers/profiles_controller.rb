@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
         lng: profile.longitude,
         info_window_html: render_to_string(partial:
           "info_window", locals: {profile: profile}),
-        image_url: helpers.asset_url("https://res.cloudinary.com/dfipoufmj/image/upload/v1685634376/light_bulb_moment_zpn95k.png")
+        image_url: helpers.asset_url("https://res.cloudinary.com/dfipoufmj/image/upload/v1686909469/vecteezy_location-pointer-pin-icon_22061508_434_k3xxnl.png")
       }
     end
 
@@ -38,8 +38,8 @@ class ProfilesController < ApplicationController
 
       if questionnaire.present? && profile.user_id == current_user.id
         most_similar = find_most_similar_questionnaires(questionnaire)
-        profile_ids = most_similar.map { |element| element[1].profile_id }
-        profile_ids.map { |profileid| @most_similar_profiles.push(Profile.find(profileid)) }
+        user_ids = most_similar.map { |element| element[1].user_id }
+        user_ids.map { |userid| @most_similar_profiles.push(Profile.where(user_id: userid).first) }
       end
       @profile_data[profile.id] = {
         user: user,
@@ -112,7 +112,7 @@ class ProfilesController < ApplicationController
     @reviews = Review.where(profile_id: profile.id)
     sum_of_reviews = @reviews.sum(:rating).to_f
     total_reviews = @reviews.length.to_f
-    @total_rating = total_reviews > 0 ? sum_of_reviews / @reviews.length : "No reviews"
+    @total_rating = total_reviews > 0 ? sum_of_reviews / @reviews.length : 0
   end
 
   private
