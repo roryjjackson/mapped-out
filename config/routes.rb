@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard'
   get 'about', to: 'pages#about'
+  get 'admin', to: 'pages#admin'
+  get 'choose_path', to: 'pages#choose_path'
 end
