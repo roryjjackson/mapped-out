@@ -93,7 +93,7 @@
         <p>We are making the world more accessible by connecting people together</p>
         <div class="get-started-button">
         <% if Questionnaire.where(user_id: current_user.id).exists? %>
-          <%= link_to "Get started", edit_questionnaire_path, class: "button" %>
+          <%= link_to "Get started", edit_questionnaire_path(@questionnaire), class: "button" %>
         <% else %>
           <%= link_to "Get started", new_questionnaire_path, class: "button" %>
         <% end %>
