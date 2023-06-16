@@ -1,6 +1,5 @@
 class QuestionnairesController < ApplicationController
   before_action :set_questionnaire, only: %i[show edit update destroy]
-  before_action :set_profile, only: %i[show new create update edit]
 
   def total_score
     @questionnaire = Questionnaire.find(params[:id])
@@ -27,7 +26,6 @@ class QuestionnairesController < ApplicationController
   def create
     @questionnaire = Questionnaire.new(questionnaire_params)
     @questionnaire.user = current_user
-    @questionnaire.profile_id = @profile.id
     authorize @questionnaire
     @most_similar = find_most_similar_questionnaires(@questionnaire)
     respond_to do |format|
@@ -78,17 +76,12 @@ class QuestionnairesController < ApplicationController
     scores.first(1)
   end
 
-
-  def set_profile
-    @profile = Profile.find(params[:profile_id])
-  end
-
   def set_questionnaire
     @questionnaire = Questionnaire.find(params[:id])
   end
 
   def questionnaire_params
-    params.require(:questionnaire).permit(:q1, :q2, :q3, :q4, :q5, :profile_id)
+    params.require(:questionnaire).permit(:q1, :q2, :q3, :q4, :q5)
   end
 
   def euclidean_distance(a, b)
