@@ -226,9 +226,14 @@
         justify-content: space-between;
         align-items: center;
 
-        img {
-          margin-bottom: 30px;
+        .card-image {
+          font-size: 5rem;
+          color: $light-white;
         }
+
+        // img {
+        //   margin-bottom: 30px;
+        // }
 
         h3 {
           margin-top: 20px;

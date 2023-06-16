@@ -31,6 +31,14 @@
   color: #D23333;
 }
 
+.footer-logo {
+  height: 8vh;
+
+  img {
+    height: 100%;
+  }
+}
+
 @media only screen and (max-width: 1300px) {
   .footer-container {
     padding: 0 5vw;
