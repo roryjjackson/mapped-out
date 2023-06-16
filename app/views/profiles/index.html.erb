@@ -40,8 +40,8 @@
             <% if @most_similar_profiles.length < 1 %>
 
               <div>
-                <p>You need to create a profile and complete our questionnaire to match with similar people</p>
-                <%= link_to new_profile_questionnaire_path(@profile)  do %>
+                <p>You need to complete our questionnaire to use our algorithm</p>
+                <%= link_to new_questionnaire_path  do %>
                   <button class="button">
                     Create Profile
                   </button>
@@ -74,5 +74,4 @@
       </div>
     </div>
   </div>
-
 </div>
