@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  # skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    # if current_user.exists?
+
     @questionnaire = Questionnaire.where(user_id: current_user.id).first
   end
 
@@ -18,5 +20,9 @@ class PagesController < ApplicationController
   end
 
   def about
+  end
+
+  def choose_path
+
   end
 end

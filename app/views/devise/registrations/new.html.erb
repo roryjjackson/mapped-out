@@ -13,6 +13,11 @@
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email" }%>
+            <%= f.input :mentor,
+                        as: :boolean,
+                        required: true,
+                        autofocus: true,
+                        label: "Please check the box if you are a mentor" %>
             <%= f.input :nickname,
                         required: true,
                         autofocus: true,

@@ -7,11 +7,12 @@ class ProfilePolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    # true
+    user.mentor?
   end
 
   def create?
-    true
+    user.mentor?
   end
 
   def destroy?
@@ -20,7 +21,9 @@ class ProfilePolicy < ApplicationPolicy
 
   def update?
     # record.user == user
-    true
+    user.mentor?
+
+    # true
   end
 
   def total_score
