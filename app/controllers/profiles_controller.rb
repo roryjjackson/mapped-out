@@ -38,8 +38,8 @@ class ProfilesController < ApplicationController
 
       if questionnaire.present? && profile.user_id == current_user.id
         most_similar = find_most_similar_questionnaires(questionnaire)
-        profile_ids = most_similar.map { |element| element[1].profile_id }
-        profile_ids.map { |profileid| @most_similar_profiles.push(Profile.find(profileid)) }
+        user_ids = most_similar.map { |element| element[1].user_id }
+        user_ids.map { |userid| @most_similar_profiles.push(Profile.where(user_id: userid).first) }
       end
       @profile_data[profile.id] = {
         user: user,

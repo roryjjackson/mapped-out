@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :questionnaires
   resources :profiles do
-    resources :questionnaires
     resources :reviews, only: %i[new create]
   end
   devise_for :users
