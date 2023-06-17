@@ -10,7 +10,7 @@
 }
 
 //landing
-@media only screen and (min-width: 1301px) {
+// @media only screen and (min-width: 1301px) {
 
 .landing {
   height: 90vh;
@@ -52,7 +52,7 @@
       opacity: .8;
     }
 
-    p {
+    #landing-text-line {
       // margin-top: 50px;
       opacity: .5;
       max-width: 400px;
@@ -66,10 +66,11 @@
   justify-content: center;
   align-items: center;
 }
-}
+// }
 
 @media only screen and (min-width: 1px) and (max-width: 1300px) {
   .landing {
+    height: 70vh;
     padding: 15vh 3vw 0 3vw;
     display: block;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg);
@@ -79,13 +80,17 @@
     img {
       display: none;
     }
+
+    #landing-text-line {
+      max-width: 100% !important;
+    }
   }
 
   .landing-content {
     max-width: 1250px;
-    width: 100%;
+    width: 100% !important;
     margin: auto;
-    text-align: center;
+    text-align: center !important;
 
     h1, h2 {
       margin-bottom: 10px;
@@ -129,14 +134,23 @@
 .logos {
   margin-top: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  max-width: 80%;
+  max-width: 100%;
+
+  div {
+    height: 100%;
+    // width: ;
+  }
+
+  p {
+    max-width: 80%;
+  }
 }
 
 @media only screen and (max-width: 1300px) {
   .logos {
-    max-width: 70%;
+    max-width: 80%;
     padding-bottom: 30px;
     margin: 0 auto;
   }
