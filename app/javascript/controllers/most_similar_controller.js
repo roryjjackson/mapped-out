@@ -1,7 +1,7 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  static targets= ['profiles', 'mostSimilarProfiles', 'mostSimilarButton', 'allProfilesButton', 'mostSimilarTag']
+  static targets = ['profiles', 'mostSimilarProfiles', 'mostSimilarButton', 'allProfilesButton', 'mostSimilarTag']
 
   connect() {
     console.log("connected");

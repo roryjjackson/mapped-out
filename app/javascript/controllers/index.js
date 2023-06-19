@@ -25,8 +25,8 @@ application.register("map", MapController)
 import MostSimilarController from "./most_similar_controller"
 application.register("most-similar", MostSimilarController)
 
-import NavbarScrollController from "./navbar_scroll_controller"
-application.register("navbar-scroll", NavbarScrollController)
+import NavbarDropdownController from "./navbar_dropdown_controller"
+application.register("navbar-dropdown", NavbarDropdownController)
 
 import StarRatingController from "./star_rating_controller"
 application.register("star-rating", StarRatingController)
