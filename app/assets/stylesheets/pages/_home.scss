@@ -123,8 +123,10 @@
 
 @media only screen and (max-width: 700px) {
  .landing {
+  height: 65vh;
+
   h1 {
-    font-size: 3rem;
+    font-size: 3rem !important;
   }
  }
 }
@@ -150,9 +152,33 @@
 
 @media only screen and (max-width: 1300px) {
   .logos {
-    max-width: 80%;
+    max-width: 100%;
     padding-bottom: 30px;
     margin: 0 auto;
+  }
+
+  .logos h3 {
+    font-size: 1.5rem;
+  }
+  .logos p {
+    padding: 10px;
+    font-size: 1rem;
+    margin: 0 0 0 0;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .logos {
+    max-width: 100%;
+  }
+  .logos h3 {
+    font-size: 1rem;
+  }
+  .logos p {
+    font-size: .7rem;
+    margin: 0 0 0 0;
+    max-width: 100%;
   }
 }
 
@@ -181,6 +207,8 @@
   .slogan {
     padding: 30px 5vw;
     height: auto;
+    border-left: $light-white 5px solid;
+    border-right: $light-white 5px solid;
 
 
     h2 {
@@ -430,6 +458,7 @@
         height: 100%;
         width: 100%;
         border-left: $light-white 5px solid;
+        border-right: $light-white 5px solid;
 
         .mission-content-container {
           padding: 0 5vw;
@@ -574,5 +603,15 @@
      .become-a-member-button {
       margin: 20px auto;
      }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .become-a-member-container {
+    height: 800px;
+  }
+
+  .member-content {
+    height: 500px;
   }
 }
