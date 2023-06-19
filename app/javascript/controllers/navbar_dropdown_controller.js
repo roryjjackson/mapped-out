@@ -1,7 +1,7 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  static targets = ['navbar', 'navbarBars', 'navbarCollapse']
+  static targets = ['navbar', 'navbarMenu', 'navbarCollapse', 'navbarContent']
 
   connect() {
     console.log("connected to navbar_dropdown");
@@ -9,7 +9,8 @@ export default class extends Controller {
 
   openDropdown() {
     console.log("connected to open dropdown");
-    this.navbarBarsTarget.innerHTML = 'close';
-    this.navbarTarget.classList.toggle('navbar-collapse-open');
+
+    this.navbarContentTarget.style.display = 'block'
+    this.navbarTarget.classList.toggle('open-dropdown');
   }
 }
