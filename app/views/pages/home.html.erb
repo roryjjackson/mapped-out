@@ -1,114 +1,19 @@
-<%# <%= link_to "index of profiles", profiles_path %>
-<%# <%= link_to "complete questionnaire", new_questionnaire_path %>
-<%# <%= link_to "chatrooms index", chatrooms_path %>
-
-<%# <div class="bubbles">
-  <span style="--i:11;"></span>
-  <span style="--i:12;"></span>
-  <span style="--i:24;"></span>
-  <span style="--i:10;"></span>
-  <span style="--i:14;"></span>
-  <span style="--i:23;"></span>
-  <span style="--i:18;"></span>
-  <span style="--i:16;"></span>
-  <span style="--i:19;"></span>
-  <span style="--i:20;"></span>
-  <span style="--i:22;"></span>
-  <span style="--i:25;"></span>
-  <span style="--i:18;"></span>
-  <span style="--i:21;"></span>
-  <span style="--i:15;"></span>
-  <span style="--i:13;"></span>
-  <span style="--i:26;"></span>
-  <span style="--i:17;"></span>
-  <span style="--i:13;"></span>
-  <span style="--i:28;"></span>
-  <span style="--i:11;"></span>
-  <span style="--i:12;"></span>
-  <span style="--i:24;"></span>
-  <span style="--i:10;"></span>
-  <span style="--i:14;"></span>
-  <span style="--i:23;"></span>
-  <span style="--i:18;"></span>
-  <span style="--i:16;"></span>
-  <span style="--i:19;"></span>
-  <span style="--i:20;"></span>
-  <span style="--i:22;"></span>
-  <span style="--i:25;"></span>
-  <span style="--i:18;"></span>
-  <span style="--i:21;"></span>
-  <span style="--i:15;"></span>
-  <span style="--i:13;"></span>
-  <span style="--i:26;"></span>
-  <span style="--i:17;"></span>
-  <span style="--i:13;"></span>
-  <span style="--i:28;"></span>
-  <span style="--i:12;"></span>
-  <span style="--i:24;"></span>
-  <span style="--i:10;"></span>
-  <span style="--i:14;"></span>
-  <span style="--i:23;"></span>
-  <span style="--i:18;"></span>
-  <span style="--i:16;"></span>
-  <span style="--i:19;"></span>
-  <span style="--i:20;"></span>
-  <span style="--i:22;"></span>
-  <span style="--i:25;"></span>
-  <span style="--i:18;"></span>
-  <span style="--i:21;"></span>
-  <span style="--i:15;"></span>
-  <span style="--i:13;"></span>
-  <span style="--i:26;"></span>
-  <span style="--i:17;"></span>
-  <span style="--i:13;"></span>
-  <span style="--i:28;"></span>
-  <span style="--i:11;"></span>
-  <span style="--i:12;"></span>
-  <span style="--i:24;"></span>
-  <span style="--i:10;"></span>
-  <span style="--i:14;"></span>
-  <span style="--i:23;"></span>
-  <span style="--i:18;"></span>
-  <span style="--i:16;"></span>
-  <span style="--i:19;"></span>
-  <span style="--i:20;"></span>
-  <span style="--i:22;"></span>
-  <span style="--i:25;"></span>
-  <span style="--i:18;"></span>
-  <span style="--i:21;"></span>
-  <span style="--i:15;"></span>
-  <span style="--i:13;"></span>
-  <span style="--i:26;"></span>
-  <span style="--i:17;"></span>
-  <span style="--i:13;"></span>
-  <span style="--i:28;"></span>
-</div> %>
-
-<%# <div class="content"> %>
-
   <div class="landing">
       <div class="landing-content">
-        <h2>Discover alternate paths</h2>
-        <h1>Mapped Out</h1>
-        <p id="landing-text-line">We are making the world more accessible by connecting people together</p>
-        <% if user_signed_in? %>
+        <h1>Userdriven platform, <span class="highlighted-word">discover alternate paths</span></h1>
+        <p id="landing-text-line">By bringin the expertise of people around the world in one place, better explore your options with a more comprehensive understanding</p>
 
-          <div class="get-started-button">
-          <% if Questionnaire.where(user_id: current_user.id).exists? %>
-            <%= link_to "Get started", edit_questionnaire_path(@questionnaire), class: "button" %>
-          <% else %>
-            <%= link_to "Get started", new_questionnaire_path, class: "button" %>
-          <% end %>
-          </div>
+        <div class="landing-buttons">
+          <button class="button fill">
+            <%= link_to "Become a mentor" %>
+          </button>
+          <button class="button border">
+            <%= link_to "Get started" %>
+          </button>
+        </div>
 
-        <% else %>
-
-          <div class="get-started-button">
-            <%= link_to "Log In", new_user_session_path, class: "button" %>
-          </div>
-
-        <% end %>
-        <div class="logos">
+      </div>
+        <%# <div class="logos">
             <div>
               <h3><strong>12</strong></h3>
               <p>Average times a person will change jobs </p>
@@ -121,9 +26,23 @@
               <h3><strong>1 in every 2</strong></h3>
               <p>work in a field unrelated to their degree</p>
             </div>
+        </div> %>
+      <div class="landing-data-grid">
+        <div class="landing-data-box left">
+          <h3><strong>12</strong></h3>
+          <p>Average times a person will change jobs </p>
+        </div>
+        <div class="landing-data-box-right">
+          <div class="landing-data-box">
+            <h3><strong>39%</strong></h3>
+            <p>of students are over the age of 25</p>
+          </div>
+          <div class="landing-data-box">
+            <h3><strong>1 in every 2</strong></h3>
+            <p>work in a field unrelated to their degree</p>
+          </div>
         </div>
       </div>
-      <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg" alt="">
   </div>
 
   <div class="slogan">

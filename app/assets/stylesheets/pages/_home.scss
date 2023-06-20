@@ -22,12 +22,12 @@
   max-width: 1250px;
   margin: 0 auto;
 
-  img {
-    height: 450px;
-    width: 50%;
-    object-fit: cover;
-    border: solid $light-white 5px;
-    border-radius: 10px;
+  .landing-buttons {
+    display: flex;
+
+    .button {
+      margin-right: 30px;
+    }
   }
 
   .landing-content {
@@ -36,27 +36,46 @@
     margin: auto;
     text-align: left;
 
-    h1, h2 {
-      margin-bottom: 10px;
-      z-index: 3;
-    }
-
     h1 {
-      font-size: 6rem;
+      font-size: 64px;
       font-weight: bold;
       margin-bottom: 40px;
-      // color: $black;
     }
 
-    h2 {
+    p {
       opacity: .8;
+      margin-bottom: 40px;
     }
 
     #landing-text-line {
-      // margin-top: 50px;
       opacity: .5;
       max-width: 400px;
     }
+  }
+
+  .landing-data-grid {
+    height: 55%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .landing-data-box {
+    background-color: $color7;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .landing-data-box-right {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .landing-data-box.left {
+    margin-top: 30px;
   }
 }
 
@@ -73,9 +92,9 @@
     height: 70vh;
     padding: 15vh 3vw 0 3vw;
     display: block;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg);
-    background-size: cover;
-    background-position: center;
+    // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1685692964/pexels-fauxels-3228812_nmt9yn.jpg);
+    // background-size: cover;
+    // background-position: center;
 
     img {
       display: none;
