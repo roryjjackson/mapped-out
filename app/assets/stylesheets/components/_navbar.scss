@@ -1,13 +1,12 @@
 .navbar {
   height: 10vh;
   width: 100%;
-  background-color: $light-white;
+  background-color: transparent;
   z-index: 3;
   position: fixed;
   top: 0;
   justify-content: center;
-  color: black;
-  backdrop-filter: blur(10px);
+  color: $color7;
 }
 
 .navbar-fluid {
@@ -78,7 +77,7 @@
   }
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 50px) {
   .button.navbar-menu {
     display: block;
   }
