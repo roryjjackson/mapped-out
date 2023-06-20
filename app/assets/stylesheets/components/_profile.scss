@@ -234,8 +234,6 @@
       background-size: cover;
       background-position: center;
       z-index: -1;
-      border-bottom: solid $light-white 5px;
-      border-left: solid $light-white 5px;
     }
 
     .profile-show-content {
@@ -260,147 +258,50 @@
 
     .message-button-container {
       height: 30px;
-
-      a {
-        color: $light-white;
-      }
-    }
-
-  .profile-show-divider {
-    padding: 30px ;
-    margin-bottom: 100px;
-    text-align: center;
-
-    button {
-      margin: 0 auto;
     }
   }
 
-
-  .profile-show-card.what {
-    background-color: $color1;
-    color: $color2;
-    border-top: solid $light-white 5px;
-    border-bottom: solid $light-white 5px;
-    padding: 50px 0;
-
-    .what-content {
-      margin: 50px auto;
-      max-width: 1250px;
-
-    }
-  }
-
-  .profile-show-card-why {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px ;
-    align-items: center;
-
-    .profile-show-card-why-container {
-      max-width: 1250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 400px;
-    }
-
-    img {
-      width: 40vw;
-      height: 100%;
-      object-fit: cover;
-      margin-right: 50px;
-    }
-  }
-
-  .profile-show-card.socials {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
-
-    .review-partial {
-      color: $color2;
-      width: 35vw;
-      margin-right: 50px;
-    }
-
-    a {
-      font-size: 50px;
-      margin-right: 20px;
-    }
-  }
+.profile-show-information {
+  max-width: 1250px;
+  margin: auto;
 }
 
-// bad organization of css
-
-.member-image.socials {
-  background-color: $color1;
+.profile-show-card {
+  background-color: $color7;
   border-radius: 10px;
-  border: solid $light-white 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-
-  a {
-    font-size: 4rem;
-    margin: 20px;
-  }
+  margin-bottom: 10px;
+  padding: 20px;
+  color: black;
 }
 
-@media only screen and (max-width: 1300px) {
-  .profile-show .profile-show-title {
-    height: 400px;
-  }
+// @media only screen and (max-width: 1300px) {
+//   .profile-show .profile-show-title {
+//     height: 400px;
+//   }
 
-  .profile-show-title .background-image {
-    height: 400px;
-    width: 100vw;
-    border-bottom: none;
-    border-top: solid $light-white 5px;
-  }
+//   .profile-show-title .background-image {
+//     height: 400px;
+//     width: 100vw;
+//   }
 
-  .profile-show-content-data {
-    top: 400px;
-    left: 0;
-  }
-  .profile-show-content-data {
-    padding-left: 5vw;
-  }
+//   .profile-show-content-data {
+//     top: 400px;
+//     left: 0;
+//   }
+//   .profile-show-content-data {
+//     padding-left: 5vw;
+//   }
 
-  .what-content {
-    padding: 0 5vw;
-  }
+//   .what-content {
+//     padding: 0 5vw;
+//   }
 
-  .become-a-member-container.show-member-container {
-    height: 900px;
-  }
 
-  .member-content.show-member-content {
-    height: 600px;
-    border-bottom: solid $light-white 5px ;
-  }
 
-  .member-image.show-member-image {
-    height: 300px;
-  }
-
-  .profile-show .profile-show-divider {
-    margin-bottom: 0;
-  }
-
-  .member-image.socials {
-    background-color: $color2;
-    border-radius: 0 !important;
-    border: none;
-  }
-
-  .form-label {
-    color: $light-white;
-  }
-}
+//   .form-label {
+//     color: $light-white;
+//   }
+// }
 
 
 
