@@ -7,8 +7,7 @@ class ProfilePolicy < ApplicationPolicy
   end
 
   def show?
-    # true
-    user.mentor?
+    true
   end
 
   def create?
