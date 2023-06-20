@@ -49,7 +49,7 @@
 
 .all-profiles {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   flex-grow: 1;
 }
@@ -153,8 +153,7 @@
 
 .profile-card {
   overflow: hidden;
-  background: $color1;
-  border: solid $light-white 5px;
+  background: $color7;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
 
@@ -163,7 +162,7 @@
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.2rem ;
     margin-bottom: 0;
   }
 
