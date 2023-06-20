@@ -11,6 +11,7 @@
   padding: 6px 12px;
   height: auto;
   max-width: 150px !important;
+  color: black;
 
   a {
     color: black;
@@ -26,6 +27,8 @@
 .button.border {
   border: solid 1px $color7;
   background-color: transparent;
+  color: $color7;
+
   a {
     color: $color7;
   }
