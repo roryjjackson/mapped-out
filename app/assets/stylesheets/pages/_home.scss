@@ -86,7 +86,6 @@
 
   .our-mission {
     max-width: 1250px;
-    // text-align: center;
     width: 100%;
     margin: auto;
 
@@ -132,7 +131,6 @@
     .card-image {
       background-color: $color7;
       color: $color5;
-      // padding: 20px;
       border-radius: 10px;
 
       img {
@@ -153,12 +151,10 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      // width: 100%;
 
       .card {
         display: flex;
         flex-direction: initial;
-        // width: 50%;
       }
 
     }
@@ -191,134 +187,31 @@
 .section-two-right {
   border-left: solid black 1px;
   padding: 20px 0 0 40px;
-  // width: 30%;
+}
+
+li.stage::marker {
+  font-size: 5rem;
 }
 
 .stage {
-  padding-bottom: 100px;
-  // display: flex;
+  padding-bottom: 70px;
 
   p {
     margin: 0;
   }
 
   i {
-    font-size: 3rem;
+    background-color: black;
+    color: $color7;
+    height: 80px;
+    width: 80px;
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 35px;
     margin-bottom: 20px;
-  }
-}
-
-
-
-
-
-
-//section three
-
-.section.three {
-  margin-bottom: 100px;
-  width: 100%;
-  margin: 0 auto 100px auto;
-
-
-  .mission-section {
-    border-top: $light-white 5px solid;
-    border-bottom: $light-white 5px solid;
-    background-color: $color1;
-    position: relative;
-    height: 700px;
-    width: 100vw;
     display: flex;
-    justify-content: space-between;
-    color: $color2;
-
-    img {
-      border-right: $light-white 5px solid;
-      position: absolute;
-      height: 100%;
-      width: 50vw;
-      object-fit: cover;
-      top: 0;
-      left: 0;
-    }
-
-    .mission-container {
-      height: 100%;
-      width: 50%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      margin: auto;
-
-      .mission-content-container {
-        padding-left: 50px;
-
-        h3, p {
-          max-width: 500px;
-          margin-bottom: 20px;
-        }
-        h2 {
-          font-size: 3rem;
-          text-align: left;
-          margin-bottom: 30px;
-        }
-        .button {
-          margin: 0;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1300px) {
-  .section.three {
-    margin-bottom: 100px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-
-
-    .mission-section {
-      height: 500px;
-      width: 100vw;
-      display: block;
-
-      img {
-        display: none;
-      }
-
-      .mission-container {
-        height: 100%;
-        width: 100%;
-        border-left: $light-white 5px solid;
-        border-right: $light-white 5px solid;
-
-        .mission-content-container {
-          padding: 0 5vw;
-          width: 100%;
-
-          h3 {
-            font-size: 1.5rem;
-            margin: 20px auto;
-          }
-          h2 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 30px;
-          }
-          p {
-            font-size: .8rem;
-            margin: 20px auto;
-          }
-          .button {
-            margin: auto;
-          }
-        }
-      }
-    }
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -358,7 +251,6 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  // padding: 20px 12vw 20px 60px;
   border-radius: 10px;
   text-align: left;
 
@@ -381,7 +273,6 @@
 
   p {
     font-weight: 100;
-    // margin-top: 50px;
   }
 
    i {
@@ -390,9 +281,4 @@
     color: $color2;
    }
 
-  //  .become-a-member-button {
-  //   color: $color2;
-  //   background-color: $color1;
-  //   margin: 20px 0;
-  //  }
 }
