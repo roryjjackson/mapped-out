@@ -3,7 +3,7 @@
   <div class='dashboard-container left'>
     <div>
       <h2 id='dashboard-title'>Welcome, <%= current_user.nickname %></h2>
-      <p>Manage everything all in one place</p>
+      <p>Navigate round our app from here. All our features are easy to access.</p>
     </div>
     <div class='icon-container'>
       <div class='icon'><%= cl_image_tag current_user.photo.key, class: "dashboard-avatar" %></div>
@@ -15,7 +15,7 @@
     <%= link_to profiles_path do %>
       <div class="discover-card">
         <div class='card-content'>
-          <h2>Discover</h2>
+          <h3>Discover</h3>
           <p>Browse some snippets of information from our mentors!</p>
         </div>
       </div>
@@ -34,7 +34,7 @@
 
         <%= link_to edit_profile_path(@profile) do %>
           <div class="card-category">
-            Profile
+            Mentor Profile
           </div>
         <% end %>
 
@@ -64,7 +64,7 @@
   </div>
 
   <div class='dashboard-container right'>
-    <div>
+    <%# <div>
       <a class="social-media-icon" href="https://github.com/roryjjackson" target="_blank" rel="noreferrer">
         <i class="fa-brands fa-github" id="github"></i>
       </a>
@@ -74,8 +74,9 @@
       <a class="social-media-icon" href="https://www.instagram.com/jackson_rory_/" target="_blank" rel="noreferrer">
         <i class="fa-brands fa-instagram" id="instagram"></i>
       </a>
-    </div>
-    <p>mappedout.com logo</p>
+    </div> %>
+    <h3>MappedOut.</h3>
+    <p>If you have any suggestions on new features, please do let us know!</p>
   </div>
 
 </div>

@@ -4,7 +4,7 @@
   max-width: 1250px;
   margin-top: 10vh;
   padding-bottom: 10vh;
-  padding-top: 10vh;
+  // padding-top: 10vh;
   margin: 100px auto;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .dashboard-container.left{
-  max-width: 30vw;
+  max-width: 25vw;
   padding-right: 20px;
   display: flex;
   flex-direction: column;
@@ -31,6 +31,7 @@
 
   #dashboard-title {
     font-size: 3rem;
+    color: $color6;
   }
 
 }
@@ -57,14 +58,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $color2;
+  color: black;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-color: $color3;
-  border: solid $light-white 5px;
+  background-color: $color6;
 }
 
 .card-category-container {
@@ -74,7 +74,6 @@
 }
 
 .discover-card {
-  border: solid $light-white 5px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 2vh;
@@ -84,20 +83,20 @@
   justify-content: space-between;
   position: relative;
   border-radius: 10px;
-  background: $color3;
+  background-color: $color6;
 
-  h2 {
-    font-size: 30px;
+  h3 {
+    // font-size: 30px;
     font-weight: bold;
     margin: 0;
-    color: $color2;
+    color: black;
   }
 
   p {
     font-size: 12px;
     opacity: .7;
     margin: 0;
-    color: $color2;
+    color: black;
   }
 }
 
@@ -127,7 +126,6 @@
     height: 100px;
     width: 100px;
     object-fit: cover;
-    border: solid $light-white 5px;
   }
 }
 
@@ -140,63 +138,62 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $color3;
-  border: solid $light-white 5px;
-
-}
-
-.social-media-icon {
-  color: black;
-  display: flex;
-  justify-content: right;
-  margin-bottom: 50px;
-  text-decoration: none;
-}
-
-#github:hover {
-  background-color: white;
+  background: $color6;
   color: black;
 }
 
-#facebook:hover {
-  color: white;
-  background-color: #1877F2;
-}
+// .social-media-icon {
+//   color: black;
+//   display: flex;
+//   justify-content: right;
+//   margin-bottom: 50px;
+//   text-decoration: none;
+// }
 
-#instagram:hover {
-  color: white;
-  background: #f09433;
-  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-}
+// #github:hover {
+//   background-color: white;
+//   color: black;
+// }
 
-#github {
-  color: white;
-  background: $color3;
-  list-style: none;
-  border: solid $light-white 5px;
-}
+// #facebook:hover {
+//   color: white;
+//   background-color: #1877F2;
+// }
 
-#facebook {
-  color: white;
-  background: $color3;
-  list-style: none;
-  border: solid $light-white 5px;
-}
+// #instagram:hover {
+//   color: white;
+//   background: #f09433;
+//   background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+//   background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+//   background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+// }
 
-#instagram {
-  color: white;
-  background: $color3;
-  list-style: none;
-  border: solid $light-white 5px;
-}
+// #github {
+//   color: white;
+//   background: $color3;
+//   list-style: none;
+//   border: solid $light-white 5px;
+// }
 
-.svg-inline--fa {
-  margin: auto;
-  height: 40px;
-}
+// #facebook {
+//   color: white;
+//   background: $color3;
+//   list-style: none;
+//   border: solid $light-white 5px;
+// }
+
+// #instagram {
+//   color: white;
+//   background: $color3;
+//   list-style: none;
+//   border: solid $light-white 5px;
+// }
+
+// .svg-inline--fa {
+//   margin: auto;
+//   height: 40px;
+// }
 
 .dashboard-container.right {
   display: flex;
@@ -215,7 +212,7 @@
     transition: all 0.5s ease;
   }
 
-  p {
+  h3, p {
     text-align: right;
     padding: 0 0 0 10;
     margin-bottom: 0;
@@ -264,7 +261,7 @@
     margin-top: 50px;
 
     p {
-      text-align: center;
+      text-align: right;
     }
   }
 

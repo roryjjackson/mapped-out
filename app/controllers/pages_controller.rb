@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home about]
 
   def home
-    @questionnaire = Questionnaire.where(user_id: current_user.id).first
+    # @questionnaire = Questionnaire.where(user_id: current_user.id).first
   end
 
   def dashboard

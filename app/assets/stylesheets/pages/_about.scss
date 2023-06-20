@@ -8,40 +8,41 @@
 
   h2 {
     opacity: 1;
-    font-size: 1.2rem;
+    // font-size: 2rem;
     font-weight: 100;
   }
 
   h1 {
-    font-size: 2.2rem;
+    font-size: 4rem;
     font-weight: bold;
+    color: $color6;
   }
 
-  p {
-    font-size: 1;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+  // p {
+  //   font-size: 1;
+  //   max-width: 600px;
+  //   margin: 0 auto;
+  // }
 }
 
-.about-list-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1250px;
-  margin: 0 auto 100px auto;
+// .about-list-container {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   max-width: 1250px;
+//   margin: 0 auto 100px auto;
 
-  .about-list-card {
-    max-width: 250px;
-  }
+//   .about-list-card {
+//     max-width: 250px;
+//   }
 
-  i {
-    font-size: 3rem;
-    text-align: left;
-    color: $color3;
-    margin-bottom: 10px;
-  }
-}
+//   i {
+//     font-size: 3rem;
+//     text-align: left;
+//     color: $color3;
+//     margin-bottom: 10px;
+//   }
+// }
 
 
 .about-meet-the-founders-container {
@@ -67,7 +68,6 @@
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
-    border: solid $light-white 5px;
     z-index: 2;
   }
 
@@ -75,9 +75,8 @@
 
 .about-founders-content {
   z-index: -1;
-  color: $color2;
-  background-color: $color1;
-  border: solid $light-white 5px;
+  color: black;
+  background-color: $color7;
   position: absolute;
   top: 0;
   right: 0;
@@ -99,7 +98,7 @@
   margin-bottom: 100px;
 
   .meet-founder-card {
-    max-width: 280px;
+    max-width: 380px;
     text-align: center;
 
     img {
@@ -108,7 +107,6 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 20px;
-      border: solid $light-white 5px;
     }
 
     h2 {
@@ -160,7 +158,6 @@
       width: 100%;
       object-fit: cover;
       border-radius: 10px;
-      border: solid $light-white 5px;
       z-index: 2;
     }
 
@@ -168,9 +165,6 @@
 
   .about-founders-content {
     z-index: -1;
-    color: $color2;
-    background-color: $color1;
-    border: solid $light-white 5px;
     position: absolute;
     top: calc(400px + 5vw);
     right: 0;
@@ -203,9 +197,6 @@
 
   .about-founders-content {
     z-index: -1;
-    color: $color2;
-    background-color: $color1;
-    border: solid $light-white 5px;
     position: absolute;
     top: calc(400px + 5vw);
     right: 0;
@@ -234,7 +225,6 @@
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 20px;
-        border: solid $light-white 5px;
       }
 
       h2 {
