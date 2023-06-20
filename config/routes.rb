@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'admin', to: 'pages#admin'
   get 'choose_path', to: 'pages#choose_path'
+  get 'contact', to: 'pages#contact'
 end

@@ -1,9 +1,7 @@
 class PagesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: %i[home about]
 
   def home
-    # if current_user.exists?
-
     @questionnaire = Questionnaire.where(user_id: current_user.id).first
   end
 
@@ -23,6 +21,8 @@ class PagesController < ApplicationController
   end
 
   def choose_path
+  end
 
+  def contact
   end
 end

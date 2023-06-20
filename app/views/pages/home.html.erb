@@ -91,13 +91,23 @@
         <h2>Discover alternate paths</h2>
         <h1>Mapped Out</h1>
         <p id="landing-text-line">We are making the world more accessible by connecting people together</p>
-        <div class="get-started-button">
-        <% if Questionnaire.where(user_id: current_user.id).exists? %>
-          <%= link_to "Get started", edit_questionnaire_path(@questionnaire), class: "button" %>
+        <% if user_signed_in? %>
+
+          <div class="get-started-button">
+          <% if Questionnaire.where(user_id: current_user.id).exists? %>
+            <%= link_to "Get started", edit_questionnaire_path(@questionnaire), class: "button" %>
+          <% else %>
+            <%= link_to "Get started", new_questionnaire_path, class: "button" %>
+          <% end %>
+          </div>
+
         <% else %>
-          <%= link_to "Get started", new_questionnaire_path, class: "button" %>
+
+          <div class="get-started-button">
+            <%= link_to "Log In", new_user_session_path, class: "button" %>
+          </div>
+
         <% end %>
-        </div>
         <div class="logos">
             <div>
               <h3><strong>12</strong></h3>
@@ -133,29 +143,39 @@
       </div>
       <p>Traditional careers are a well trodden and documented path. But what about those who don't fit the mould of the modern Accountant, Doctor or Lawyer etc? We have found a collection of unique people willing to share their valuable experiences for the benefit of YOU! Take the steps below...</p>
     </div>
+
     <div class="card-container">
 
-      <% if Questionnaire.where(user_id: current_user.id).exists? %>
-        <%= link_to edit_questionnaire_path(@questionnaire) do %>
-          <div class="card">
-            <h3>About you</h3>
-            <div class="card-image"><i class="fa-regular fa-lightbulb"></i></div>
+      <% if user_signed_in? %>
 
-            <%# <i class="fa-regular fa-lightbulb"></i> %>
-            <%# <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div> %>
-            <p>Tell us a little bit about you! We have devised a set of questions to help us identify possible paths you could take</p>
-          </div>
+        <% if Questionnaire.where(user_id: current_user.id).exists? %>
+          <%= link_to edit_questionnaire_path(@questionnaire) do %>
+            <div class="card">
+              <h3>About you</h3>
+              <div class="card-image"><i class="fa-regular fa-lightbulb"></i></div>
+              <p>Tell us a little bit about you! We have devised a set of questions to help us identify possible paths you could take</p>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to new_questionnaire_path do %>
+            <div class="card">
+              <h3>About you</h3>
+              <div class="card-image"><i class="fa-regular fa-lightbulb"></i></div>
+              <p>Tell us a little bit about you! We have devised a set of questions to help us identify possible paths you could take</p>
+            </div>
+          <% end %>
         <% end %>
+
       <% else %>
-         <%= link_to new_questionnaire_path do %>
+
+        <%= link_to "Log In", new_user_session_path, class: "button" do %>
           <div class="card">
             <h3>About you</h3>
-            <%# <i class="fa-regular fa-lightbulb"></i> %>
-            <%# <div class="card-image"><img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685689100/light_bulb_momentBW_tpapxa.png" alt=""></div> %>
             <div class="card-image"><i class="fa-regular fa-lightbulb"></i></div>
             <p>Tell us a little bit about you! We have devised a set of questions to help us identify possible paths you could take</p>
           </div>
         <% end %>
+
       <% end %>
 
       <%= link_to profiles_path do %>
