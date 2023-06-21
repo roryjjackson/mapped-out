@@ -285,6 +285,38 @@
   }
 }
 
+@media (max-width: 1300px) {
+  .profile-show {
+    padding: 0 5vw;
+
+    .background-image {
+      width: 90vw;
+      padding-right: 0;
+      opacity: .6;
+      top: 0;
+      left: 0;
+      height: 350px;
+      border-radius: 10px;
+    }
+    // .profile-show-content {
+    //   margin-bottom: 50px;
+    // }
+  }
+
+  .profile-show .profile-show-title {
+    height: 350px;
+    width: auto;
+    text-align: center;
+    margin-bottom: 5vw;
+
+    .button {
+      display: flex;
+      margin: auto;
+    }
+  }
+
+}
+
 
 
 
