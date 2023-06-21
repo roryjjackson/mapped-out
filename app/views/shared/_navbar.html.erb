@@ -47,7 +47,10 @@
         </div>
       </div>
       <div class="navbar-content" data-navbar-dropdown-target="navbarContent">
-        <%= link_to "Log In", new_user_session_path, class: "button" %>
+        <div class="devise-nav-btn">
+          <%= link_to "Log In", new_user_session_path, class: "button" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "button border" %>
+        </div>
       </div>
     <% end %>
   </div>

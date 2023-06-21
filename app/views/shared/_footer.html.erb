@@ -15,10 +15,19 @@
       <div class="footer-pages">
         <h3>Pages</h3>
         <div>
-          <h6>Home</h6>
-          <h6>About</h6>
-          <h6>Blog</h6>
-          <h6>Contact</h6>
+          <%= link_to root_path do %>
+            <h6>Home</h6>
+          <% end %>
+          <%= link_to about_path do %>
+            <h6>About</h6>
+          <% end %>
+          <%= link_to root_path do %>
+            <h6>Blog</h6>
+          <% end %>
+          <%= link_to new_enquiry_path do %>
+            <h6>Contact</h6>
+          <% end %>
+
         </div>
       </div>
       <div class="footer-details">
@@ -30,8 +39,14 @@
       <div class="footer-access">
         <h3>Access</h3>
         <div>
-          <h6>Login</h6>
-          <h6>Signup</h6>
+          <%= link_to new_user_session_path do %>
+            <h6>Login</h6>
+          <% end %>
+
+          <%= link_to new_user_registration_path do %>
+            <h6>Signup</h6>
+          <% end %>
+
         </div>
       </div>
     </div>

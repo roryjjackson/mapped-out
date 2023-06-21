@@ -1,10 +1,10 @@
 .form-login {
-  background: $color1;
-  border: solid $light-white 5px;
-  color: $color2;
+  background: $color5-dark;
+  border: solid $color7 1px;
+  color: $color7;
   width: 50%;
   max-width: 500px;
-  padding: 10px 20px;
+  padding: 20px;
   margin-top: 35px;
   border-radius: 10px;
 
@@ -28,11 +28,8 @@
 }
 
 .form-container {
+  min-height: 100vh;
   border-radius: 10px;
-
-  height: 80vh;
-  // margin: 10vh auto;
-  margin-top: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;

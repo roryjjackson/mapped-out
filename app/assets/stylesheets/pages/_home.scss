@@ -30,6 +30,7 @@
 
 
   .landing-data-grid {
+    width: 50%;
     height: 55%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -37,8 +38,9 @@
   }
 
   .landing-data-box {
-    background-color: $color7;
-    color: black;
+    background-color: $color5-dark;
+    border: solid $color7 1px;
+    color: $color7;
     padding: 20px;
     border-radius: 10px;
   }
@@ -51,8 +53,23 @@
   }
 
   .landing-data-box.left {
+    background-color: $color7;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
     margin-top: 30px;
+
+    img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
   }
+}
+
+.landing .landing-buttons .button {
+  height: 100%;
 }
 
 .landing-content {
@@ -297,7 +314,7 @@ li.stage::marker {
     display: block;
   }
 
-  .landing-content, .landing-data-grid {
+  .landing-content, .landing .landing-data-grid {
     width: 100%;
   }
 

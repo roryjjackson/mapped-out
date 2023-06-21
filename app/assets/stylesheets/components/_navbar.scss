@@ -56,6 +56,16 @@
   max-width: 100vw;
   padding: 100px 0 0 100px;
 
+  .devise-nav-btn {
+    display: block;
+
+    .button.border {
+      margin-top: 20px;
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
   .nav-item.logo {
     display: none;
   }
@@ -74,6 +84,14 @@
 
   .button.navbar-menu, .navbar-content, .nav-link {
     margin-bottom: 50px;
+  }
+}
+
+.devise-nav-btn {
+  display: flex;
+
+  .button.border {
+    margin-left: 20px;
   }
 }
 
