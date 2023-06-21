@@ -162,9 +162,11 @@
   }
 
   .chatroom-list-section {
-    width: 105%;
+    // width: 105%;
     margin-top: 0;
-    padding-right: 5vw;
+    min-width: 100%;
+    max-width: 100%;
+    // padding-right: 5vw;
     margin-bottom: 50px;
   }
 
