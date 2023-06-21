@@ -330,6 +330,12 @@
   margin-bottom: 50px;
 }
 
+@media (max-width: 1300px) {
+  .profile-edit, .profile-new {
+    padding: 0 5vw;
+  }
+}
+
 //profile new
 
 .profile-new {
@@ -343,6 +349,15 @@
 
 
 //form
+
+.profile-form-text {
+  text-align: center;
+  margin-bottom: 50px;
+
+  h5 {
+    opacity: .7;
+  }
+}
 
 .form-input {
   margin-bottom: 50px;
