@@ -139,6 +139,7 @@
       border-radius: 10px;
       background-color: $color5-dark;
       padding: 20px;
+      border: solid $color7 1px;
     }
 
     .card-data {
@@ -146,11 +147,11 @@
     }
 
     .card-image {
-      background-color: $color7;
-      color: $color5;
-      border-radius: 10px;
+      // background-color: $color7;
+      // color: $color5;
 
       img {
+        border-radius: 10px;
         width: 100%;
         object-fit: cover;
       }
@@ -263,7 +264,7 @@ li.stage::marker {
 }
 
 .member-content {
-  color: black;
+  color: $color7;
   background-color: $color5-dark;
   width: 50%;
   display: flex;
@@ -271,10 +272,10 @@ li.stage::marker {
   align-items: center;
   border-radius: 10px;
   text-align: left;
+  border: solid $color7 1px;
 
 
   .member-text {
-    background-color: $color7;
     padding: 40px;
     margin: 20px;
     display: flex;
@@ -291,6 +292,8 @@ li.stage::marker {
 
   p {
     font-weight: 100;
+    opacity: .7;
+
   }
 
    i {
@@ -328,6 +331,10 @@ li.stage::marker {
     font-size: 13px;
   }
 
+  .section.one {
+    margin-bottom: 5vw;
+  }
+
   .section.one .our-mission .information {
     display: block;
 
@@ -346,6 +353,7 @@ li.stage::marker {
 
   .section-two {
     display: block;
+    margin-bottom: 5vw;
   }
 
   .section-two-left {
