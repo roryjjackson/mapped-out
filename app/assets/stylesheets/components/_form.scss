@@ -2,12 +2,11 @@
   background: $color5-dark;
   border: solid $color7 1px;
   color: $color7;
-  width: 50%;
-  max-width: 500px;
-  padding: 20px;
+  max-width: 70vw;
+  padding: 20px 8vw;
   margin-top: 35px;
   border-radius: 10px;
-
+  width: 100%;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 
   h2 {
@@ -33,4 +32,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-container.edit-registration, .form-container.signup {
+  margin: 7vh 0;
 }
