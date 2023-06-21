@@ -52,7 +52,7 @@
 // form
 
 .questionnaire-form-input {
-  margin-bottom: 50px;
+  margin-bottom: 150px;
 }
 
 .questionnaire-form-label {
@@ -60,4 +60,15 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+@media (max-width: 1300px) {
+  .questionnaire-edit-section, .questionnaire-new-section {
+    padding: 0 5vw;
+
+  }
+
+  .simple_form {
+    padding: 0;
+  }
 }
