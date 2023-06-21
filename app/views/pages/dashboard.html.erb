@@ -7,7 +7,7 @@
     </div>
     <div class='icon-container'>
       <div class='icon'><%= cl_image_tag current_user.photo.key, class: "dashboard-avatar" %></div>
-      <div class='icon'><%= @total_rating %> ⭐️</div>
+      <div class='icon review'><%= @total_rating %> </div>
     </div>
   </div>
 
@@ -16,38 +16,47 @@
       <div class="discover-card">
         <div class='card-content'>
           <h3>Discover</h3>
-          <p>Browse some snippets of information from our mentors!</p>
         </div>
       </div>
     <% end %>
     <div class='card-category-container'>
       <%= link_to chatrooms_path  do %>
         <div class="card-category">
-          Messages
+          <div class="card-content">
+            <h3>Messages</h3>
+          </div>
         </div>
       <% end %>
       <div class="card-category">
-        Reviews
+        <div class="card-content">
+          <h3>Reviews</h3>
+        </div>
       </div>
 
       <% if @profile.present? %>
 
         <%= link_to edit_profile_path(@profile) do %>
           <div class="card-category">
-            Mentor Profile
+            <div class="card-content">
+              <h3>Mentor Profile</h3>
+            </div>
           </div>
         <% end %>
 
         <% if @questionnaire.present? %>
           <%= link_to edit_questionnaire_path(@questionnaire) do %>
             <div class="card-category">
-              Re-take Quiz
+              <div class="card-content">
+                <h3>Re-take Quiz</h3>
+              </div>
             </div>
           <% end %>
         <% else %>
           <%= link_to new_questionnaire_path do %>
             <div class="card-category">
-              Take The Quiz
+              <div class="card-content">
+                <h3>Take The Quiz</h3>
+              </div>
             </div>
           <% end %>
         <% end %>
@@ -56,7 +65,9 @@
 
         <%= link_to new_profile_path do %>
           <div class="card-category">
-            Become a mentor
+            <div class="card-content">
+              <h3>Become a mentor</h3>
+            </div>
           </div>
         <% end %>
       <% end %>
