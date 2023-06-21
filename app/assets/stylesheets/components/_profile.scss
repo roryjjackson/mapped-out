@@ -54,76 +54,6 @@
   flex-grow: 1;
 }
 
-@media only screen and (max-width: 1300px) {
-  .profiles-section {
-    padding: 0 5vw;
-  }
-  .all-profiles {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .not-hidden {
-    grid-template-columns: 1fr 1fr 1fr !important;
-    max-width: 100% !important;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .all-profiles {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .not-hidden {
-    grid-template-columns: 1fr 1fr !important;
-    max-width: 100% !important;
-  }
-
-  .index-container {
-    display: block;
-  }
-
-  .profile-index-sidebar {
-    margin-top: 50px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .profile-index-container {
-    max-height: 60vh;
-  }
-
-}
-
-@media only screen and (max-width: 500px) {
-  .all-profiles {
-    grid-template-columns: 1fr;
-  }
-
-  .not-hidden {
-    grid-template-columns: 1fr !important;
-    max-width: 100% !important;
-  }
-
-  .index-of-profiles {
-    padding-right: 0;
-  }
-
-  .filter-bar {
-    width: 80vw;
-  }
-  .button.most-similar-button {
-    margin-left: 10px;
-    font-size: .5rem;
-  }
-
-  .button.all-profiles-button {
-    margin-left: 10px;
-    font-size: .5rem;
-  }
-
-  .profile-index-container {
-    max-height: 60vh;
-  }
-}
 
 .hidden {
   display: none;
@@ -142,12 +72,12 @@
 }
 
 .button.most-similar-button {
-  display: block;
+  display: flex;
   height: 38px;
 }
 
 .button.all-profiles-button {
-  display: block;
+  display: flex;
   height: 38px;
 }
 
@@ -212,6 +142,80 @@
   object-fit: cover;
   border: solid $light-white 2px;
 
+}
+
+
+@media only screen and (max-width: 1300px) {
+  .profiles-section {
+    padding: 0 5vw;
+  }
+  .all-profiles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .not-hidden {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    max-width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .all-profiles {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .not-hidden {
+    grid-template-columns: 1fr 1fr !important;
+    max-width: 100% !important;
+  }
+
+  .index-container {
+    display: block;
+  }
+
+  .profile-index-sidebar {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-index-container {
+    max-height: 60vh;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+  .all-profiles {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .not-hidden {
+    grid-template-columns: 1fr 1fr !important;
+    max-width: 100% !important;
+  }
+
+  .index-of-profiles {
+    padding-right: 0;
+  }
+
+  .profile-card > img {
+    height: 100px;
+  }
+
+  .filter-bar {
+    width: auto;
+  }
+  .button.most-similar-button {
+    margin-left: 10px;
+  }
+
+  .button.all-profiles-button {
+    margin-left: 10px;
+  }
+
+  .profile-index-container {
+    max-height: 60vh;
+  }
 }
 
 
@@ -281,34 +285,37 @@
   }
 }
 
-// @media only screen and (max-width: 1300px) {
-//   .profile-show .profile-show-title {
-//     height: 400px;
-//   }
+@media (max-width: 1300px) {
+  .profile-show {
+    padding: 0 5vw;
 
-//   .profile-show-title .background-image {
-//     height: 400px;
-//     width: 100vw;
-//   }
+    .background-image {
+      width: 90vw;
+      padding-right: 0;
+      opacity: .6;
+      top: 0;
+      left: 0;
+      height: 350px;
+      border-radius: 10px;
+    }
+    // .profile-show-content {
+    //   margin-bottom: 50px;
+    // }
+  }
 
-//   .profile-show-content-data {
-//     top: 400px;
-//     left: 0;
-//   }
-//   .profile-show-content-data {
-//     padding-left: 5vw;
-//   }
+  .profile-show .profile-show-title {
+    height: 350px;
+    width: auto;
+    text-align: center;
+    margin-bottom: 5vw;
 
-//   .what-content {
-//     padding: 0 5vw;
-//   }
+    .button {
+      display: flex;
+      margin: auto;
+    }
+  }
 
-
-
-//   .form-label {
-//     color: $light-white;
-//   }
-// }
+}
 
 
 
@@ -321,6 +328,12 @@
 
 .subheader.profile-edit-title {
   margin-bottom: 50px;
+}
+
+@media (max-width: 1300px) {
+  .profile-edit, .profile-new {
+    padding: 0 5vw;
+  }
 }
 
 //profile new
@@ -336,6 +349,15 @@
 
 
 //form
+
+.profile-form-text {
+  text-align: center;
+  margin-bottom: 50px;
+
+  h5 {
+    opacity: .7;
+  }
+}
 
 .form-input {
   margin-bottom: 50px;

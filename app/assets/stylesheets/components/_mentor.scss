@@ -14,3 +14,24 @@
     border-radius: 10px;
   }
 }
+
+
+@media (max-width: 1300px) {
+  .become-a-mentor-page {
+    padding: 0 5vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .become-a-mentor-page {
+    display: block;
+
+    .mentor-text, .mentor-form {
+      width: 100%;
+    }
+
+    .mentor-text {
+      margin-bottom: 50px;
+    }
+  }
+}

@@ -1,14 +1,8 @@
 <div class="navbar" data-controller="navbar-dropdown"
       data-navbar-dropdown-target="navbar">
-  <div class="navbar-fluid">
+  <div class="navbar-fluid" data-navbar-dropdown-target="navbarFluid">
 
-
-    <%# <%= link_to root_path, class: "navbar-brand" do %>
-      <%# <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1686933098/Untitled-2_2_saug3b.png" alt=""> %>
-      <%# Mapped Out. %>
-    <%# <% end %>
-
-    <div class="nav-item">
+    <div class="nav-item logo">
       <%= link_to "MappedOut.", root_path, class: "nav-link" %>
     </div>
 
@@ -35,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="navbar-content" data-navbar-dropdown-target="navbarContent">
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "button" %>
       </div>
     <% else %>
@@ -52,8 +46,11 @@
           </div>
         </div>
       </div>
-      <div>
-        <%= link_to "Log In", new_user_session_path, class: "button" %>
+      <div class="navbar-content" data-navbar-dropdown-target="navbarContent">
+        <div class="devise-nav-btn">
+          <%= link_to "Log In", new_user_session_path, class: "button" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "button border" %>
+        </div>
       </div>
     <% end %>
   </div>

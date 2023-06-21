@@ -1,7 +1,7 @@
 <div class='home-page'>
   <div class="landing">
     <div class="landing-content">
-      <h1>Community-driven platform, <span class="highlighted-word">discover alternate paths.</span></h1>
+      <h1>Community-driven platform. <span class="highlighted-word">Discover alternate paths.</span></h1>
       <p id="landing-text-line">By bringin the expertise of people around the world in one place, better explore your options with a more comprehensive understanding</p>
 
       <div class="landing-buttons">
@@ -10,25 +10,28 @@
             Become a mentor
           </button>
         <% end %>
-        <button class="button border">
-          <%= link_to "Get started" %>
-        </button>
+        <%= link_to dashboard_path do %>
+          <button class="button border">
+            Get started
+          </button>
+        <% end %>
       </div>
     </div>
 
     <div class="landing-data-grid">
       <div class="landing-data-box left">
-        <h3><strong>12</strong></h3>
-        <p>Average times a person will change jobs </p>
+        <h2><strong>12</strong></h2>
+        <p>Is the average number of times a person will change jobs/careers in their lifetime</p>
+        <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1687360557/pexels-andrea-piacquadio-3778966_unl4mq.jpg" alt="">
       </div>
       <div class="landing-data-box-right">
         <div class="landing-data-box">
-          <h3><strong>39%</strong></h3>
-          <p>of students are over the age of 25</p>
+          <h3><strong class="highlighted-word">39%</strong></h3>
+          <p>of students are over the age of 25, so why rush into choosing?</p>
         </div>
         <div class="landing-data-box">
-          <h3><strong>1 in every 2</strong></h3>
-          <p>work in a field unrelated to their degree</p>
+          <h3><strong class="highlighted-word">1 in every 2</strong></h3>
+          <p>people work in a field totally unrelated to their degree</p>
         </div>
       </div>
     </div>

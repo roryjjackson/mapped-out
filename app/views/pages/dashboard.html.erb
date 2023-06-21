@@ -58,12 +58,30 @@
 
       <% else %>
 
-        <%= link_to new_profile_path do %>
+        <%= link_to new_mentor_path do %>
           <div class="card-category">
             <div class="card-content">
               <h3>Become a mentor</h3>
             </div>
           </div>
+        <% end %>
+
+        <% if @questionnaire.present? %>
+          <%= link_to edit_questionnaire_path(@questionnaire) do %>
+            <div class="card-category">
+              <div class="card-content">
+                <h3>Re-take Quiz</h3>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to new_questionnaire_path do %>
+            <div class="card-category">
+              <div class="card-content">
+                <h3>Take The Quiz</h3>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
 

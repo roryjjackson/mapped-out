@@ -11,14 +11,13 @@
 //landing
 
 .landing {
-  height: 90vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10vh;
   width: 100%;
   max-width: 1250px;
-  margin: 0 auto;
+  margin: 100px auto;
 
   .landing-buttons {
     display: flex;
@@ -28,30 +27,10 @@
     }
   }
 
-  .landing-content {
-    max-width: 1250px;
-    width: 50%;
-    margin: auto;
-    text-align: left;
 
-    h1 {
-      font-size: 64px;
-      font-weight: bold;
-      margin-bottom: 40px;
-    }
-
-    p {
-      opacity: .8;
-      margin-bottom: 40px;
-    }
-
-    #landing-text-line {
-      opacity: .5;
-      max-width: 400px;
-    }
-  }
 
   .landing-data-grid {
+    width: 50%;
     height: 55%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -59,8 +38,9 @@
   }
 
   .landing-data-box {
-    background-color: $color7;
-    color: black;
+    background-color: $color5-dark;
+    border: solid $color7 1px;
+    color: $color7;
     padding: 20px;
     border-radius: 10px;
   }
@@ -73,7 +53,45 @@
   }
 
   .landing-data-box.left {
+    background-color: $color7;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
     margin-top: 30px;
+
+    img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+}
+
+.landing .landing-buttons .button {
+  height: 100%;
+}
+
+.landing-content {
+  max-width: 1250px;
+  width: 50%;
+  margin: auto;
+  text-align: left;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+
+  p {
+    opacity: .8;
+    margin-bottom: 40px;
+  }
+
+  #landing-text-line {
+    opacity: .5;
+    max-width: 400px;
   }
 }
 
@@ -81,7 +99,7 @@
 //section one
 
 .section.one {
-  margin: 30px auto 100px auto;
+  margin: 100px auto 100px auto;
 
   .our-mission {
     max-width: 1250px;
@@ -281,4 +299,85 @@ li.stage::marker {
     color: $color2;
    }
 
+}
+
+
+@media (max-width: 1350px) {
+  html {
+    font-size: 14px;
+  }
+  .home-page, .home-page-span {
+    padding: 0 5vw;
+  }
+
+  .landing {
+    display: block;
+  }
+
+  .landing-content, .landing .landing-data-grid {
+    width: 100%;
+  }
+
+  .landing-content {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 750px) {
+  html {
+    font-size: 12px;
+  }
+
+  .section.one .our-mission .information {
+    display: block;
+
+    div {
+      width: auto
+    }
+  }
+
+  .section.one .our-mission .card-container {
+    display: block;
+  }
+
+  .section.one .our-mission .card {
+    margin-bottom: 10px;
+  }
+
+  .section-two {
+    display: block;
+  }
+
+  .section-two-left {
+    padding-bottom: 50px;
+  }
+
+  .stage i {
+    height: 50px;
+    width: 50px;
+    padding: 14px;
+    font-size: 25px;
+  }
+
+  .become-a-member-container {
+    display: block;
+  }
+
+  .member-content, .member-image {
+    width: 100%;
+  }
+
+  .member-image {
+    margin-bottom: 20px;
+  }
+
+  .section.four {
+    margin: 0 0 20px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 10px;
+  }
 }
