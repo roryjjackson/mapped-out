@@ -1,16 +1,43 @@
 <div class="footer">
   <div class="footer-container">
-    <div class="footer-links">
-      <a href="#"><i class="fa-brands fa-github"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-facebook"></i></a>
-      <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <div>
+      <h3><%= link_to "MappedOut.", root_path, class: "nav-link" %></h3>
+      <p>Discover alternate paths</p>
+      <div class="footer-links">
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
     </div>
-    <div class="footer-logo">
-      <%= link_to root_path do %>
-        <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1686933098/Untitled-2_2_saug3b.png" alt="fuck">
-      <% end %>
+    <div class="footer-guide">
+      <div class="footer-pages">
+        <h3>Pages</h3>
+        <div>
+          <h6>Home</h6>
+          <h6>About</h6>
+          <h6>Blog</h6>
+          <h6>Contact</h6>
+        </div>
+      </div>
+      <div class="footer-details">
+        <h3>Business</h3>
+        <div>
+          <h6>Social Enterprise</h6>
+        </div>
+      </div>
+      <div class="footer-access">
+        <h3>Access</h3>
+        <div>
+          <h6>Login</h6>
+          <h6>Signup</h6>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="footer-down">
+    <p>Web application by Rory Jackson. Powered by Heroku</p>
+    <p>@2023</p>
   </div>
 </div>

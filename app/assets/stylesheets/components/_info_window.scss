@@ -1,10 +1,19 @@
 .info-window {
   height: auto;
-  width: 200px;
+  width: 100px;
+
+  h2 {
+    font-size: 1.3rem !important;
+    color: black;
+  }
+
+  p {
+    color: black;
+  }
 }
 
 .info-window-image {
-  height: 120px;
-  width: 200px;
+  height: 60px;
+  width: 100px;
   object-fit: cover;
 }

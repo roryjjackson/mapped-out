@@ -26,71 +26,33 @@
       </div>
     </div>
   </div>
+  <div class="profile-show-information">
+    <div class="profile-show-card">
+      <h3>What does your day typically involve?</h3>
+      <p><%= @profile.what %></p>
+    </div>
 
-    <div class="profile-show-card what">
-      <div class="what-content">
-        <h3>What does your day typically involve?</h3>
-        <p><%= @profile.what %></p>
+    <div class="profile-show-card">
+      <h3>Why did you choose to go into your field?</h3>
+      <p><%= @profile.why %></p>
+    </div>
+
+    <div class="profile-show-card">
+      <h3>How did you get yourself started in the beginning?</h3>
+      <p><%= @profile.how %></p>
+    </div>
+
+    <div class="profile-show-card">
+      <h3>What advice would you give to aspiring people?</h3>
+      <p><%= @profile.advice %></p>
+    </div>
+
+    <div class="profile-show-card">
+      <div class="member-image socials">
+        <div class="review-partial">
+      </div>
+        <%= render partial: 'reviews/form', locals: { profile: @profile } %>
       </div>
     </div>
-
-
-    <div class="section four">
-      <div class="become-a-member-container show-member-container">
-        <div class="member-content show-member-content">
-          <div>
-              <h3>Why did you choose to go into your field?</h3>
-              <p><%= @profile.why %></p>
-          </div>
-        </div>
-        <div class="member-image show-member-image">
-            <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1685435179/pexels-thijs-van-der-weide-792972_nevhug.jpg" alt="">
-        </div>
-      </div>
-    </div>
-
-
-    <div class="profile-show-divider">
-      <h2>Find other similar profiles</h2>
-      <button class="button">Discover</button>
-    </div>
-
-    <div class="profile-show-card what">
-      <div class="what-content">
-        <h3>How did you get yourself started in the beginning?</h3>
-        <p><%= @profile.how %></p>
-      </div>
-    </div>
-
-
-<div class="section four">
-      <div class="become-a-member-container">
-        <div class="member-content">
-          <div>
-            <h3>Why not keep in touch with <%= @profile.name %> by checking out their socials</h3>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="member-image socials">
-          <div class="review-partial">
-            <%= render partial: 'reviews/form', locals: { profile: @profile } %>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="profile-show-card what">
-      <div class="what-content">
-        <h3>What advice would you give to aspiring people?</h3>
-        <p><%= @profile.advice %></p>
-      </div>
-    </div>
-
-</div>
-
-
-  <%# <%= button_to "Destroy this profile", @profile, method: :delete if policy(@profile).destroy? %>
+  </div>
 </div>

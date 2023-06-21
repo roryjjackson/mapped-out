@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :mentors
+  resources :enquiries
   resources :questionnaires
   resources :profiles do
     resources :reviews, only: %i[new create]
@@ -13,6 +15,4 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   get 'about', to: 'pages#about'
   get 'admin', to: 'pages#admin'
-  get 'choose_path', to: 'pages#choose_path'
-  get 'contact', to: 'pages#contact'
 end

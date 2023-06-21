@@ -50,10 +50,12 @@
 
             <% else %>
               <% @most_similar_profiles.each do |profile| %>
+                <% next if profile.nil? || profile.id.nil? %>
                 <%= link_to profile_path(profile) do %>
                   <%= render profile %>
                 <% end %>
               <% end %>
+
 
             <% end %>
           </div>

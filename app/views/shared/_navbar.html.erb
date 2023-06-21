@@ -3,9 +3,14 @@
   <div class="navbar-fluid">
 
 
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1686933098/Untitled-2_2_saug3b.png" alt="">
-    <% end %>
+    <%# <%= link_to root_path, class: "navbar-brand" do %>
+      <%# <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1686933098/Untitled-2_2_saug3b.png" alt=""> %>
+      <%# Mapped Out. %>
+    <%# <% end %>
+
+    <div class="nav-item">
+      <%= link_to "MappedOut.", root_path, class: "nav-link" %>
+    </div>
 
     <button class="button navbar-menu"
             data-navbar-dropdown-target="navbarMenu"
@@ -13,14 +18,14 @@
       <i class="fa-solid fa-bars"></i>
     </button>
 
-    <div class="navbar-content" data-navbar-dropdown-target="navbarContent">
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <div class="navbar-content" data-navbar-dropdown-target="navbarContent">
         <div class="navbar-container">
           <div class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </div>
           <div class="nav-item">
-            <%= link_to "Contact", contact_path, class: "nav-link" %>
+            <%= link_to "Contact", new_enquiry_path, class: "nav-link" %>
           </div>
           <div class="nav-item">
             <%= link_to "About Us", about_path, class: "nav-link" %>
@@ -28,11 +33,13 @@
           <div class="nav-item">
             <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
           </div>
-          <div>
-            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "button" %>
-          </div>
         </div>
-      <% else %>
+      </div>
+      <div>
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "button" %>
+      </div>
+    <% else %>
+      <div class="navbar-content" data-navbar-dropdown-target="navbarContent">
         <div class="navbar-container">
           <div class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link" %>
@@ -41,13 +48,13 @@
             <%= link_to "About Us", about_path, class: "nav-link" %>
           </div>
           <div class="nav-item">
-            <%= link_to "Contact", contact_path, class: "nav-link" %>
-          </div>
-          <div>
-            <%= link_to "Log In", new_user_session_path, class: "button" %>
+            <%= link_to "Contact", new_enquiry_path, class: "nav-link" %>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+      <div>
+        <%= link_to "Log In", new_user_session_path, class: "button" %>
+      </div>
+    <% end %>
   </div>
 </div>

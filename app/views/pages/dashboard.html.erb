@@ -3,11 +3,11 @@
   <div class='dashboard-container left'>
     <div>
       <h2 id='dashboard-title'>Welcome, <%= current_user.nickname %></h2>
-      <p>Manage everything all in one place</p>
+      <p>Navigate round our app from here. All our features are easy to access.</p>
     </div>
     <div class='icon-container'>
       <div class='icon'><%= cl_image_tag current_user.photo.key, class: "dashboard-avatar" %></div>
-      <div class='icon'><%= @total_rating %> ⭐️</div>
+      <div class='icon review'><%= @total_rating %> </div>
     </div>
   </div>
 
@@ -15,39 +15,43 @@
     <%= link_to profiles_path do %>
       <div class="discover-card">
         <div class='card-content'>
-          <h2>Discover</h2>
-          <p>Browse some snippets of information from our mentors!</p>
+          <h3>Discover</h3>
         </div>
       </div>
     <% end %>
     <div class='card-category-container'>
       <%= link_to chatrooms_path  do %>
         <div class="card-category">
-          Messages
+          <div class="card-content">
+            <h3>Messages</h3>
+          </div>
         </div>
       <% end %>
-      <div class="card-category">
-        Reviews
-      </div>
 
       <% if @profile.present? %>
 
         <%= link_to edit_profile_path(@profile) do %>
           <div class="card-category">
-            Profile
+            <div class="card-content">
+              <h3>Mentor Profile</h3>
+            </div>
           </div>
         <% end %>
 
         <% if @questionnaire.present? %>
           <%= link_to edit_questionnaire_path(@questionnaire) do %>
             <div class="card-category">
-              Re-take Quiz
+              <div class="card-content">
+                <h3>Re-take Quiz</h3>
+              </div>
             </div>
           <% end %>
         <% else %>
           <%= link_to new_questionnaire_path do %>
             <div class="card-category">
-              Take The Quiz
+              <div class="card-content">
+                <h3>Take The Quiz</h3>
+              </div>
             </div>
           <% end %>
         <% end %>
@@ -56,15 +60,23 @@
 
         <%= link_to new_profile_path do %>
           <div class="card-category">
-            Become a mentor
+            <div class="card-content">
+              <h3>Become a mentor</h3>
+            </div>
           </div>
         <% end %>
       <% end %>
+
+      <div class="card-category">
+        <div class="card-content">
+          <h3>New features are coming</h3>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class='dashboard-container right'>
-    <div>
+    <%# <div>
       <a class="social-media-icon" href="https://github.com/roryjjackson" target="_blank" rel="noreferrer">
         <i class="fa-brands fa-github" id="github"></i>
       </a>
@@ -74,8 +86,9 @@
       <a class="social-media-icon" href="https://www.instagram.com/jackson_rory_/" target="_blank" rel="noreferrer">
         <i class="fa-brands fa-instagram" id="instagram"></i>
       </a>
-    </div>
-    <p>mappedout.com logo</p>
+    </div> %>
+    <h3>MappedOut.</h3>
+    <p>If you have any suggestions on new features, please do let us know!</p>
   </div>
 
 </div>

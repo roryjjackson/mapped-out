@@ -1,0 +1,17 @@
+
+<%= simple_form_for(@mentor) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name, required: true %>
+    <%= f.input :last_name, required: true %>
+    <%= f.input :email, required: true %>
+    <%= f.input :number, required: true, label: "Contact number", input_html: { pattern: "[0-9]*", inputmode: "numeric" } %>
+    <%= f.input :occupation, required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "send", class: "button" %>
+  </div>
+<% end %>

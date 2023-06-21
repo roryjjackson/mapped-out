@@ -16,18 +16,21 @@ class ProfilesController < ApplicationController
     end
 
     if params[:query].present?
-      sql_subquery = <<~SQL
-        profiles.name @@ :query
-        OR profiles.title @@ :query
-        OR profiles.how @@ :query
-        OR profiles.why @@ :query
-        OR profiles.what @@ :query
-        OR profiles.address @@ :query
-        OR profiles.advice @@ :query
-        OR profiles.hours @@ :query
-      SQL
-      @profiles = @profiles.where(sql_subquery, query: "%#{params[:query]}%")
+      @profiles = @profiles.search_by_query(params[:query])
+
+      # sql_subquery = <<~SQL
+      #   profiles.name @@ :query
+      #   OR profiles.title @@ :query
+      #   OR profiles.how @@ :query
+      #   OR profiles.why @@ :query
+      #   OR profiles.what @@ :query
+      #   OR profiles.address @@ :query
+      #   OR profiles.advice @@ :query
+      #   OR profiles.hours @@ :query
+      # SQL
+      # @profiles = @profiles.where(sql_subquery, query: "%#{params[:query]}%")
     end
+
 
     @profile_data = {}
     @most_similar_profiles = []
@@ -63,9 +66,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    # @profile = Profile.where(user_id: current_user)
     authorize @profile
-
   end
 
   def create
@@ -112,7 +113,7 @@ class ProfilesController < ApplicationController
     @reviews = Review.where(profile_id: profile.id)
     sum_of_reviews = @reviews.sum(:rating).to_f
     total_reviews = @reviews.length.to_f
-    @total_rating = total_reviews > 0 ? sum_of_reviews / @reviews.length : 0
+    @total_rating = total_reviews > 0 ? sum_of_reviews / @reviews.length : 'No reviews'
   end
 
   private

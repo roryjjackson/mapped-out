@@ -3,7 +3,6 @@
   background-color: $button;
   border-radius: 5px;
   border: none;
-  color: $color2;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -12,10 +11,25 @@
   padding: 6px 12px;
   height: auto;
   max-width: 150px !important;
+  color: black;
+
+  a {
+    color: black;
+  }
 
 }
 
 .btn.most-similar {
   // height: 20px;
   padding: 6px 12px;
+}
+
+.button.border {
+  border: solid 1px $color7;
+  background-color: transparent;
+  color: $color7;
+
+  a {
+    color: $color7;
+  }
 }
