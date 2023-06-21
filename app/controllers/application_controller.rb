@@ -29,8 +29,8 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized
-    flash[:alert] = "You are not authorized to become a mentor"
-    redirect_to dashboard_path
+    flash[:alert] = "You are not authorized to complete this action"
+    redirect_to root_path
   end
 
   def skip_pundit?

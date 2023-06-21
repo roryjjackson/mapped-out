@@ -63,9 +63,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    # @profile = Profile.where(user_id: current_user)
     authorize @profile
-
   end
 
   def create

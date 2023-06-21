@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :enquiries
   resources :questionnaires
   resources :profiles do
     resources :reviews, only: %i[new create]

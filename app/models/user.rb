@@ -12,5 +12,4 @@ class User < ApplicationRecord
 
   has_many :chatrooms, dependent: :destroy, foreign_key: 'user_id'
   has_many :user2_chatrooms, class_name: 'Chatroom', dependent: :destroy, foreign_key: 'user2_id'
-
 end
