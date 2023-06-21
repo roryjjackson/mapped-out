@@ -19,3 +19,27 @@
     height: 200px;
   }
 }
+
+@media (max-width: 1300px) {
+  .contact-page {
+    padding: 0 5vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-page {
+    display: block;
+  }
+
+  .contact-form, .contact-text {
+    width: 100%;
+  }
+
+  .contact-text {
+    margin-bottom: 50px;
+  }
+
+  .simple_form {
+    padding: 0;
+  }
+}
