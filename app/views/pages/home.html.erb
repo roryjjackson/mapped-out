@@ -5,9 +5,11 @@
       <p id="landing-text-line">By bringin the expertise of people around the world in one place, better explore your options with a more comprehensive understanding</p>
 
       <div class="landing-buttons">
-        <button class="button fill">
-          <%= link_to "Become a mentor" %>
-        </button>
+        <%= link_to new_mentor_path do %>
+          <button class="button fill">
+            Become a mentor
+          </button>
+        <% end %>
         <button class="button border">
           <%= link_to "Get started" %>
         </button>
@@ -121,7 +123,7 @@
           <h3>Are you in the priviledged position of being able to help others?</h3>
           <p>Get started inspiring people and register with us below. No matter how advanced you are in your field, you will undoubtedly have some valuable knowledge to share!</p>
           <div class="button-container">
-            <%= link_to "Join as a mentor", new_user_registration_path, class: "button become-a-member-button" %>
+            <%= link_to "Join as a mentor", new_mentor_path, class: "button become-a-member-button" %>
           </div>
         </div>
       </div>

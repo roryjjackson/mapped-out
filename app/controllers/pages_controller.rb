@@ -19,11 +19,4 @@ class PagesController < ApplicationController
 
   def about
   end
-
-  def choose_path
-  end
-
-  def contact
-    @enquiry = Enquiry.new
-  end
 end

@@ -1,0 +1,16 @@
+.become-a-mentor-page {
+  margin: 15vh auto 10vh auto;
+  display: flex;
+  max-width: 1250px;
+
+  .mentor-text, .mentor-form {
+    width: 50%;
+  }
+
+  img {
+    width: 80%;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
