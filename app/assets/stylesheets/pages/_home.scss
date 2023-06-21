@@ -62,7 +62,7 @@
   text-align: left;
 
   h1 {
-    font-size: 64px;
+    font-size: 4rem;
     font-weight: bold;
     margin-bottom: 40px;
   }
@@ -286,6 +286,9 @@ li.stage::marker {
 
 
 @media (max-width: 1350px) {
+  html {
+    font-size: 14px;
+  }
   .home-page, .home-page-span {
     padding: 0 5vw;
   }
@@ -300,5 +303,64 @@ li.stage::marker {
 
   .landing-content {
     margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 750px) {
+  html {
+    font-size: 12px;
+  }
+
+  .section.one .our-mission .information {
+    display: block;
+
+    div {
+      width: auto
+    }
+  }
+
+  .section.one .our-mission .card-container {
+    display: block;
+  }
+
+  .section.one .our-mission .card {
+    margin-bottom: 10px;
+  }
+
+  .section-two {
+    display: block;
+  }
+
+  .section-two-left {
+    padding-bottom: 50px;
+  }
+
+  .stage i {
+    height: 50px;
+    width: 50px;
+    padding: 14px;
+    font-size: 25px;
+  }
+
+  .become-a-member-container {
+    display: block;
+  }
+
+  .member-content, .member-image {
+    width: 100%;
+  }
+
+  .member-image {
+    margin-bottom: 20px;
+  }
+
+  .section.four {
+    margin: 0 0 20px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 10px;
   }
 }
