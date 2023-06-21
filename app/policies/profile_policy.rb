@@ -10,6 +10,10 @@ class ProfilePolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    true
+  end
+
   def create?
     user.mentor?
   end
