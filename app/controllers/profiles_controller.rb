@@ -16,18 +16,21 @@ class ProfilesController < ApplicationController
     end
 
     if params[:query].present?
-      sql_subquery = <<~SQL
-        profiles.name @@ :query
-        OR profiles.title @@ :query
-        OR profiles.how @@ :query
-        OR profiles.why @@ :query
-        OR profiles.what @@ :query
-        OR profiles.address @@ :query
-        OR profiles.advice @@ :query
-        OR profiles.hours @@ :query
-      SQL
-      @profiles = @profiles.where(sql_subquery, query: "%#{params[:query]}%")
+      @profiles = @profiles.search_by_query(params[:query])
+
+      # sql_subquery = <<~SQL
+      #   profiles.name @@ :query
+      #   OR profiles.title @@ :query
+      #   OR profiles.how @@ :query
+      #   OR profiles.why @@ :query
+      #   OR profiles.what @@ :query
+      #   OR profiles.address @@ :query
+      #   OR profiles.advice @@ :query
+      #   OR profiles.hours @@ :query
+      # SQL
+      # @profiles = @profiles.where(sql_subquery, query: "%#{params[:query]}%")
     end
+
 
     @profile_data = {}
     @most_similar_profiles = []

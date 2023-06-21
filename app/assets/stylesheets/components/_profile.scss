@@ -218,6 +218,8 @@
 //profile show page
 
 .profile-show {
+  margin-bottom: 10vh;
+
     .profile-show-title {
       position: relative;
       width: 100vw;
@@ -267,11 +269,16 @@
 }
 
 .profile-show-card {
-  background-color: $color7;
+  background-color: $color5-dark;
+  border: solid $color7 1px;
+  color: $color7;
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 20px;
-  color: black;
+
+  p {
+    opacity: .7;
+  }
 }
 
 // @media only screen and (max-width: 1300px) {
