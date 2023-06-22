@@ -3,12 +3,13 @@
   width: 100px;
 
   h2 {
+    color: $color7;
     font-size: 1.3rem !important;
-    color: black;
   }
 
   p {
-    color: black;
+    color: $color7;
+    margin-bottom: 0;
   }
 }
 
@@ -16,4 +17,10 @@
   height: 60px;
   width: 100px;
   object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.mapboxgl-popup-close-button {
+  color: $color7;
 }
