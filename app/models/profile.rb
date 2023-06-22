@@ -2,7 +2,6 @@ class Profile < ApplicationRecord
   belongs_to :user
   has_one_attached :photo, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_one :questionnaire, dependent: :destroy
 
   validates :user_id, uniqueness: true
   validates :name, :hours, :title, :how, :why, :what, :advice, :photo, :address, presence: true
