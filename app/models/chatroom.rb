@@ -9,9 +9,6 @@ class Chatroom < ApplicationRecord
   private
 
   def delete_associated_model
-    # raise
-    # Perform the deletion of the associated model here
-    # You can use the destroy method to delete the current instance
     self.destroy
   end
 end

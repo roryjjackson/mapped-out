@@ -125,7 +125,7 @@
        }
 
       div {
-        width: 500px;
+        width: 650px;
       }
     }
 
@@ -327,6 +327,13 @@ li.stage::marker {
   .landing-content {
     margin-bottom: 50px;
   }
+
+  .section.one .our-mission .information {
+    div {
+      width: auto;
+      margin-right: 40px;
+    }
+  }
 }
 
 @media (max-width: 750px) {
@@ -342,7 +349,7 @@ li.stage::marker {
     display: block;
 
     div {
-      width: auto
+      width: auto;
     }
   }
 
