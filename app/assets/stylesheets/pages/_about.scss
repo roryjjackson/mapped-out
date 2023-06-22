@@ -47,7 +47,7 @@
 
 .about-meet-the-founders-container {
   position: relative;
-  height: 70vh;
+  height: 80vh;
   width: 100%;
   max-width: 1250px;
   margin: 0 auto 100px auto;
@@ -55,9 +55,9 @@
 
 .about-founders-image {
   position: absolute;
-  top: 5vh;
+  top: 10vh;
   left: 0;
-  width: 40vw;
+  width: 38vw;
   height: 60vh;
   background-size: cover;
   background-position: center;
@@ -75,20 +75,19 @@
 
 .about-founders-content {
   z-index: -1;
-  color: black;
-  background-color: $color7;
+  border: solid $color7 1px;
+  color: $color7;
+  background-color: $color5-dark;
   position: absolute;
   top: 0;
   right: 0;
   width: 65%;
   height: 100%;
-  padding-left: 15vw;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 20px 20px 12vw;
   border-radius: 10px;
-  padding-left: 15vw;
 }
 
 
