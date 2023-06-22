@@ -14,12 +14,14 @@
 
 .sender-style {
   border-radius: 10px;
-  background-color: $color7;
-  color: black;
+  background-color: $color5-dark;
+  border: solid $color7 1px;
+  color: $color7;
 }
 
 .receiver-style {
-  background-color: $color8;
+  background-color: $color6;
+  border: solid $color7 1px;
   border-radius: 10px;
   color: black;
 }

@@ -334,6 +334,10 @@ li.stage::marker {
       margin-right: 40px;
     }
   }
+
+  .section-two-right {
+    padding: 20px 0 0 35px;
+  }
 }
 
 @media (max-width: 750px) {
@@ -370,6 +374,10 @@ li.stage::marker {
     padding-bottom: 50px;
   }
 
+  .section-two-right {
+    padding: 20px 0 0 33px;
+  }
+
   .stage i {
     height: 50px;
     width: 50px;
@@ -401,5 +409,9 @@ li.stage::marker {
 
   .landing {
     padding-top: 0;
+  }
+
+  .section-two-right {
+    padding: 20px 0 0 31px;
   }
 }
