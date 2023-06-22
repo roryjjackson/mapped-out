@@ -38,8 +38,8 @@ class ChatroomsController < ApplicationController
   def create
     @chatroom = Chatroom.new(chatroom_params)
     @chatroom.user_id = current_user.id
-    @chatroom.user2_id = session[:user2_id]
-    # raise
+    @chatroom.user2_id = session[:user2_id].to_i
+
     authorize @chatroom
     respond_to do |format|
       if @chatroom.save

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_one_attached :photo, dependent: :destroy
   has_one :profile, dependent: :destroy
 
-  has_one :questionnaire
+  has_one :questionnaire, dependent: :destroy
   has_many :reviews, through: :profile, dependent: :destroy
 
   has_many :chatrooms, dependent: :destroy, foreign_key: 'user_id'

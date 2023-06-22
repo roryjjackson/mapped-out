@@ -1,6 +1,7 @@
 // whole page
 
 .chatroom-index {
+  min-height: 90vh;
   display: flex;
   justify-content: space-between;
   max-width: 1250px;
@@ -8,8 +9,8 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1300px) {
-  .chatroom-index {
+@media (max-width: 1300px) {
+  .chatroom-index, .chatroom-show {
     padding: 0 5vw;
   }
 }
@@ -31,11 +32,11 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  border: solid $light-white 5px;
+  border: solid $light-white 1px;
   border-radius: 10px;
   margin-bottom: 5px;
-  background-color: $color7;
-  color: $color2;
+  background-color: $color5-dark;
+  color: $color7;
   padding: 10px;
   width: 100%;
 
@@ -116,32 +117,42 @@
 
 //show page
 
-.chatroom-show {
-  h2 {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-
-  }
-
-  .container.chatroom {
-    padding: 80px 0 10px 0;
-  }
-}
-
-
 
 .chatroom-show {
-  background-color: $color5-dark;
   border-radius: 10px;
   position: relative;
   max-width: 1250px;
   width: 100%;
-  margin: 20vh auto;
-  min-height: 50vh;
+  margin: 15vh auto 10vh auto;
   display: flex;
   flex-direction: column;
   justify-content: end;
+}
+
+.chatroom-show-content {
+  // height: 30vh;
+  border: solid $color7 1px;
+  border-radius: 10px;
+  background-color: $color5-dark;
+  padding: 50px;
+
+}
+
+.messages-container.chatroom-show-page {
+  // height: auto;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 800px) {
+  .messages-container.chatroom-show-page {
+    // height: auto;
+    max-height: 35vh;
+    overflow-y: auto;
+  }
+  .chatroom-show-content {
+    padding: 20px;
+  }
 }
 
 //form section

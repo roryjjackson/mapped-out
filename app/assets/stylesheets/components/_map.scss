@@ -4,5 +4,7 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  background: $color5-dark !important;
+  border: solid $color7 1px;
+  border-radius: 10px !important;
 }

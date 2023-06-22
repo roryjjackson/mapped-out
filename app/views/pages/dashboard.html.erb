@@ -28,7 +28,7 @@
         </div>
       <% end %>
 
-      <% if @user.mentor? && !@profile.exist? %>
+      <% if @user.mentor? && !@profile.present? %>
         <%= link_to new_profile_path do %>
           <div class="card-category">
             <div class="card-content">

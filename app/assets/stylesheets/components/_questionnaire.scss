@@ -29,6 +29,10 @@
 
 // edit page
 
+.questionnaire-edit-section p, .questionnaire-new-section p, .questionnaire-form-input h3, .form-range {
+  opacity: .7;
+}
+
 .questionnaire-edit-section {
   min-height: 90vh;
   margin: 20vh auto 10vh auto;
