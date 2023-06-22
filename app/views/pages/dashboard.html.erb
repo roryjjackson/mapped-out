@@ -28,6 +28,18 @@
         </div>
       <% end %>
 
+      <% if @user.mentor? && !@profile.exist? %>
+        <%= link_to new_profile_path do %>
+          <div class="card-category">
+            <div class="card-content">
+              <h3>Create Profile</h3>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+      <% end %>
+
+
       <% if @profile.present? %>
 
         <%= link_to edit_profile_path(@profile) do %>

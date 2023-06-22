@@ -6,8 +6,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user = User.find(current_user.id)
     @questionnaire = Questionnaire.where(user_id: current_user.id).first
-
     @profile = Profile.where(user_id: current_user.id).first
     if @profile.present?
       @reviews = Review.where(profile_id: @profile.id)

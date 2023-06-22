@@ -45,6 +45,8 @@
   height: 40vh;
   width: 100%;
   margin-bottom: 30px;
+  border-radius: 10px;
+  border: solid $color7 1px;
 }
 
 .all-profiles {
@@ -83,12 +85,13 @@
 
 .profile-card {
   overflow: hidden;
-  background: $color7;
+  background: $color5-dark;
+  border: solid $color7 1px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
 
   h2, p, h3 {
-    color: $color2;
+    color: $color7;
   }
 
   h3 {
