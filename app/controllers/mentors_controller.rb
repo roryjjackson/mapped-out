@@ -1,26 +1,23 @@
 class MentorsController < ApplicationController
   before_action :set_mentor, only: %i[ show edit update destroy ]
 
-  # GET /mentors or /mentors.json
   def index
-    @mentors = Mentor.all
+    @mentors = policy_scope(Mentor)
   end
 
-  # GET /mentors/1 or /mentors/1.json
   def show
+    authorize @mentor
   end
 
-  # GET /mentors/new
   def new
     @mentor = Mentor.new
     authorize @mentor
   end
 
-  # GET /mentors/1/edit
   def edit
+    authorize @mentor
   end
 
-  # POST /mentors or /mentors.json
   def create
     @mentor = Mentor.new(mentor_params)
     authorize @mentor
@@ -36,7 +33,6 @@ class MentorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /mentors/1 or /mentors/1.json
   def update
     respond_to do |format|
       if @mentor.update(mentor_params)
@@ -49,7 +45,6 @@ class MentorsController < ApplicationController
     end
   end
 
-  # DELETE /mentors/1 or /mentors/1.json
   def destroy
     @mentor.destroy
 
@@ -60,13 +55,12 @@ class MentorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mentor
-      @mentor = Mentor.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def mentor_params
-      params.require(:mentor).permit(:first_name, :last_name, :email, :number, :occupation)
-    end
+  def set_mentor
+    @mentor = Mentor.find(params[:id])
+  end
+
+  def mentor_params
+    params.require(:mentor).permit(:first_name, :last_name, :email, :number, :occupation)
+  end
 end
