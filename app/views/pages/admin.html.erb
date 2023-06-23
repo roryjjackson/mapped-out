@@ -7,3 +7,19 @@
 <br/>
 
 <div>admin page</div>
+<h2>All mentor applications</h2>
+<% @mentors.each do |mentor| %>
+  <p><%= mentor.first_name %></p>
+  <p><%= mentor.last_name %></p>
+  <p><%= mentor.email %></p>
+  <p><%= mentor.number %></p>
+  <p><%= mentor.occupation %></p>
+  <p><%= mentor.user_id %></p>
+<% end %>
+<h2>All enquiries</h2>
+<% @enquiries.each do |enquiry| %>
+  <p><%= enquiry.email %></p>
+  <p><%= enquiry.first_name %></p>
+  <p><%= enquiry.last_name %></p>
+  <p><%= enquiry.message %></p>
+<% end %>
