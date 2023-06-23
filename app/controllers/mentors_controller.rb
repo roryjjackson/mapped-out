@@ -21,7 +21,7 @@ class MentorsController < ApplicationController
   def create
     @mentor = Mentor.new(mentor_params)
     authorize @mentor
-
+    @mentor.user_id = current_user.id
     respond_to do |format|
       if @mentor.save
         format.html { redirect_to root_path, notice: "Thank you for applying with us, we will be in contact shortly!" }
