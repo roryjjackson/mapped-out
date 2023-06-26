@@ -1,26 +1,52 @@
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<div>admin page</div>
-<h2>All mentor applications</h2>
-<% @mentors.each do |mentor| %>
-  <p><%= mentor.first_name %></p>
-  <p><%= mentor.last_name %></p>
-  <p><%= mentor.last_name %></p>
-  <p><%= mentor.email %></p>
-  <p><%= mentor.number %></p>
-  <p><%= mentor.occupation %></p>
-  <p><%= mentor.user_id %></p>
-<% end %>
-<h2>All enquiries</h2>
-<% @enquiries.each do |enquiry| %>
-  <p><%= enquiry.email %></p>
-  <p><%= enquiry.first_name %></p>
-  <p><%= enquiry.last_name %></p>
-  <p><%= enquiry.message %></p>
-<% end %>
+<div class="admin-page">
+  <div class="mentors">
+    <h3>Mentor Applications</h3>
+    <% @mentors.each do |mentor| %>
+      <div class="mentor-card">
+        <h4>First Name: </h4>
+        <p>
+        <%= mentor.first_name %>
+        </p>
+        <h4>Last Name: </h4>
+        <p>
+        <%= mentor.last_name %>
+        </p>
+        <h4>Email: </h4>
+        <p>
+        <%= mentor.email %>
+        </p>
+        <h4>Contact: </h4>
+        <p>
+        <%= mentor.number %>
+        </p>
+        <h4>Occupation: </h4>
+        <p>
+        <%= mentor.occupation %>
+        </p>
+        <h4>User: </h4>
+        <p>
+        <%= mentor.user_id %>
+        </p>
+        <button class="button" data-controller="update-mentor" data-update-mentor-controller-target="button"  data-action="click->update-mentor#updateMentorStatus">
+          Make user a mentor
+        </button>
+      </div>
+    <% end %>
+  </div>
+  <div class="enquiries">
+    <h3>Enquiries</h3>
+    <% @enquiries.each do |enquiry| %>
+      <div class="enquiry-card">
+        <h4>Email:</h4>
+        <p><%= enquiry.email %></p>
+        <h4>First Name:</h4>
+        <p><%= enquiry.first_name %></p>
+        <h4>Last Name:</h4>
+        <p><%= enquiry.last_name %></p>
+        <h4>Message:</h4>
+        <p><%= enquiry.message %></p>
+        <%= button_to "Delete this enquiry", enquiry, method: :delete, class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

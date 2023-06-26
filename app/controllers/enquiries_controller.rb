@@ -57,10 +57,12 @@ class EnquiriesController < ApplicationController
 
   # DELETE /enquiries/1 or /enquiries/1.json
   def destroy
+    authorize @enquiry
+
     @enquiry.destroy
 
     respond_to do |format|
-      format.html { redirect_to enquiries_url, notice: "Enquiry was successfully destroyed." }
+      format.html { redirect_to admin_path, notice: "Enquiry was successfully destroyed." }
       format.json { head :no_content }
     end
   end

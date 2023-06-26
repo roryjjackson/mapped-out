@@ -30,3 +30,6 @@ application.register("navbar-dropdown", NavbarDropdownController)
 
 import StarRatingController from "./star_rating_controller"
 application.register("star-rating", StarRatingController)
+
+import updateMentorController from "./update_mentor_controller"
+application.register("update-mentor", updateMentorController)
