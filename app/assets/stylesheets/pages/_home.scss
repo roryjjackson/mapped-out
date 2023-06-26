@@ -318,6 +318,10 @@ li.stage::marker {
 
   .landing {
     display: block;
+
+    .landing-data-box.left {
+      margin-top: 0;
+    }
   }
 
   .landing-content, .landing .landing-data-grid {
@@ -327,6 +331,8 @@ li.stage::marker {
   .landing-content {
     margin-bottom: 50px;
   }
+
+
 
   .section.one .our-mission .information {
     div {
@@ -404,14 +410,23 @@ li.stage::marker {
 
 @media (max-width: 420px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .landing {
     padding-top: 0;
+    margin: 100px auto 50px auto;
+
+    .landing-data-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .section.one {
+    margin: 50px auto 100px auto;
   }
 
   .section-two-right {
-    padding: 20px 0 0 31px;
+    padding: 20px 0 0 35px;
   }
 }
