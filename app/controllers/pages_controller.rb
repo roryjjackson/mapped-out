@@ -19,4 +19,10 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def admin
+    authorize :pages, :admin?
+    @mentors = Mentor.all
+    @enquiries = Enquiry.all
+  end
 end

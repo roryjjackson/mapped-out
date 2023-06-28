@@ -7,6 +7,6 @@ class PagesPolicy < ApplicationPolicy
   end
 
   def admin?
-    current_user.admin? ? true : false
+    user.admin?
   end
 end

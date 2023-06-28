@@ -10,6 +10,10 @@ class EnquiryPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    user.admin?
+  end
+
   def create?
     true
   end
