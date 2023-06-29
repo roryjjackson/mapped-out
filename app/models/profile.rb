@@ -11,8 +11,6 @@ class Profile < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  # validates :what, :why, :how, length: { minimum: 100, maximum: 600 }
-
   include PgSearch::Model
   pg_search_scope :search_by_query, against: %i[title name how why what address advice hours]
 
