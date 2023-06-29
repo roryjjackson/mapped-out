@@ -32,6 +32,7 @@
       <% end %>
 
       <% if @user.mentor? && !@profile.present? %>
+
         <%= link_to new_profile_path do %>
           <div class="card-category">
             <div class="card-content">
@@ -39,11 +40,10 @@
             </div>
           </div>
         <% end %>
-      <% else %>
+
       <% end %>
 
-
-      <% if @profile.present? %>
+      <% if @user.mentor? && @profile.present? %>
 
         <%= link_to edit_profile_path(@profile) do %>
           <div class="card-category">
@@ -53,50 +53,37 @@
           </div>
         <% end %>
 
-        <% if @questionnaire.present? %>
-          <%= link_to edit_questionnaire_path(@questionnaire) do %>
-            <div class="card-category">
-              <div class="card-content">
-                <h3>Re-take Quiz</h3>
-              </div>
+      <% end %>
+
+      <% if @questionnaire.present? %>
+
+        <%= link_to edit_questionnaire_path(@questionnaire) do %>
+          <div class="card-category">
+            <div class="card-content">
+              <h3>Re-take Quiz</h3>
             </div>
-          <% end %>
-        <% else %>
-          <%= link_to new_questionnaire_path do %>
-            <div class="card-category">
-              <div class="card-content">
-                <h3>Take The Quiz</h3>
-              </div>
-            </div>
-          <% end %>
+          </div>
         <% end %>
 
       <% else %>
 
+        <%= link_to new_questionnaire_path do %>
+          <div class="card-category">
+            <div class="card-content">
+              <h3>Take The Quiz</h3>
+            </div>
+          </div>
+        <% end %>
+
+      <% end %>
+
+      <% if !@user.mentor? %>
         <%= link_to new_mentor_path do %>
           <div class="card-category">
             <div class="card-content">
               <h3>Become a mentor</h3>
             </div>
           </div>
-        <% end %>
-
-        <% if @questionnaire.present? %>
-          <%= link_to edit_questionnaire_path(@questionnaire) do %>
-            <div class="card-category">
-              <div class="card-content">
-                <h3>Re-take Quiz</h3>
-              </div>
-            </div>
-          <% end %>
-        <% else %>
-          <%= link_to new_questionnaire_path do %>
-            <div class="card-category">
-              <div class="card-content">
-                <h3>Take The Quiz</h3>
-              </div>
-            </div>
-          <% end %>
         <% end %>
       <% end %>
 
