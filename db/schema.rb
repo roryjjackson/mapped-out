@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_29_094026) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_29_111825) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -105,18 +105,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_094026) do
     t.string "name"
     t.string "hours"
     t.string "title"
-    t.text "how"
-    t.text "why"
-    t.text "what"
-    t.text "advice"
+    t.text "summary"
+    t.string "compensation"
+    t.text "time_off"
+    t.text "personal_background"
+    t.text "entry_qualifications"
+    t.text "side_hustles"
+    t.text "q1"
+    t.text "q2"
+    t.text "q3"
+    t.text "q4"
+    t.text "q5"
+    t.text "q6"
+    t.text "q7"
+    t.text "q8"
+    t.text "q9"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.string "linked_in_url"
-    t.string "instagram_url"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

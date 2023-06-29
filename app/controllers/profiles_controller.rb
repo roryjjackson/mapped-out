@@ -85,8 +85,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    # @profile = Profile.where(user_id: current_user)
-
     authorize @profile
     respond_to do |format|
       if @profile.update(profile_params)
