@@ -121,9 +121,9 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:name, :hours, :title, :how,
-                                    :why, :what, :advice, :photo,
-                                    :address, :linked_in_url, :instagram_url)
+    params.require(:profile).permit(:name, :hours, :title, :summary, :personal_background, :compensation,
+                                    :time_off, :entry_qualifications, :side_hustles,
+                                    :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :photo, :address)
   end
 
   def find_most_similar_questionnaires(questionnaire)

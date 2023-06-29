@@ -4,7 +4,9 @@ class Profile < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   validates :user_id, uniqueness: true
-  validates :name, :hours, :title, :how, :why, :what, :advice, :photo, :address, presence: true
+  validates :name, :hours, :title, :summary, :personal_background, :compensation,
+            :time_off, :entry_qualifications,
+            :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :photo, :address, presence: true
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

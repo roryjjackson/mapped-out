@@ -8,34 +8,61 @@
         <div class="form-inputs">
 
           <div class="form-input">
-            <%= f.input :name, required: true, label: "What is your name?" %>
+            <%= f.input :name, required: true, label: "What is your name? Please state leave blank if you would like to stay anonymous." %>
           </div>
           <div class="form-input">
-            <%= f.input :hours, required: true, label: "What hours do you typically work?" %>
+            <%= f.input :title, required: true, label: "What is your the title of your current position at work?" %>
           </div>
           <div class="form-input">
-            <%= f.input :title, required: true, label: "What is your current job title?" %>
+            <%= f.input :photo, as: :file, required: true, label: "Please upload a photo that best represents you or your work" %>
           </div>
           <div class="form-input">
-            <%= f.input :how, required: true, label: "Please tell us how you got yourself started", class: "text-box" %>
+            <%= f.input :summary, required: true, label: "Give a brief summary on what your role entails.", class: "text-box" %>
           </div>
           <div class="form-input">
-            <%= f.input :why, required: true, label: "Why did you decide to do what you do?", class: "text-box" %>
+            <%= f.input :personal_background, required: true, label: "What is your personal background? Your education, interests etc...", class: "text-box" %>
           </div>
           <div class="form-input">
-            <%= f.input :what, required: true, label: "Day to day, what do you actually do?", class: "text-box" %>
+            <%= f.input :hours, required: true, label: "What hours do you typically work on a daily basis?" %>
           </div>
           <div class="form-input">
-            <%= f.input :advice, required: true, label: "Have you got any advice to share?", class: "text-box" %>
+            <%= f.input :time_off, required: true, label: "How much time per year to you get to switch off completely?", class: "text-box" %>
           </div>
           <div class="form-input">
-            <%= f.input :photo, as: :file, required: true, label: "Upload a photo that best represents you or your work" %>
+            <%= f.input :compensation, required: true, label: "How are you compensated for your work? Salary, bonuses etc. Provide as much details as you're willing to give.", class: "text-box" %>
           </div>
           <div class="form-input">
-            <%= f.input :linked_in_url, label: "Provide your linked in" %>
+            <%= f.input :entry_qualifications, label: "Are there any entry qualifications required for your role?" %>
           </div>
           <div class="form-input">
-            <%= f.input :instagram_url, label: "Provide your instagram" %>
+            <%= f.input :side_hustles, label: "Do you have any side hustles on the go?" %>
+          </div>
+          <div class="form-input">
+            <%= f.input :q1, label: "What enjoyment does your position give you at work and in general life?" %>
+          </div>
+          <div class="form-input">
+            <%= f.input :q2, label: "Do you see yourself progressing further in your field or changing to another? If so, why?" %>
+          </div>
+          <div class="form-input">
+            <%= f.input :q3, label: "How well does your background serve you in your industry?" %>
+          </div>
+          <div class="form-input">
+            <%= f.input :q4, label: "If you were recruiting for your own position, what would you look for?" %>
+          </div>
+          <div class="form-input">
+            <%= f.input :q5, label: "Are there any misconceptions about your industry?" %>
+          </div>
+          <div class="form-input">
+            <%= f.input :q6, label: "What gives you the greatest sense of pride in your life?" %>
+          </div>
+          <div class="form-input">
+            <%= f.input :q7, label: "What advice would you give to someone new to the industry?" %>
+          </div>
+          <div class="form-input">
+            <%= f.input :q8, label: "Can you provide any information on how to research your industry further?" %>
+          </div>
+          <div class="form-input">
+            <%= f.input :q9, label: "Have you had any doubts at any stage? If yes, why did they appear and are they still causing concern" %>
           </div>
           <div class="form-input">
             <%= f.input :address, required: true, label: "Where in the world are you located?",
