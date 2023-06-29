@@ -288,6 +288,17 @@
   }
 }
 
+.profile-show-card-summary {
+  background-color: $color5-dark;
+  border: solid $color7 1px;
+  color: $color7;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 @media (max-width: 1300px) {
   .profile-show {
     padding: 0 5vw;
@@ -364,6 +375,10 @@
 
 .form-input {
   margin-bottom: 50px;
+}
+
+textarea.form-control {
+  min-height: calc(1.5em + 0.75rem + 200px);
 }
 
 #profile_why, #profile_how, #profile_advice, #profile_what {

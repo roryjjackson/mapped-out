@@ -1,10 +1,12 @@
 <div class="profile-show">
-  <%= link_to "Back", profiles_path %>
   <div class="profile-show-title">
     <div class="background-image" style="background-image: url('<%= cl_image_path(@profile.photo.key)%>')">
     </div>
     <div class="profile-show-content">
       <div class="profile-show-content-data">
+        <%= link_to "Back to discover", profiles_path %>
+        <br/>
+        <br/>
         <h1>Hi 👋🏼, I'm <%= @profile.name %></h1>
         <h2>I work as a <%= @profile.title %></h2>
         <div class="message-button-container">
@@ -28,24 +30,76 @@
     </div>
   </div>
   <div class="profile-show-information">
-    <div class="profile-show-card">
-      <h3>What does your day typically involve?</h3>
-      <p><%= @profile.what %></p>
+    <div class="profile-show-card-summary">
+      <div>
+        <h3>Average working day</h3>
+        <p><%= @profile.hours %></p>
+      </div>
+      <div>
+        <h3>Time off</h3>
+        <p><%= @profile.time_off %></p>
+      </div>
+      <div>
+        <h3>Compensation</h3>
+        <p><%= @profile.compensation %></p>
+      </div>
+      <div>
+        <h3>Entry qualifications</h3>
+        <p><%= @profile.entry_qualifications %></p>
+      </div>
+      <div>
+        <h3>My Personal background</h3>
+        <p><%= @profile.personal_background %></p>
+      </div>
     </div>
 
     <div class="profile-show-card">
-      <h3>Why did you choose to go into your field?</h3>
-      <p><%= @profile.why %></p>
+      <h3>Summary</h3>
+      <p><%= @profile.summary %></p>
     </div>
 
-    <div class="profile-show-card">
-      <h3>How did you get yourself started in the beginning?</h3>
-      <p><%= @profile.how %></p>
-    </div>
 
     <div class="profile-show-card">
-      <h3>What advice would you give to aspiring people?</h3>
-      <p><%= @profile.advice %></p>
+      <h3>Enjoyment and fulfillment</h3>
+      <p><%= @profile.q1 %></p>
+    </div>
+    <div class="profile-show-card">
+      <h3>Future prospects</h3>
+      <p><%= @profile.q2 %></p>
+    </div>
+    <div class="profile-show-card">
+      <h3>Was my background relevant?</h3>
+      <p><%= @profile.q3 %></p>
+    </div>
+    <div class="profile-show-card">
+      <h3>What I would look for if recruiting for my own position</h3>
+      <p><%= @profile.q4 %></p>
+    </div>
+    <div class="profile-show-card">
+      <h3>Misconceptions</h3>
+      <p><%= @profile.q5 %></p>
+    </div>
+    <% if @profile.side_hustles.present? %>
+      <div class="profile-show-card">
+        <h3>Side hustles</h3>
+        <p><%= @profile.side_hustles %></p>
+      </div>
+    <% end %>
+    <div class="profile-show-card">
+      <h3>My greatest sense of pride</h3>
+      <p><%= @profile.q6 %></p>
+    </div>
+    <div class="profile-show-card">
+      <h3>My advice to you</h3>
+      <p><%= @profile.q7 %></p>
+    </div>
+    <div class="profile-show-card">
+      <h3>How to research further</h3>
+      <p><%= @profile.q8 %></p>
+    </div>
+    <div class="profile-show-card">
+      <h3>The difficulties I faced</h3>
+      <p><%= @profile.q9 %></p>
     </div>
 
     <div class="profile-show-card">
