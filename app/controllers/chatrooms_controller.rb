@@ -43,7 +43,7 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
     respond_to do |format|
       if @chatroom.save
-        format.html { redirect_to chatroom_url(@chatroom), notice: "chatroom was successfully created." }
+        format.html { redirect_to chatroom_url(@chatroom), notice: "You are now connected." }
         format.json { render :show, status: :created, location: @chatroom }
       else
         format.html { render :new, status: :unprocessable_entity }

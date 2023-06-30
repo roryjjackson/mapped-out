@@ -33,7 +33,7 @@ class QuestionnairesController < ApplicationController
     @most_similar = find_most_similar_questionnaires(@questionnaire)
     respond_to do |format|
       if @questionnaire.save
-        format.html { redirect_to dashboard_path, notice: "Questionnaire was successfully created." }
+        format.html { redirect_to dashboard_path, notice: "Thank you for completing the test." }
         format.json { render :show, status: :created, location: @questionnaire }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -47,7 +47,7 @@ class QuestionnairesController < ApplicationController
 
     respond_to do |format|
       if @questionnaire.update(questionnaire_params)
-        format.html { redirect_to dashboard_path, notice: "Questionnaire was successfully updated." }
+        format.html { redirect_to dashboard_path, notice: "Your test scores have been updated." }
         format.json { render :show, status: :ok, location: @questionnaire }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -62,7 +62,7 @@ class QuestionnairesController < ApplicationController
     @questionnaire.destroy
 
     respond_to do |format|
-      format.html { redirect_to dashboard_path, notice: "Questionnaire was successfully destroyed." }
+      format.html { redirect_to dashboard_path, notice: "Test scores deleted." }
       format.json { head :no_content }
     end
   end

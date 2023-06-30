@@ -33,7 +33,7 @@ class EnquiriesController < ApplicationController
 
     respond_to do |format|
       if @enquiry.save
-        format.html { redirect_to root_path, notice: "Enquiry was successfully created." }
+        format.html { redirect_to root_path, notice: "Thank you for contacting us, we will be in touch as soon as we can." }
         format.json { render :show, status: :created, location: @enquiry }
       else
         format.html { render :new, status: :unprocessable_entity }
