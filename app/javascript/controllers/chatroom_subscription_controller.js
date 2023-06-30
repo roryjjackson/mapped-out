@@ -41,6 +41,7 @@ export default class extends Controller {
   }
 
   resetForm(event) {
+    console.log('connected to reset form')
     event.target.reset()
   }
 
