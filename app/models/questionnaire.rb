@@ -26,7 +26,7 @@ class Questionnaire < ApplicationRecord
       "I believe success is not limited to money or prestige",
       "I am driven by the feeling of greater purpose",
       "I am energized by learning something new",
-      "I am good at making others feel hear, understood, and included",
+      "I am good at making others feel heard, understood, and included",
       "I am good at instilling certainty and confidence in other people",
       "I am good at explaining, describing, and entertaining"
     ]
