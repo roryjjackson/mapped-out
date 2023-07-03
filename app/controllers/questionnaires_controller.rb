@@ -23,7 +23,6 @@ class QuestionnairesController < ApplicationController
   def edit
     @questions = Questionnaire.all_questions
     authorize @questionnaire
-
   end
 
   def create
@@ -84,7 +83,7 @@ class QuestionnairesController < ApplicationController
   end
 
   def questionnaire_params
-    params.require(:questionnaire).permit(:q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10, :q11, :q12, :q13, :q14, :q15, :q16, :q17, :q18, :q19, :q20, :q21, :q22, :q23, :q24, :q25)
+    params.require(:questionnaire).permit(:q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10, :q11, :q12, :q13, :q14, :q15, :q16, :q17, :q18, :q19, :q20)
   end
 
   def euclidean_distance(a, b)
@@ -92,8 +91,8 @@ class QuestionnairesController < ApplicationController
   end
 
   def similarity_score(a, b)
-    total_deviation = [a.q1, a.q2, a.q3, a.q4, a.q5, a.q6, a.q7, a.q8, a.q9, a.q10,a.q11, a.q12, a.q13, a.q14, a.q15,a.q16, a.q17, a.q18, a.q19, a.q20,a.q21, a.q22, a.q23, a.q24, a.q25]
-    .zip([b.q1, b.q2, b.q3, b.q4, b.q5, b.q6, b.q7, b.q8, b.q9, b.q10,b.q11, b.q12, b.q13, b.q14, b.q15,b.q16, b.q17, b.q18, b.q19, b.q20,b.q21, b.q22, b.q23, b.q24, b.q25]).sum do |x, y|
+    total_deviation = [a.q1, a.q2, a.q3, a.q4, a.q5, a.q6, a.q7, a.q8, a.q9, a.q10,a.q11, a.q12, a.q13, a.q14, a.q15,a.q16, a.q17, a.q18, a.q19, a.q20]
+    .zip([b.q1, b.q2, b.q3, b.q4, b.q5, b.q6, b.q7, b.q8, b.q9, b.q10,b.q11, b.q12, b.q13, b.q14, b.q15,b.q16, b.q17, b.q18, b.q19, b.q20,]).sum do |x, y|
       euclidean_distance(x, y)
     end
     total_deviation_percentage = (total_deviation.to_f / (a.attribute_names.size - 1) * 4) * 100

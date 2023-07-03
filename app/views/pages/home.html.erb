@@ -89,31 +89,40 @@
     </div>
     <ul class="section-two-right">
       <li class="stage">
-        <%= link_to new_questionnaire_path do %>
-          <i class="fa-regular fa-lightbulb"></i>
-        <% end %>
+        <i class="fa-regular fa-lightbulb"></i>
         <div>
           <h3>Take our questionnaire</h3>
           <p>Answer our questions honestly, they're the key to finding a potential match.</p>
         </div>
+        <%= link_to new_questionnaire_path do %>
+          <button class="button">
+            Take our test
+          </button>
+        <% end %>
       </li>
       <li class="stage">
-        <%= link_to profiles_path do %>
-          <i class="fa-solid fa-book-open"></i>
-        <% end %>
+        <i class="fa-solid fa-book-open"></i>
         <div>
           <h3>Browse our library</h3>
           <p>Explore and read about the experiences of others.</p>
         </div>
+        <%= link_to profiles_path do %>
+          <button class="button">
+            Browse
+          </button>
+        <% end %>
       </li>
       <li class="stage">
-        <%= link_to new_mentor_path do %>
-          <i class="fa-regular fa-comments"></i>
-        <% end %>
+        <i class="fa-regular fa-comments"></i>
         <div>
-          <h3>Connect to a mentor</h3>
-          <p>Contact one of our members directly, or apply for our more specific mentor program.</p>
+          <h3>Contact</h3>
+          <p>Contact one of our members directly via our library, or send us a message directly</p>
         </div>
+        <%= link_to new_enquiry_path do %>
+          <button class="button">
+            Contact
+          </button>
+        <% end %>
       </li>
     </ul>
   </div>
@@ -123,7 +132,7 @@
   <div class="section four">
     <div class="become-a-member-container">
       <div class="member-image">
-        <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1686920328/pexels-kampus-production-5940841_rokpmx.jpg" alt="">
+        <img src="https://res.cloudinary.com/dfipoufmj/image/upload/v1688378925/pexels-christina-morillo-1181722_dv9ogw.jpg" alt="">
       </div>
       <div class="member-content">
         <div class="member-text">
