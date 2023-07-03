@@ -1,5 +1,4 @@
 <div class='dashboard'>
-
   <div class='dashboard-container left'>
     <div>
       <%= link_to "Return Home", root_path %>
@@ -10,7 +9,11 @@
     </div>
     <div class='icon-container'>
       <div class='icon'><%= cl_image_tag current_user.photo.key, class: "dashboard-avatar" %></div>
-      <div class='icon review'><%= @total_rating %> </div>
+      <% if @total_rating.present? %>
+        <div class='icon review'><%= @total_rating %> </div>
+      <% else %>
+        <div class='icon review'>Reviews</div>
+      <% end %>
     </div>
   </div>
 

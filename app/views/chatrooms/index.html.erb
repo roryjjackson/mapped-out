@@ -1,4 +1,5 @@
 <div class="chatroom-index">
+  <% if @chatrooms.length > 0 %>
   <div class="chatroom-selected-section" id="chatroom-show-content-placeholder">
     <div class="chatroom-placeholder">
       Select a chat
@@ -7,100 +8,102 @@
 
   <div class="chatroom-list-section">
     <h2>All Chats</h2>
-    <div class="chatroom-links-container">
-      <% @chatrooms.each do |chatroom| %>
-        <%= link_to chatroom_path(chatroom), class: 'chatroom-link', id: "chatroom-#{chatroom.id}"  do %>
-          <div class="chatroom-container">
-            <div class="chatroom-card">
-              <% if @user_data[chatroom.id][:user1].present? && chatroom.user_id != current_user.id %>
-                <div class="chatroom-card-avatar">
-                  <img src="<%= @user_data[chatroom.id][:user1].photo.url %>" alt="">
-                </div>
-                <div class="chatroom-data">
-                  <!-- Chatroom details -->
-                  <div class="upper">
-                    <h3 class="user-nickname"><%= @user_data[chatroom.id][:user1].nickname %></h3>
-                    <% if @user_data[chatroom.id][:messages].present? %>
-                      <% timestamp = @user_data[chatroom.id][:messages].last.updated_at %>
-                      <% if timestamp.today? %>
-                        <h4><%= timestamp.strftime('%H:%M') %></h4>
-                      <% else %>
-                        <h4><%= timestamp.strftime('%A') %></h4>
+
+      <div class="chatroom-links-container">
+        <% @chatrooms.each do |chatroom| %>
+          <%= link_to chatroom_path(chatroom), class: 'chatroom-link', id: "chatroom-#{chatroom.id}"  do %>
+            <div class="chatroom-container">
+              <div class="chatroom-card">
+                <% if @user_data[chatroom.id][:user1].present? && chatroom.user_id != current_user.id %>
+                  <div class="chatroom-card-avatar">
+                    <img src="<%= @user_data[chatroom.id][:user1].photo.url %>" alt="">
+                  </div>
+                  <div class="chatroom-data">
+                    <!-- Chatroom details -->
+                    <div class="upper">
+                      <h3 class="user-nickname"><%= @user_data[chatroom.id][:user1].nickname %></h3>
+                      <% if @user_data[chatroom.id][:messages].present? %>
+                        <% timestamp = @user_data[chatroom.id][:messages].last.updated_at %>
+                        <% if timestamp.today? %>
+                          <h4><%= timestamp.strftime('%H:%M') %></h4>
+                        <% else %>
+                          <h4><%= timestamp.strftime('%A') %></h4>
+                        <% end %>
                       <% end %>
+                    </div>
+                    <% if @user_data[chatroom.id][:messages].present? %>
+                      <p><%= @user_data[chatroom.id][:messages].last.content %></p>
                     <% end %>
                   </div>
-                  <% if @user_data[chatroom.id][:messages].present? %>
-                    <p><%= @user_data[chatroom.id][:messages].last.content %></p>
-                  <% end %>
-                </div>
-              <% else %>
-                <div class="chatroom-card-avatar">
-                  <img src="<%= @user_data[chatroom.id][:user2].photo.url %>" alt="">
-                </div>
-                <div class="chatroom-data">
-                  <!-- Chatroom details -->
-                  <div class="upper">
-                    <h3 class="user-nickname"><%= @user_data[chatroom.id][:user2].nickname %></h3>
-                    <% if @user_data[chatroom.id][:messages].present? %>
-                      <% timestamp = @user_data[chatroom.id][:messages].last.updated_at %>
-                      <% if timestamp.today? %>
-                        <h4><%= timestamp.strftime('%H:%M') %></h4>
-                      <% else %>
-                        <h4><%= timestamp.strftime('%A') %></h4>
+                <% else %>
+                  <div class="chatroom-card-avatar">
+                    <img src="<%= @user_data[chatroom.id][:user2].photo.url %>" alt="">
+                  </div>
+                  <div class="chatroom-data">
+                    <!-- Chatroom details -->
+                    <div class="upper">
+                      <h3 class="user-nickname"><%= @user_data[chatroom.id][:user2].nickname %></h3>
+                      <% if @user_data[chatroom.id][:messages].present? %>
+                        <% timestamp = @user_data[chatroom.id][:messages].last.updated_at %>
+                        <% if timestamp.today? %>
+                          <h4><%= timestamp.strftime('%H:%M') %></h4>
+                        <% else %>
+                          <h4><%= timestamp.strftime('%A') %></h4>
+                        <% end %>
                       <% end %>
+                    </div>
+                    <% if @user_data[chatroom.id][:messages].present? %>
+                      <p><%= @user_data[chatroom.id][:messages].last.content %></p>
                     <% end %>
                   </div>
-                  <% if @user_data[chatroom.id][:messages].present? %>
-                    <p><%= @user_data[chatroom.id][:messages].last.content %></p>
-                  <% end %>
-                </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
   </div>
+
+    <% else %>
+
+      <div class="chatroom-placeholder-empty">
+        <p>You have no messages</p>
+        <br/>
+        <br/>
+        <br/>
+        <%= link_to "Back To Dashboard", dashboard_path %>
+      </div>
+
+    <% end %>
 
 
 </div>
 
 <script>
-  // Get the chatroom links container
   const chatroomLinksContainer = document.querySelector('.chatroom-links-container');
 
-  // Attach a click event listener to the chatroom links container
   chatroomLinksContainer.addEventListener('click', (event) => {
-    // Prevent the default link behavior
     event.preventDefault();
 
-    // Get the selected chatroom link
     const selectedChatroomLink = event.target.closest('.chatroom-link');
 
-    // Check if a chatroom link was clicked and exclude navbar links
     if (selectedChatroomLink && !event.target.closest('.navbar-nav')) {
-      // Get the URL of the selected chatroom show page
       const chatroomShowUrl = selectedChatroomLink.getAttribute('href');
 
-      // Send an AJAX request to the chatroom show URL
       fetch(chatroomShowUrl)
         .then(response => response.text())
         .then(content => {
-          // Create a temporary container element to hold the content
           const tempContainer = document.createElement('div');
           tempContainer.innerHTML = content;
 
-          // Remove the navbar element from the loaded content
           const navbarElement = tempContainer.querySelector('.navbar');
           navbarElement.remove();
 
           const footerElement = tempContainer.querySelector('.footer');
           footerElement.remove();
 
-          // Get the chatroom show content placeholder
           const chatroomShowContentPlaceholder = document.querySelector('#chatroom-show-content-placeholder');
 
-          // Update the chatroom show content placeholder with the modified content
           chatroomShowContentPlaceholder.innerHTML = tempContainer.innerHTML;
         })
         .catch(error => {

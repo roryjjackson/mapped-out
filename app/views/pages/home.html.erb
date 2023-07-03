@@ -89,21 +89,27 @@
     </div>
     <ul class="section-two-right">
       <li class="stage">
-        <i class="fa-regular fa-lightbulb"></i>
+        <%= link_to new_questionnaire_path do %>
+          <i class="fa-regular fa-lightbulb"></i>
+        <% end %>
         <div>
           <h3>Take our questionnaire</h3>
           <p>Answer our questions honestly, they're the key to finding a potential match.</p>
         </div>
       </li>
       <li class="stage">
-        <i class="fa-solid fa-book-open"></i>
+        <%= link_to profiles_path do %>
+          <i class="fa-solid fa-book-open"></i>
+        <% end %>
         <div>
           <h3>Browse our library</h3>
           <p>Explore and read about the experiences of others.</p>
         </div>
       </li>
       <li class="stage">
-        <i class="fa-regular fa-comments"></i>
+        <%= link_to new_mentor_path do %>
+          <i class="fa-regular fa-comments"></i>
+        <% end %>
         <div>
           <h3>Connect to a mentor</h3>
           <p>Contact one of our members directly, or apply for our more specific mentor program.</p>
