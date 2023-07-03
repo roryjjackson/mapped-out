@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_29_111825) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_03_104307) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -105,27 +105,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_111825) do
     t.string "name"
     t.string "hours"
     t.string "title"
-    t.text "summary"
-    t.string "compensation"
-    t.text "time_off"
-    t.text "personal_background"
-    t.text "entry_qualifications"
-    t.text "side_hustles"
-    t.text "q1"
     t.text "q2"
     t.text "q3"
+    t.text "q1"
     t.text "q4"
-    t.text "q5"
-    t.text "q6"
-    t.text "q7"
-    t.text "q8"
-    t.text "q9"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.text "q5"
+    t.text "q6"
+    t.text "q7"
+    t.text "q8"
+    t.text "q9"
+    t.text "summary"
+    t.string "compensation"
+    t.text "time_off"
+    t.text "personal_background"
+    t.text "entry_qualifications"
+    t.text "side_hustles"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -154,11 +154,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_111825) do
     t.integer "q18"
     t.integer "q19"
     t.integer "q20"
-    t.integer "q21"
-    t.integer "q22"
-    t.integer "q23"
-    t.integer "q24"
-    t.integer "q25"
     t.index ["user_id"], name: "index_questionnaires_on_user_id"
   end
 
