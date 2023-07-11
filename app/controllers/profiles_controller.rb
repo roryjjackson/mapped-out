@@ -123,7 +123,7 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:name, :hours, :title, :summary, :personal_background, :compensation,
                                     :time_off, :entry_qualifications, :side_hustles,
-                                    :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :photo, :address)
+                                    :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :address, photos: [])
   end
 
   def find_most_similar_questionnaires(questionnaire)
