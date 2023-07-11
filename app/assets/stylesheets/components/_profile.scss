@@ -297,6 +297,32 @@
   }
 }
 
+.profile-show-img img {
+  height: 600px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 40px;
+  object-position: center;
+}
+
+.profile-show-images  {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin-bottom: 50px;
+  margin-top: 40px;
+
+  img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    object-position: center;
+  }
+}
+
 .profile-show-card-summary {
   background-color: $color5-dark;
   border: solid $color7 1px;
@@ -323,9 +349,6 @@
       height: 350px;
       border-radius: 10px;
     }
-    // .profile-show-content {
-    //   margin-bottom: 50px;
-    // }
   }
 
   .profile-show .profile-show-title {
@@ -348,6 +371,14 @@
       display: grid;
       grid-template-columns: 1fr;
     }
+  }
+
+
+}
+
+@media (max-width: 600px) {
+  .profile-show-images  {
+    grid-template-columns: 1fr;
   }
 }
 

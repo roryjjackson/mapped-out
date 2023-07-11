@@ -1,7 +1,6 @@
 <div id="<%= dom_id profile %>">
   <div class="profile-card">
-    <img src="<%= cl_image_path(profile.photo.key) %>" alt="Profile Photo">
-
+      <img src="<%= cl_image_path(profile.photos.first.key) %>" alt="Profile Photo">
     <div class="profile-card-infos">
       <div>
         <h3><%= profile.name %></h3>

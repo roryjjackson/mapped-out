@@ -1,6 +1,6 @@
 <div class="profile-show">
   <div class="profile-show-title">
-    <div class="background-image" style="background-image: url('<%= cl_image_path(@profile.photo.key)%>')">
+    <div class="background-image" style="background-image: url('<%= cl_image_path(@profile.photos.first.key)%>')">
     </div>
     <div class="profile-show-content">
       <div class="profile-show-content-data">
@@ -53,9 +53,15 @@
       </div>
     </div>
 
+
+
     <div class="profile-show-card">
       <h3>Summary</h3>
       <p><%= @profile.summary %></p>
+    </div>
+
+    <div class="profile-show-img">
+      <img src="<%= cl_image_path(@profile.photos.last.key) %>" alt="">
     </div>
 
     <div class="profile-grid">
@@ -75,6 +81,15 @@
         <h3>What I would look for if recruiting for my own position</h3>
         <p><%= @profile.q4 %></p>
       </div>
+    </div>
+
+    <div class="profile-show-images">
+      <% @profile.photos.take(3).each do |photo| %>
+        <img src="<%= cl_image_path(photo.key) %>" alt="">
+      <% end %>
+    </div>
+
+    <div class="profile-grid">
       <div class="profile-show-card">
         <h3>Misconceptions</h3>
         <p><%= @profile.q5 %></p>
