@@ -9,23 +9,23 @@
         <br/>
         <h1>Hi 👋🏼, I'm <%= @profile.name %></h1>
         <h2>I work as a <%= @profile.title %></h2>
-        <div class="message-button-container">
-          <div>
-            <% if (current_user.id != @profile.user_id ) %>
-              <% chatroom = Chatroom.find_by(user_id: current_user.id, user2_id: @profile.user_id) %>
-              <% chatroom2 = Chatroom.find_by(user_id: @profile.user_id, user2_id: current_user.id) %>
-              <% if chatroom || chatroom2 %>
-                <button class="button">
-                  <%= link_to "Message #{@profile.name}", chatroom_path(chatroom || chatroom2) %>
-                </button>
-              <% else %>
-                <button class="button">
-                  <%= link_to "Message #{@profile.name}", new_chatroom_path(user2_id: @profile.user_id)  %>
-                </button>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+        <%# <div class="message-button-container"> %>
+          <%# <div> %>
+            <%# <% if (current_user.id != @profile.user_id ) %>
+              <%# <% chatroom = Chatroom.find_by(user_id: current_user.id, user2_id: @profile.user_id) %>
+              <%# <% chatroom2 = Chatroom.find_by(user_id: @profile.user_id, user2_id: current_user.id) %>
+              <%# <% if chatroom || chatroom2 %>
+                <%# <button class="button"> %>
+                  <%# <%= link_to "Message #{@profile.name}", chatroom_path(chatroom || chatroom2) %>
+                <%# </button> %>
+              <%# <% else %>
+                <%# <button class="button"> %>
+                  <%# <%= link_to "Message #{@profile.name}", new_chatroom_path(user2_id: @profile.user_id)  %>
+                <%# </button> %>
+              <%# <% end %>
+            <%# <% end %>
+          <%# </div> %>
+        <%# </div> %>
       </div>
     </div>
   </div>
@@ -58,48 +58,49 @@
       <p><%= @profile.summary %></p>
     </div>
 
-
-    <div class="profile-show-card">
-      <h3>Enjoyment and fulfillment</h3>
-      <p><%= @profile.q1 %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>Future prospects</h3>
-      <p><%= @profile.q2 %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>Was my background relevant?</h3>
-      <p><%= @profile.q3 %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>What I would look for if recruiting for my own position</h3>
-      <p><%= @profile.q4 %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>Misconceptions</h3>
-      <p><%= @profile.q5 %></p>
-    </div>
-    <% if @profile.side_hustles.present? %>
+    <div class="profile-grid">
       <div class="profile-show-card">
-        <h3>Side hustles</h3>
-        <p><%= @profile.side_hustles %></p>
+        <h3>Enjoyment and fulfillment</h3>
+        <p><%= @profile.q1 %></p>
       </div>
-    <% end %>
-    <div class="profile-show-card">
-      <h3>My greatest sense of pride</h3>
-      <p><%= @profile.q6 %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>My advice to you</h3>
-      <p><%= @profile.q7 %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>How to research further</h3>
-      <p><%= @profile.q8 %></p>
-    </div>
-    <div class="profile-show-card">
-      <h3>The difficulties I faced</h3>
-      <p><%= @profile.q9 %></p>
+      <div class="profile-show-card">
+        <h3>Future prospects</h3>
+        <p><%= @profile.q2 %></p>
+      </div>
+      <div class="profile-show-card">
+        <h3>Was my background relevant?</h3>
+        <p><%= @profile.q3 %></p>
+      </div>
+      <div class="profile-show-card">
+        <h3>What I would look for if recruiting for my own position</h3>
+        <p><%= @profile.q4 %></p>
+      </div>
+      <div class="profile-show-card">
+        <h3>Misconceptions</h3>
+        <p><%= @profile.q5 %></p>
+      </div>
+      <% if @profile.side_hustles.present? %>
+        <div class="profile-show-card">
+          <h3>Side hustles</h3>
+          <p><%= @profile.side_hustles %></p>
+        </div>
+      <% end %>
+      <div class="profile-show-card">
+        <h3>My greatest sense of pride</h3>
+        <p><%= @profile.q6 %></p>
+      </div>
+      <div class="profile-show-card">
+        <h3>My advice to you</h3>
+        <p><%= @profile.q7 %></p>
+      </div>
+      <div class="profile-show-card">
+        <h3>How to research further</h3>
+        <p><%= @profile.q8 %></p>
+      </div>
+      <div class="profile-show-card">
+        <h3>The difficulties I faced</h3>
+        <p><%= @profile.q9 %></p>
+      </div>
     </div>
 
     <div class="profile-show-card">

@@ -92,7 +92,7 @@
 
   p {
     font-size: 12px;
-    opacity: .7;
+    opacity: .85;
     margin: 0;
     color: black;
   }
@@ -145,13 +145,12 @@
   align-items: center;
   background: $color5-dark;
   color: $color7;
-  border: solid $color7 1px;
   text-align: center;
+}
 
-  .review {
-    padding: 10px;
-
-  }
+.icon.review {
+  padding: 10px;
+  border: solid $color7 1px;
 }
 
 .dashboard-container.right {

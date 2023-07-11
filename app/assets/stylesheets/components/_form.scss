@@ -36,7 +36,11 @@
 
 .form-container.edit-registration, .form-container.signup {
   // margin: 7vh 0;
-  margin: 10vh 0 0 0;
+  margin: 12vh 0 0 0;
+}
+
+.form-container.edit-registration {
+  margin-bottom: 10vh;
 }
 
 @media (max-width: 700px) {

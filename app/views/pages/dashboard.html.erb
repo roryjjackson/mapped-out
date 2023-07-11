@@ -9,107 +9,104 @@
     </div>
     <div class='icon-container'>
       <div class='icon'><%= cl_image_tag current_user.photo.key, class: "dashboard-avatar" %></div>
-      <% if @total_rating.present? %>
-        <div class='icon review'><%= @total_rating %> </div>
-      <% else %>
-        <div class='icon review'>Reviews</div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class='dashboard-container middle'>
-    <%= link_to profiles_path do %>
-      <div class="discover-card">
-        <div class='card-content'>
-          <h3>Discover</h3>
-        </div>
+        <% if @total_rating.present? %>
+          <div class='icon review'><%= @total_rating %></div>
+        <% else %>
+          <div class='icon review'>Reviews</div>
+        <% end %>
       </div>
-    <% end %>
-    <div class='card-category-container'>
-      <%= link_to chatrooms_path  do %>
+    </div>
+
+    <div class='dashboard-container middle'>
+      <%= link_to profiles_path do %>
+        <div class="discover-card">
+          <div class='card-content'>
+            <h3>Discover</h3>
+          </div>
+        </div>
+      <% end %>
+      <div class='card-category-container'>
+        <%# <%= link_to chatrooms_path  do %>
+          <%# <div class="card-category">
+            <div class="card-content">
+              <h3>Messages</h3>
+            </div>
+          </div> %>
+        <%# <% end %>
+
+        <%= link_to edit_user_registration_path  do %>
+          <div class="card-category">
+            <div class="card-content">
+              <h3>Account</h3>
+            </div>
+          </div>
+        <% end %>
+
+        <% if @user.mentor? && !@profile.present? %>
+
+          <%= link_to new_profile_path do %>
+            <div class="card-category">
+              <div class="card-content">
+                <h3>Create Profile</h3>
+              </div>
+            </div>
+          <% end %>
+
+        <% end %>
+
+        <% if @user.mentor? && @profile.present? %>
+
+          <%= link_to edit_profile_path(@profile) do %>
+            <div class="card-category">
+              <div class="card-content">
+                <h3>Professional Profile</h3>
+              </div>
+            </div>
+          <% end %>
+
+        <% end %>
+
+        <% if @questionnaire.present? %>
+
+          <%= link_to edit_questionnaire_path(@questionnaire) do %>
+            <div class="card-category">
+              <div class="card-content">
+                <h3>Re-take The Test</h3>
+              </div>
+            </div>
+          <% end %>
+
+        <% else %>
+
+          <%= link_to new_questionnaire_path do %>
+            <div class="card-category">
+              <div class="card-content">
+                <h3>Take The Test</h3>
+              </div>
+            </div>
+          <% end %>
+
+        <% end %>
+
+        <% if !@user.mentor? %>
+          <%= link_to new_mentor_path do %>
+            <div class="card-category">
+              <div class="card-content">
+                <h3>Share your experiences</h3>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
         <div class="card-category">
           <div class="card-content">
-            <h3>Messages</h3>
+            <h3>New features are coming</h3>
           </div>
-        </div>
-      <% end %>
-
-      <% if @user.mentor? && !@profile.present? %>
-
-        <%= link_to new_profile_path do %>
-          <div class="card-category">
-            <div class="card-content">
-              <h3>Create Profile</h3>
-            </div>
-          </div>
-        <% end %>
-
-      <% end %>
-
-      <% if @user.mentor? && @profile.present? %>
-
-        <%= link_to edit_profile_path(@profile) do %>
-          <div class="card-category">
-            <div class="card-content">
-              <h3>Mentor Profile</h3>
-            </div>
-          </div>
-        <% end %>
-
-      <% end %>
-
-      <% if @questionnaire.present? %>
-
-        <%= link_to edit_questionnaire_path(@questionnaire) do %>
-          <div class="card-category">
-            <div class="card-content">
-              <h3>Re-take The Test</h3>
-            </div>
-          </div>
-        <% end %>
-
-      <% else %>
-
-        <%= link_to new_questionnaire_path do %>
-          <div class="card-category">
-            <div class="card-content">
-              <h3>Take The Test</h3>
-            </div>
-          </div>
-        <% end %>
-
-      <% end %>
-
-      <% if !@user.mentor? %>
-        <%= link_to new_mentor_path do %>
-          <div class="card-category">
-            <div class="card-content">
-              <h3>Become a mentor</h3>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-
-      <div class="card-category">
-        <div class="card-content">
-          <h3>New features are coming</h3>
         </div>
       </div>
     </div>
-  </div>
 
   <div class='dashboard-container right'>
-    <%# <div>
-      <a class="social-media-icon" href="https://github.com/roryjjackson" target="_blank" rel="noreferrer">
-        <i class="fa-brands fa-github" id="github"></i>
-      </a>
-      <a class="social-media-icon" href="https://www.facebook.com/jacksonrory3/" target="_blank" rel="noreferrer">
-        <i class="fa-brands fa-facebook" id="facebook"></i>
-      </a>
-      <a class="social-media-icon" href="https://www.instagram.com/jackson_rory_/" target="_blank" rel="noreferrer">
-        <i class="fa-brands fa-instagram" id="instagram"></i>
-      </a>
-    </div> %>
     <h3>MappedOut.</h3>
     <p>If you have any suggestions on new features, please do let us know!</p>
   </div>
