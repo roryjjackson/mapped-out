@@ -41,9 +41,13 @@
   display: flex;
   align-items: center;
 
-  h5 {
-    font-size: 1rem;
+  h5, h5.devise-btn {
+    font-size: 1rem !important;
   }
+}
+
+.devise-btn {
+  font-size: 1rem;
 }
 
 .nav-link {

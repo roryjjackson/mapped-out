@@ -11,10 +11,10 @@
             <%= f.input :name, required: true, label: "What is your name? Use an alternate name or put 'Anonymous' if you would prefer to do so" %>
           </div>
           <div class="form-input">
-            <%= f.input :title, required: true, label: "What is your the title of your current position at work?" %>
+            <%= f.input :title, required: true, label: "What is your current job title?" %>
           </div>
           <div class="form-input">
-            <%= f.input :photos, as: :file, input_html: { multiple: true }, required: true, label: "Please upload a photo that best represents you or your work" %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, required: true, label: "Please upload up to 4 photos that represent what you do" %>
           </div>
           <div class="form-input">
             <%= f.input :summary, required: true, label: "Give a brief summary on what your role entails.", class: "text-box" %>
