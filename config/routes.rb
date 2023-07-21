@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :recipes
   resources :mentors
   resources :enquiries
   resources :questionnaires
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   get 'about', to: 'pages#about'
   get 'admin', to: 'pages#admin'
+
 end
