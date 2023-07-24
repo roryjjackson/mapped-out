@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[ show edit update destroy ]
   require "nokogiri"
   require "open-uri"
-
+  require 'json'
   # GET /recipes or /recipes.json
   def index
     # @recipes = Recipe.all
@@ -75,6 +75,28 @@ class RecipesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search_youtube_videos
+    @recipe = Recipe.last
+    authorize @recipe
+    api_key = 'AIzaSyBj0Zq-ad00BSLiPvcJqtpagSkB_f-x67g'
+    base_url = 'https://www.googleapis.com/youtube/v3/search'
+    params = {
+      q: query,
+      key: api_key
+    }
+    url = "#{base_url}?#{URI.encode_www_form(params)}"
+
+    begin
+      response = URI.open(url)
+      data = JSON.parse(response.read)
+      return data
+    rescue OpenURI::HTTPError => e
+      puts "Error: #{e.message}"
+      return nil
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

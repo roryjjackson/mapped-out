@@ -5,4 +5,8 @@ class RecipePolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def search_youtube_videos?
+    true
+  end
 end
