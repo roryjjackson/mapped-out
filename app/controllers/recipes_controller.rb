@@ -81,6 +81,7 @@ class RecipesController < ApplicationController
     authorize @recipe
     api_key = 'AIzaSyBj0Zq-ad00BSLiPvcJqtpagSkB_f-x67g'
     base_url = 'https://www.googleapis.com/youtube/v3/search'
+    query = "day in the life of a porn star"
     params = {
       q: query,
       key: api_key
@@ -90,10 +91,12 @@ class RecipesController < ApplicationController
     begin
       response = URI.open(url)
       data = JSON.parse(response.read)
-      return data
+      @video_urls = data["items"].map { |item| "https://www.youtube.com/embed/#{item['id']['videoId']}" }
+      # return data
     rescue OpenURI::HTTPError => e
       puts "Error: #{e.message}"
-      return nil
+      @video_urls = []
+      # return nil
     end
   end
 
