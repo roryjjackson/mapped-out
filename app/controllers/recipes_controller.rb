@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
     @recipes = policy_scope(Recipe)
 
     ingredient = "pine nuts"
-    url = "https://www.bbcgoodfood.com/search/recipes?q=#{ingredient}"
+    url = "https://www.youtube.com/results?search_query=#{ingredient}"
 
     html_file = URI.open(url).read
     html_doc = Nokogiri::HTML.parse(html_file)
@@ -18,9 +18,9 @@ class RecipesController < ApplicationController
     @recipe_urls = []
 
     html_doc.search(".card__section.card__content").each do |element|
-      @recipe_titles << element.search(".heading-4").text.strip
+      @recipe_titles << element.search(".style-scope.ytd-video-renderer").text.strip
       # @recipe_titles << element.text.strip
-      @recipe_urls << element.search(".link").attribute("href").value
+      # @recipe_urls << element.search(".link").attribute("href").value
       # raise
     end
   end

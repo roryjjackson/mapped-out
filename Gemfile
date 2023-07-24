@@ -85,3 +85,4 @@ gem 'open-uri'
 gem "pg_search"
 # gem "elasticsearch"
 # gem "searchkick"
+gem 'google-api-client'
