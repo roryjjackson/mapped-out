@@ -19,7 +19,6 @@ class JobsController < ApplicationController
       # help me here
       @job_titles << element.text.strip
     end
-    raise
   end
 
   # GET /jobs/1 or /jobs/1.json
