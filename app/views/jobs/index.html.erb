@@ -9,8 +9,12 @@
 
 <h1>Jobs</h1>
 
+<% @job_headings.each do |x| %>
+  <p><%= x %></p>
+<% end %>
+
 <div id="jobs">
-  <% @job_titles.each do |job| %>
+  <% @jobs.each do |job| %>
     <%# <%= render job %>
     <p><%= job %></p>
     <p>

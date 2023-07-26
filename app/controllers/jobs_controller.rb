@@ -8,21 +8,63 @@ class JobsController < ApplicationController
   def index
     @jobs = policy_scope(Job)
 
-    url = "https://www.planitplus.net/CareerAreas/"
+    letters = ("A".."Z").to_a
 
-    html_file = URI.open(url).read
-    html_doc = Nokogiri::HTML.parse(html_file)
+    url = "https://www.planitplus.net/JobProfiles?letter=Y"
+    # base_url = "https://www.planitplus.net/JobProfiles?letter=A"
 
-    @job_titles = []
+    # letters.map do |letter|
+      # url = base_url + letter
 
-    html_doc.search(".career-area").each do |element|
-      # help me here
-      @job_titles << element.text.strip
-    end
+      html_file = URI.open(url).read
+      html_doc = Nokogiri::HTML.parse(html_file)
+
+      @job_headings = []
+
+      html_doc.search('.jobs-list').each do |element|
+        @job_headings << element.text.strip
+      end
+
+      # html_doc.search(".jobs-list").each do |element|
+      #   # help me here
+      #   @job_headings << element.text.strip
+      # end
+    # end
+
+    # html_file = URI.open(url).read
+    # html_doc = Nokogiri::HTML.parse(html_file)
+
+    # @job_titles = []
+
+    # html_doc.search(".jobs-list").each do |element|
+    #   # help me here
+    #   @job_titles << element.text.strip
+    # end
   end
 
   # GET /jobs/1 or /jobs/1.json
   def show
+    authorize @job
+
+    api_key = 'AIzaSyBj0Zq-ad00BSLiPvcJqtpagSkB_f-x67g'
+    base_url = 'https://www.googleapis.com/youtube/v3/search'
+    # query = "day in the life of a stonemason"
+    params = {
+      q: @job.name,
+      key: api_key
+    }
+    url = "#{base_url}?#{URI.encode_www_form(params)}"
+
+    begin
+      response = URI.open(url)
+      data = JSON.parse(response.read)
+      @video_urls = data["items"].map { |item| "https://www.youtube.com/embed/#{item['id']['videoId']}" }
+      # return data
+    rescue OpenURI::HTTPError => e
+      puts "Error: #{e.message}"
+      @video_urls = []
+      # return nil
+    end
   end
 
   # GET /jobs/new

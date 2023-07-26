@@ -1,6 +1,17 @@
 <p style="color: green"><%= notice %></p>
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <%= render @job %>
+<% @video_urls.each do |url| %>
+  <div class="video-wrapper">
+    <iframe width="560" height="315" src="<%= url %>" frameborder="0" allowfullscreen></iframe>
+  </div>
+<% end %>
 
 <div>
   <%= link_to "Edit this job", edit_job_path(@job) %> |

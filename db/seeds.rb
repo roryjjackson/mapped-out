@@ -137,3 +137,7 @@ job_categories = ["Administration and Management",
                   "Transport and Distribution",
                   "Uniformed and Security Services",
                   "Personal Development"]
+
+job_categories.each do |job|
+  Job.create(name: job)
+end
