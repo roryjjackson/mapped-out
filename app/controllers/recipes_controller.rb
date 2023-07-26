@@ -81,7 +81,7 @@ class RecipesController < ApplicationController
     authorize @recipe
     api_key = 'AIzaSyBj0Zq-ad00BSLiPvcJqtpagSkB_f-x67g'
     base_url = 'https://www.googleapis.com/youtube/v3/search'
-    query = "day in the life of a porn star"
+    query = "day in the life of a stonemason"
     params = {
       q: query,
       key: api_key

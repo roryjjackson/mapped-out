@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :jobs
   resources :recipes
   resources :mentors
   resources :enquiries
