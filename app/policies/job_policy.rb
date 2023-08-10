@@ -1,4 +1,4 @@
-class RecipePolicy < ApplicationPolicy
+class JobPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
@@ -6,7 +6,7 @@ class RecipePolicy < ApplicationPolicy
     end
   end
 
-  def search_youtube_videos?
+  def show?
     true
   end
 end

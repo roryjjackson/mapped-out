@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :jobs
   resources :recipes
   resources :mentors
   resources :enquiries
@@ -16,5 +17,6 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   get 'about', to: 'pages#about'
   get 'admin', to: 'pages#admin'
+  get '/search_youtube_videos', to: 'recipes#search_youtube_videos'
 
 end

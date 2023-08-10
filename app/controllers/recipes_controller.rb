@@ -2,14 +2,14 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[ show edit update destroy ]
   require "nokogiri"
   require "open-uri"
-
+  require 'json'
   # GET /recipes or /recipes.json
   def index
     # @recipes = Recipe.all
     @recipes = policy_scope(Recipe)
 
     ingredient = "pine nuts"
-    url = "https://www.bbcgoodfood.com/search/recipes?q=#{ingredient}"
+    url = "https://www.youtube.com/results?search_query=#{ingredient}"
 
     html_file = URI.open(url).read
     html_doc = Nokogiri::HTML.parse(html_file)
@@ -18,9 +18,9 @@ class RecipesController < ApplicationController
     @recipe_urls = []
 
     html_doc.search(".card__section.card__content").each do |element|
-      @recipe_titles << element.search(".heading-4").text.strip
+      @recipe_titles << element.search(".style-scope.ytd-video-renderer").text.strip
       # @recipe_titles << element.text.strip
-      @recipe_urls << element.search(".link").attribute("href").value
+      # @recipe_urls << element.search(".link").attribute("href").value
       # raise
     end
   end
@@ -75,6 +75,31 @@ class RecipesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search_youtube_videos
+    @recipe = Recipe.last
+    authorize @recipe
+    api_key = 'AIzaSyBj0Zq-ad00BSLiPvcJqtpagSkB_f-x67g'
+    base_url = 'https://www.googleapis.com/youtube/v3/search'
+    query = "day in the life of a stonemason"
+    params = {
+      q: query,
+      key: api_key
+    }
+    url = "#{base_url}?#{URI.encode_www_form(params)}"
+
+    begin
+      response = URI.open(url)
+      data = JSON.parse(response.read)
+      @video_urls = data["items"].map { |item| "https://www.youtube.com/embed/#{item['id']['videoId']}" }
+      # return data
+    rescue OpenURI::HTTPError => e
+      puts "Error: #{e.message}"
+      @video_urls = []
+      # return nil
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

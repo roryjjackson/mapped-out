@@ -1,0 +1,19 @@
+<!-- app/views/videos/search_youtube_videos.html.erb -->
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h3>Embedded search_youtube_videos</h3>
+<!-- Loop through the video URLs and embed each video -->
+<% @video_urls.each do |url| %>
+  <div class="video-wrapper">
+    <a href='<%= url %>'><%= url %></a>
+    <iframe width="560" height="315" src='<%= url %>' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+<% end %>

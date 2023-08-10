@@ -1,19 +1,6 @@
-<div class="the_class">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<% @recipe_titles.each do |recipe| %>
-  <p><%= recipe %></p>
+<!-- Loop through the video URLs and embed each video -->
+<% video_urls.each do |url| %>
+  <div class="video-wrapper">
+    <iframe width="560" height="315" src="<%= url %>" frameborder="0" allowfullscreen></iframe>
+  </div>
 <% end %>
-
-<% @recipe_urls.each do |recipe| %>
-  <%= link_to 'link', 'https://www.bbcgoodfood.com/#{recipe}', target: '_blank' %>
-<% end %>
-
-
-</div>
