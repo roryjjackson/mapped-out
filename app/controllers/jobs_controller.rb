@@ -25,6 +25,7 @@ class JobsController < ApplicationController
         @job_headings << element.text.strip
       end
 
+      # do something
       # html_doc.search(".jobs-list").each do |element|
       #   # help me here
       #   @job_headings << element.text.strip
